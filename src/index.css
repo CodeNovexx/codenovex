@@ -11,6 +11,21 @@
 body {
   width: 100vw;
   min-height: 100vh;
-  background-color: #000011;
+  background-color: black;
   font-family: "Source Sans Pro", sans-serif;
+  overflow-x: hidden;
+}
+
+.header_background {
+  background-image: url(assets/header_logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: 100vh;
+}
+
+@media (min-width: 1000px){
+  .header_background{
+    background-size: contain;
+  }
 }

@@ -3,6 +3,7 @@ import HamburgerIcon from "../assets/hamburger.png";
 import Logo from "../assets/logo.png";
 import CloseIcon from "../assets/closeIcon.png";
 import { DropdownContentProps, HeaderContentProps } from "../types/header";
+import DownArrow from "../assets/white-down-arrow.png";
 
 const Header = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -26,19 +27,47 @@ const Header = () => {
   );
 };
 
-const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => (
-  <div className="flex justify-between items-center p-5">
-    <div
-      className="bg-white rounded-full p-4 w-11 h-11 flex items-center justify-center"
-      onClick={toggleDropdown}
-    >
-      <img src={HamburgerIcon} alt="hamburger_icon" />
-    </div>
-    <div>
-      <img src={Logo} className="w-14 h-14 rounded-full " alt="logo" />
-    </div>
-  </div>
-);
+const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => {
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 900,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="header_background flex flex-col gap-48">
+      <div className="flex justify-between items-center px-5 pt-5">
+        <div
+          className="bg-white rounded-full p-4 w-11 h-11 flex items-center justify-center cursor-pointer"
+          onClick={toggleDropdown}
+        >
+          <img src={HamburgerIcon} alt="hamburger_icon" />
+        </div>
+        <div>
+          <img src={Logo} className="w-14 h-14 rounded-full " alt="logo" />
+        </div>
+      </div>
+
+      <div className=" text-white flex flex-col gap-14 items-center  justify-center">
+        <h1 className="text-5xl">CodeNovex</h1>
+        <div className="flex flex-col gap-5 text-3xl items-center">
+          <p>BUILDING</p>
+          <p>SUCCESS</p>
+          <p>TOGETHER</p>
+        </div>
+
+        <div
+          className="mt-10 flex flex-col gap-3 items-center justify-center cursor-pointer"
+          onClick={handleScroll}
+        >
+          <img src={DownArrow} alt="down_arrow" className="w-10 h-10" />
+          <h1 className="text-2xl">Scroll</h1>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const DropdownContent = ({ closeDropdown }: DropdownContentProps) => (
   <div className="w-full h-auto rounded-lg p-10 bg-white flex flex-col gap-20">
@@ -46,17 +75,17 @@ const DropdownContent = ({ closeDropdown }: DropdownContentProps) => (
       <img
         src={CloseIcon}
         alt="close_icon"
-        className="w-7 h-7"
+        className="w-7 h-7 cursor-pointer"
         onClick={closeDropdown}
       />
       <h1 className="text-3xl font-extrabold">CodeNovex</h1>
     </div>
     <div className="flex flex-col gap-10 text-2xl font-bold items-center">
-      <p>HOME</p>
-      <p>ABOUT</p>
-      <p>TEAM</p>
-      <p>SERVICES</p>
-      <p>CONTACT</p>
+      <p className="cursor-pointer">HOME</p>
+      <p className="cursor-pointer">ABOUT</p>
+      <p className="cursor-pointer">TEAM</p>
+      <p className="cursor-pointer">SERVICES</p>
+      <p className="cursor-pointer">CONTACT</p>
     </div>
   </div>
 );
