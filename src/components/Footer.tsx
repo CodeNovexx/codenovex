@@ -4,9 +4,9 @@ import FbIcon from "../assets/facebook_icon.png";
 import LinkedinIcon from "../assets/linkedin_icon.png";
 import InstagramIcon from "../assets/instagram_icon.png";
 
-export const Footer = React.forwardRef((_, ref) => {
+
+export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    //@ts-ignore
     <div className="bg-white p-12 flex flex-col gap-4 items-center mt-28" ref={ref}>
       <img src={Logo} alt="Logo" />
       <p className="text-center text-base">

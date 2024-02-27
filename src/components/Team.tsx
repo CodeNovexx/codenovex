@@ -6,9 +6,8 @@ import Teona from "../assets/team_images/TeonaPiranishvili.jpg";
 import Davit from "../assets/team_images/DavitLabadze.png";
 import TeamMemberCard from "./TeamMemberCard";
 
-const Team = React.forwardRef((_, ref) => {
+const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    //@ts-ignore
     <div className="p-5 flex flex-col gap-16" ref={ref}>
       <section className="flex flex-col gap-3 text-white">
         <h1 className="text-2xl">Who We Are ?</h1>

@@ -4,7 +4,7 @@ import PlusIcon from "../assets/plus.png";
 import MinusIcon from "../assets/minus.png";
 import { useState } from "react";
 
-const Services = React.forwardRef((_, ref) => {
+const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
   const [openIndex, setOpenIndex] = useState(-1);
 
   const toggleDescription = (index: number) => {
@@ -40,7 +40,6 @@ const Services = React.forwardRef((_, ref) => {
   ];
 
   return (
-    //@ts-ignore
     <div className="text-white p-5" ref={ref}>
       <section className="flex flex-col gap-5">
         <h1 className="text-4xl">What We Do ?</h1>

@@ -1,9 +1,8 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 
-const Aboutus = React.forwardRef((_, ref) => {
+const Aboutus = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    //@ts-ignore
     <div className="text-white flex flex-col gap-10" ref={ref}>
       <div className="flex flex-col gap-4  p-5">
         <h1 className="text-4xl">Why us</h1>
