@@ -2,10 +2,14 @@ import { useState } from "react";
 import HamburgerIcon from "../assets/hamburger.png";
 import Logo from "../assets/logo.png";
 import CloseIcon from "../assets/closeIcon.png";
-import { DropdownContentProps, HeaderContentProps } from "../types/header";
+import {
+  DropdownContentProps,
+  HeaderContentProps,
+  HeaderProps,
+} from "../types/header";
 import DownArrow from "../assets/white-down-arrow.png";
 
-const Header = () => {
+const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -16,10 +20,31 @@ const Header = () => {
     setDropdownVisible(false);
   };
 
+  const scrollToRef = (refName: string) => {
+    if (refName === "home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else if (refName === "about") {
+      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (refName === "team") {
+      teamRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (refName === "services") {
+      servicesRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (refName === "contact") {
+      footerRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    closeDropdown();
+  };
+
   return (
     <header>
       {isDropdownVisible ? (
-        <DropdownContent closeDropdown={closeDropdown} />
+        <DropdownContent
+          closeDropdown={closeDropdown}
+          scrollToRef={scrollToRef}
+        />
       ) : (
         <HeaderContent toggleDropdown={toggleDropdown} />
       )}
@@ -69,7 +94,10 @@ const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => {
   );
 };
 
-const DropdownContent = ({ closeDropdown }: DropdownContentProps) => (
+const DropdownContent = ({
+  closeDropdown,
+  scrollToRef,
+}: DropdownContentProps) => (
   <div className="w-full h-auto rounded-lg p-10 bg-white flex flex-col gap-20">
     <div className="flex justify-between items-center">
       <img
@@ -81,11 +109,21 @@ const DropdownContent = ({ closeDropdown }: DropdownContentProps) => (
       <h1 className="text-3xl font-extrabold">CodeNovex</h1>
     </div>
     <div className="flex flex-col gap-10 text-2xl font-bold items-center">
-      <p className="cursor-pointer">HOME</p>
-      <p className="cursor-pointer">ABOUT</p>
-      <p className="cursor-pointer">TEAM</p>
-      <p className="cursor-pointer">SERVICES</p>
-      <p className="cursor-pointer">CONTACT</p>
+      <p className="cursor-pointer" onClick={() => scrollToRef("home")}>
+        HOME
+      </p>
+      <p className="cursor-pointer" onClick={() => scrollToRef("about")}>
+        ABOUT
+      </p>
+      <p className="cursor-pointer" onClick={() => scrollToRef("team")}>
+        TEAM
+      </p>
+      <p className="cursor-pointer" onClick={() => scrollToRef("services")}>
+        SERVICES
+      </p>
+      <p className="cursor-pointer" onClick={() => scrollToRef("contact")}>
+        CONTACT
+      </p>
     </div>
   </div>
 );

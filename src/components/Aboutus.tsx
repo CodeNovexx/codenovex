@@ -1,8 +1,10 @@
+import React from "react";
 import Logo from "../assets/logo.png";
 
-const Aboutus = () => {
+const Aboutus = React.forwardRef((_, ref) => {
   return (
-    <div className="text-white flex flex-col gap-10">
+    //@ts-ignore
+    <div className="text-white flex flex-col gap-10" ref={ref}>
       <div className="flex flex-col gap-4  p-5">
         <h1 className="text-4xl">Why us</h1>
         <p className="text-lg leading-[30px]">
@@ -44,6 +46,6 @@ const Aboutus = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Aboutus;

@@ -1,3 +1,4 @@
+import React from "react";
 import Sandro from "../assets/team_images/SandroTushurashvili.jpeg";
 import Anri from "../assets/team_images/AnriKopaliani.png";
 import Mariam from "../assets/team_images/MariamDatukishvili.png";
@@ -5,9 +6,10 @@ import Teona from "../assets/team_images/TeonaPiranishvili.jpg";
 import Davit from "../assets/team_images/DavitLabadze.png";
 import TeamMemberCard from "./TeamMemberCard";
 
-const Team = () => {
+const Team = React.forwardRef((_, ref) => {
   return (
-    <div className="p-5 flex flex-col gap-16">
+    //@ts-ignore
+    <div className="p-5 flex flex-col gap-16" ref={ref}>
       <section className="flex flex-col gap-3 text-white">
         <h1 className="text-2xl">Who We Are ?</h1>
 
@@ -63,6 +65,6 @@ const Team = () => {
       </section>
     </div>
   );
-};
+});
 
 export default Team;

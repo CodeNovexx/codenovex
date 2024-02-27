@@ -1,11 +1,13 @@
+import React from "react";
 import Logo from "../assets/logo.png";
 import FbIcon from "../assets/facebook_icon.png";
 import LinkedinIcon from "../assets/linkedin_icon.png";
 import InstagramIcon from "../assets/instagram_icon.png";
 
-export const Footer = () => {
+export const Footer = React.forwardRef((_, ref) => {
   return (
-    <div className="bg-white p-12 flex flex-col gap-4 items-center mt-28">
+    //@ts-ignore
+    <div className="bg-white p-12 flex flex-col gap-4 items-center mt-28" ref={ref}>
       <img src={Logo} alt="Logo" />
       <p className="text-center text-base">
         Innovate, Code, Elevate: Crafting Tomorrow's Solutions Today.
@@ -17,4 +19,4 @@ export const Footer = () => {
       </div>
     </div>
   );
-};
+});

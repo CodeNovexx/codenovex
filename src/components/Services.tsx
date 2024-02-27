@@ -1,12 +1,13 @@
+import React from "react";
 import ServiceImage from "../assets/world-wide-web.png";
 import PlusIcon from "../assets/plus.png";
 import MinusIcon from "../assets/minus.png";
 import { useState } from "react";
 
-const Services = () => {
+const Services = React.forwardRef((_, ref) => {
   const [openIndex, setOpenIndex] = useState(-1);
 
-  const toggleDescription = (index: any) => {
+  const toggleDescription = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
@@ -39,7 +40,8 @@ const Services = () => {
   ];
 
   return (
-    <div className="text-white p-5">
+    //@ts-ignore
+    <div className="text-white p-5" ref={ref}>
       <section className="flex flex-col gap-5">
         <h1 className="text-4xl">What We Do ?</h1>
         <h1 className="text-2xl">
@@ -72,6 +74,6 @@ const Services = () => {
       ))}
     </div>
   );
-};
+});
 
 export default Services;
