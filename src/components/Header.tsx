@@ -21,22 +21,36 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   };
 
   const scrollToRef = (refName: string) => {
-    if (refName === "home") {
+    let targetRef;
+  
+    switch (refName) {
+      case "about":
+        targetRef = aboutRef;
+        break;
+      case "team":
+        targetRef = teamRef;
+        break;
+      case "services":
+        targetRef = servicesRef;
+        break;
+      case "contact":
+        targetRef = footerRef;
+        break;
+      default:
+        targetRef = null;
+    }
+  
+    if (targetRef && targetRef.current) {
+      const targetPosition = targetRef.current.getBoundingClientRect().top + window.scrollY + 400;
       window.scrollTo({
-        top: 0,
+        top: targetPosition,
         behavior: "smooth",
       });
-    } else if (refName === "about") {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (refName === "team") {
-      teamRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (refName === "services") {
-      servicesRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (refName === "contact") {
-      footerRef.current?.scrollIntoView({ behavior: "smooth" });
+      closeDropdown();
     }
-    closeDropdown();
   };
+  
+  
 
   return (
     <header>
