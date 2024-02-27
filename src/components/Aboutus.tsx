@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/logo.png";
+import Logo_Without_Bg from "../assets/logo_without_background.png";
 
 const Aboutus = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
@@ -18,7 +18,7 @@ const Aboutus = React.forwardRef<HTMLDivElement>((_, ref) => {
 
       <div className="relative border border-1-white  m-5 rounded-3xl flex flex-col gap-3">
         <div className="flex justify-between items-center pr-5">
-          <img src={Logo} alt="Logo" className="w-28 h-28" />
+          <img src={Logo_Without_Bg} alt="Logo" className="w-28 h-28" />
           <p className="text-3xl">CodeNovex</p>
         </div>
 
