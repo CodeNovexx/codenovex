@@ -40,10 +40,10 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
   ];
 
   return (
-    <div className="text-white p-5 md:p-7" ref={ref}>
-      <section className="flex flex-col gap-5">
+    <div className="text-white p-5 md:p-7 lg:p-9" ref={ref}>
+      <section className="flex flex-col gap-5 lg:items-center">
         <h1 className="text-2xl md:text-4xl">What We Do ?</h1>
-        <h1 className="md:text-xl">
+        <h1 className="md:text-xl lg:text-2xl">
           We Developed Software Solutions That Grows Startups And Businesses
         </h1>
       </section>

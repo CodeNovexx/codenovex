@@ -87,7 +87,7 @@ const HeaderContent = ({ toggleDropdown, scrollToRef }: HeaderContentProps) => {
         </div>
       </div>
 
-      <div className="hidden md:flex justify-between p-7">
+      <div className="hidden md:flex justify-between p-7 lg:p-9">
       <div>
           <img src={Logo} className="w-20 h-20 rounded-full " alt="logo" />
         </div>
