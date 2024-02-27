@@ -30,30 +30,35 @@ const Team = () => {
           role="CEO"
           imageSrc={Sandro}
           altText="Sandro Tushurashvili"
+          position="Software Engineer"
         />
         <TeamMemberCard
           name="Anri Kopaliani"
-          role="Frontend Developer"
+          role="CTO"
           imageSrc={Anri}
           altText="Anri Kopaliani"
+          position="Software Engineer"
         />
         <TeamMemberCard
           name="Mariam Datukishvili"
-          role="Frontend Developer"
+          role="CTO"
           imageSrc={Mariam}
           altText="Mariam Datukishvili"
+          position="Software Engineer"
         />
         <TeamMemberCard
           name="Teona Piranishvili"
-          role="Frontend Developer"
+          role="CTO"
           imageSrc={Teona}
           altText="Teona Piranishvili"
+          position="Software Engineer"
         />
         <TeamMemberCard
           name="Davit Labadze"
-          role="Backend Developer"
+          role="CTO"
           imageSrc={Davit}
           altText="Davit Labadze"
+          position="Software Engineer"
         />
       </section>
     </div>

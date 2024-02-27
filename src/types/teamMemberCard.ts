@@ -3,4 +3,5 @@ export interface TeamMemberCardProps {
   role: string;
   imageSrc: string;
   altText: string;
+  position: string;
 }
