@@ -22,7 +22,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
 
   const scrollToRef = (refName: string) => {
     let targetRef;
-  
+
     switch (refName) {
       case "about":
         targetRef = aboutRef;
@@ -39,9 +39,10 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       default:
         targetRef = null;
     }
-  
+
     if (targetRef && targetRef.current) {
-      const targetPosition = targetRef.current.getBoundingClientRect().top + window.scrollY + 400;
+      const targetPosition =
+        targetRef.current.getBoundingClientRect().top + window.scrollY + 400;
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth",
@@ -49,8 +50,6 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       closeDropdown();
     }
   };
-  
-  
 
   return (
     <header>
@@ -84,7 +83,7 @@ const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => {
           <img src={HamburgerIcon} alt="hamburger_icon" />
         </div>
         <div>
-          <img src={Logo} className="w-14 h-14 rounded-full " alt="logo" />
+          <img src={Logo} className="w-11 h-11 rounded-full " alt="logo" />
         </div>
       </div>
 
