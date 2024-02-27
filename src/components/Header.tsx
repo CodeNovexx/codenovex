@@ -74,7 +74,7 @@ const HeaderContent = ({ toggleDropdown, scrollToRef }: HeaderContentProps) => {
   };
 
   return (
-    <section className="header_background flex flex-col gap-48">
+    <section className="header_background flex flex-col gap-48 max-w-[1130px] mx-auto">
       <div className="flex justify-between items-center px-5 pt-5 md:hidden">
         <div
           className="bg-white rounded-full p-4 w-11 h-11 flex items-center justify-center cursor-pointer"

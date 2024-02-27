@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import Header from "../components/Header";
 import { Footer } from "../components/Footer";
 import Aboutus from "../components/Aboutus";
@@ -13,10 +13,17 @@ const Home = () => {
 
   return (
     <div className="flex flex-col gap-5 md:gap-10">
-      <Header aboutRef={aboutRef} teamRef={teamRef} servicesRef={servicesRef} footerRef={footerRef} />
-      <Aboutus ref={aboutRef} />
-      <Team ref={teamRef} />
-      <Services ref={servicesRef} />
+      <Header
+        aboutRef={aboutRef}
+        teamRef={teamRef}
+        servicesRef={servicesRef}
+        footerRef={footerRef}
+      />
+      <div className="max-w-[1130px] mx-auto">
+        <Aboutus ref={aboutRef} />
+        <Team ref={teamRef} />
+        <Services ref={servicesRef} />
+      </div>
       <Footer ref={footerRef} />
     </div>
   );
