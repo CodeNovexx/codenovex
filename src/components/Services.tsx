@@ -40,17 +40,17 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
   ];
 
   return (
-    <div className="text-white p-5" ref={ref}>
+    <div className="text-white p-5 md:p-7" ref={ref}>
       <section className="flex flex-col gap-5">
-        <h1 className="text-4xl">What We Do ?</h1>
-        <h1 className="text-2xl">
+        <h1 className="text-2xl md:text-4xl">What We Do ?</h1>
+        <h1 className="md:text-xl">
           We Developed Software Solutions That Grows Startups And Businesses
         </h1>
       </section>
 
       {services.map((service, index) => (
         <div key={index} className="relative">
-          <div className="flex gap-2 items-center mt-10 text-xl justify-between">
+          <div className="flex gap-2 items-center mt-10 justify-between md:text-xl">
             <div className="flex gap-2 items-center">
               <img src={ServiceImage} alt="Icon" className="w-7 h-7" />
               <p>{service.name}</p>
@@ -63,7 +63,7 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
             />
           </div>
           <div
-            className={`mt-2 p-3 bg-gray-800 rounded-lg text-sm font-bold text-gray-300 overflow-hidden transition-all duration-500 ${
+            className={`mt-2 p-3 bg-gray-800 rounded-lg text-sm font-bold text-gray-300 overflow-hidden transition-all duration-500 md:text-lg ${
               openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
             }`}
           >

@@ -7,15 +7,15 @@ import InstagramIcon from "../assets/instagram_icon.svg";
 export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div
-      className="bg-white py-12 flex flex-col gap-4 items-center mt-28 rounded-lg"
+      className="bg-white py-12 flex flex-col gap-4 items-center mt-28 rounded-lg md:mt-0"
       ref={ref}
     >
-      <img src={Logo} alt="Logo" className="w-36 h-36 self-center" />
-      <p className="text-center text-xl">
+      <img src={Logo} alt="Logo" className="w-36 h-36 self-center md:w-40 md:h-40" />
+      <p className="text-center text-xl md:text-2xl md:w-[600px]">
         Innovate, Code, Elevate: Crafting Tomorrow's Solutions Today.
       </p>
 
-      <div className="text-xl font-sans text-gray-700 mb-7">
+      <div className="text-xl font-sans text-gray-700 mb-7 md:text-2xl">
         <a href="mailto: info@codenovex.ge">
           Email: <span className="font-bold">info@codenovex.ge</span>
         </a>
@@ -23,13 +23,13 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
 
       <div className="flex gap-5 items-start">
         <a href="" target="_blank">
-          <img src={FbIcon} alt="" className="w-10 h-10" />
+          <img src={FbIcon} alt="" className="w-10 h-10 md:w-12 md:h-12" />
         </a>
         <a href="" target="_blank">
-          <img src={LinkedinIcon} alt="" className="w-10 h-10" />
+          <img src={LinkedinIcon} alt="" className="w-10 h-10 md:w-12 md:h-12" />
         </a>
         <a href="" target="_blank">
-          <img src={InstagramIcon} alt="" className="w-10 h-10" />
+          <img src={InstagramIcon} alt="" className="w-10 h-10 md:w-12 md:h-12" />
         </a>
       </div>
     </div>

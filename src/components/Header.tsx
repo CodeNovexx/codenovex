@@ -59,13 +59,13 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
           scrollToRef={scrollToRef}
         />
       ) : (
-        <HeaderContent toggleDropdown={toggleDropdown} />
+        <HeaderContent toggleDropdown={toggleDropdown} scrollToRef={scrollToRef} />
       )}
     </header>
   );
 };
 
-const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => {
+const HeaderContent = ({ toggleDropdown, scrollToRef }: HeaderContentProps) => {
   const handleScroll = () => {
     window.scrollTo({
       top: 900,
@@ -75,7 +75,7 @@ const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => {
 
   return (
     <section className="header_background flex flex-col gap-48">
-      <div className="flex justify-between items-center px-5 pt-5">
+      <div className="flex justify-between items-center px-5 pt-5 md:hidden">
         <div
           className="bg-white rounded-full p-4 w-11 h-11 flex items-center justify-center cursor-pointer"
           onClick={toggleDropdown}
@@ -87,10 +87,25 @@ const HeaderContent = ({ toggleDropdown }: HeaderContentProps) => {
         </div>
       </div>
 
+      <div className="hidden md:flex justify-between p-7">
+      <div>
+          <img src={Logo} className="w-20 h-20 rounded-full " alt="logo" />
+        </div>
+
+        <div className="flex gap-4 items-center justify-center bg-white p-6 rounded-full text-gray-500">
+          <p onClick={() => scrollToRef("home")}>HOME</p>
+          <p onClick={() => scrollToRef("about")}>ABOUT</p>
+          <p onClick={() => scrollToRef("team")}>TEAM</p>
+          <p onClick={() => scrollToRef("services")}>SERVICES</p>
+        </div>
+
+        <button className="bg-[#3A556D] rounded-full w-auto p-3 text-white text-lg" onClick={() => scrollToRef("contact")}>Contact</button>
+      </div>
+
       <div className=" text-white flex flex-col gap-14 items-center  justify-center">
         <h1 className="text-5xl">CodeNovex</h1>
         <div className="flex flex-col gap-5 text-3xl items-center">
-          <p>BUILDING</p>
+          <p >BUILDING</p>
           <p>SUCCESS</p>
           <p>TOGETHER</p>
         </div>

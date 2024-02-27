@@ -12,7 +12,7 @@ const Home = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 md:gap-10">
       <Header aboutRef={aboutRef} teamRef={teamRef} servicesRef={servicesRef} footerRef={footerRef} />
       <Aboutus ref={aboutRef} />
       <Team ref={teamRef} />

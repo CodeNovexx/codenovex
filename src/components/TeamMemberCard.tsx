@@ -9,8 +9,8 @@ const TeamMemberCard = ({
   position,
 }: TeamMemberCardProps) => {
   return (
-    <div className="p-2 bg-white flex flex-col gap-2 items-center rounded-md">
-      <img src={imageSrc} alt={altText} className="w-full h-60 rounded-md" />
+    <div className="p-2 bg-[#3A556D] text-white flex flex-col gap-2 items-center rounded-md md:w-[335px] md:p-3">
+      <img src={imageSrc} alt={altText} className="w-auto h-auto rounded-md" />
       <h1 className="self-start text-3xl">{name}</h1>
       <div className="flex items-center gap-2 w-full justify-start text-xl">
         <p>{role}</p>

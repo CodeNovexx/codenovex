@@ -12,6 +12,7 @@ interface DropdownContentProps {
 
 interface HeaderContentProps {
   toggleDropdown: () => void;
+  scrollToRef: (refName: string) => void;
 }
 
 export type { HeaderProps, DropdownContentProps, HeaderContentProps };
