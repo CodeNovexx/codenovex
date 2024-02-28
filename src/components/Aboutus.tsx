@@ -1,9 +1,6 @@
 import React from "react";
 import Logo_Without_Bg from "../assets/logo_without_background.png";
-
-interface AboutusProps {
-  footerRef: React.RefObject<HTMLDivElement>;
-}
+import { AboutusProps } from "../types/aboutUs";
 
 const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
   const { footerRef } = props;
