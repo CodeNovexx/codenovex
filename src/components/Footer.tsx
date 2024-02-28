@@ -29,7 +29,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
       </div>
 
       <div className="flex gap-5 items-start">
-        <a href="" target="_blank">
+        <a href="https://www.facebook.com/CodeNovex" target="_blank">
           <img src={FbIcon} alt="" className="w-10 h-10 md:w-12 md:h-12" />
         </a>
         <a href="" target="_blank">
