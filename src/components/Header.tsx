@@ -93,10 +93,10 @@ const HeaderContent = ({ toggleDropdown, scrollToRef }: HeaderContentProps) => {
         </div>
 
         <div className="flex gap-4 items-center justify-center bg-white p-6 rounded-full text-gray-500">
-          <p onClick={() => scrollToRef("home")}>HOME</p>
-          <p onClick={() => scrollToRef("about")}>ABOUT</p>
-          <p onClick={() => scrollToRef("team")}>TEAM</p>
-          <p onClick={() => scrollToRef("services")}>SERVICES</p>
+          <p onClick={() => scrollToRef("home")} className="cursor-pointer">HOME</p>
+          <p onClick={() => scrollToRef("about")} className="cursor-pointer">ABOUT</p>
+          <p onClick={() => scrollToRef("team")} className="cursor-pointer">TEAM</p>
+          <p onClick={() => scrollToRef("services")} className="cursor-pointer">SERVICES</p>
         </div>
 
         <button className="bg-[#3A556D] rounded-full w-auto p-3 text-white text-lg" onClick={() => scrollToRef("contact")}>Contact</button>
@@ -105,7 +105,7 @@ const HeaderContent = ({ toggleDropdown, scrollToRef }: HeaderContentProps) => {
       <div className=" text-white flex flex-col gap-14 items-center  justify-center">
         <h1 className="text-5xl">CodeNovex</h1>
         <div className="flex flex-col gap-5 text-3xl items-center">
-          <p >BUILDING</p>
+          <p>BUILDING</p>
           <p>SUCCESS</p>
           <p>TOGETHER</p>
         </div>
