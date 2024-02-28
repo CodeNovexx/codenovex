@@ -1,9 +1,37 @@
 import React from "react";
 import Logo_Without_Bg from "../assets/logo_without_background.png";
 
-const Aboutus = React.forwardRef<HTMLDivElement>((_, ref) => {
+interface AboutusProps {
+  footerRef: React.RefObject<HTMLDivElement>;
+}
+
+const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
+  const { footerRef } = props;
+  const scrollToRef = (refName: string) => {
+    let targetRef;
+
+    switch (refName) {
+      case "contact":
+        targetRef = footerRef;
+        break;
+      default:
+        targetRef = null;
+    }
+
+    if (targetRef && targetRef.current) {
+      const targetPosition =
+        targetRef.current.getBoundingClientRect().top + window.scrollY + 400;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
-    <div className="text-white flex flex-col gap-10 lg:flex-row lg:justify-between" ref={ref}>
+    <div
+      className="text-white flex flex-col gap-10 lg:flex-row lg:justify-between"
+      ref={ref}
+    >
       <div className="flex flex-col gap-4  p-5 md:p-7 lg:p-9">
         <h1 className="text-4xl">Why us</h1>
         <p className="text-lg leading-[30px]">
@@ -16,14 +44,14 @@ const Aboutus = React.forwardRef<HTMLDivElement>((_, ref) => {
         </p>
 
         <div className="hidden lg:flex flex-col gap-3 rounded-3xl bg-[#3A556D] p-5 w-full md:p-7">
-        <h1 className="text-4xl">Pricing</h1>
-        <p className="text-lg md:text-xl">
-          Discover our unbeatable value. Our transparent pricing ensures you get
-          top-notch solutions tailored to your budget, without compromising
-          quality. No hidden fees, just straightforward pricing for exceptional
-          results
-        </p>
-      </div>
+          <h1 className="text-4xl">Pricing</h1>
+          <p className="text-lg md:text-xl">
+            Discover our unbeatable value. Our transparent pricing ensures you
+            get top-notch solutions tailored to your budget, without
+            compromising quality. No hidden fees, just straightforward pricing
+            for exceptional results
+          </p>
+        </div>
       </div>
 
       <div className="relative border border-1-white m-5 rounded-3xl flex flex-col gap-3 md:m-7 lg:m-9">
@@ -39,7 +67,10 @@ const Aboutus = React.forwardRef<HTMLDivElement>((_, ref) => {
           solutions to our clients.
         </p>
 
-        <button className="bg-white m-5 rounded-3xl text-black p-2 text-xl md:text-2xl">
+        <button
+          className="bg-white m-5 rounded-3xl text-black p-2 text-xl md:text-2xl"
+          onClick={() => scrollToRef("contact")}
+        >
           Contact Us
         </button>
       </div>

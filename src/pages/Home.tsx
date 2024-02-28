@@ -20,7 +20,7 @@ const Home = () => {
         footerRef={footerRef}
       />
       <div className="max-w-[1130px] mx-auto">
-        <Aboutus ref={aboutRef} />
+        <Aboutus ref={aboutRef} footerRef={footerRef} />
         <Team ref={teamRef} />
         <Services ref={servicesRef} />
       </div>
