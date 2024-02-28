@@ -19,7 +19,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
         Innovate, Code, Elevate: Crafting Tomorrow's Solutions Today.
       </p>
 
-      <div className="flex flex-col gap-3 text-xl font-sans text-gray-700 mb-7 md:text-2xl">
+      <div className="flex flex-col gap-3 items-center text-xl font-sans text-gray-700 mb-7 md:text-2xl">
         <a href="mailto: info@codenovex.ge">
           Email: <span className="font-bold">info@codenovex.ge</span>
         </a>
