@@ -25,7 +25,7 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
         </p>
       </section>
 
-      <section className="flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-between lg:justify-center">
+      {/* <section className="flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-between lg:justify-center">
         <TeamMemberCard
           name="Sandro Tushurashvili"
           role="CEO"
@@ -61,7 +61,7 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
           altText="Davit Labadze"
           position="Software Engineer"
         />
-      </section>
+      </section> */}
     </div>
   );
 });

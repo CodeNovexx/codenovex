@@ -95,7 +95,7 @@ const HeaderContent = ({ toggleDropdown, scrollToRef }: HeaderContentProps) => {
         <div className="flex gap-4 items-center justify-center bg-white p-6 rounded-full text-gray-500">
           <p onClick={() => scrollToRef("home")} className="cursor-pointer">HOME</p>
           <p onClick={() => scrollToRef("about")} className="cursor-pointer">ABOUT</p>
-          <p onClick={() => scrollToRef("team")} className="cursor-pointer">TEAM</p>
+          {/* <p onClick={() => scrollToRef("team")} className="cursor-pointer">TEAM</p> */}
           <p onClick={() => scrollToRef("services")} className="cursor-pointer">SERVICES</p>
         </div>
 
@@ -143,9 +143,9 @@ const DropdownContent = ({
       <p className="cursor-pointer" onClick={() => scrollToRef("about")}>
         ABOUT
       </p>
-      <p className="cursor-pointer" onClick={() => scrollToRef("team")}>
+      {/* <p className="cursor-pointer" onClick={() => scrollToRef("team")}>
         TEAM
-      </p>
+      </p> */}
       <p className="cursor-pointer" onClick={() => scrollToRef("services")}>
         SERVICES
       </p>
