@@ -1,10 +1,10 @@
 import React from "react";
-import Sandro from "../assets/team_images/SandroTushurashvili.jpeg";
-import Anri from "../assets/team_images/AnriKopaliani.png";
-import Mariam from "../assets/team_images/MariamDatukishvili.png";
-import Teona from "../assets/team_images/TeonaPiranishvili.jpg";
-import Davit from "../assets/team_images/DavitLabadze.png";
-import TeamMemberCard from "./TeamMemberCard";
+// import Sandro from "../assets/team_images/SandroTushurashvili.jpeg";
+// import Anri from "../assets/team_images/AnriKopaliani.png";
+// import Mariam from "../assets/team_images/MariamDatukishvili.png";
+// import Teona from "../assets/team_images/TeonaPiranishvili.jpg";
+// import Davit from "../assets/team_images/DavitLabadze.png";
+// import TeamMemberCard from "./TeamMemberCard";
 
 const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
