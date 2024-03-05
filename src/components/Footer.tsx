@@ -32,14 +32,14 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
         <a href="https://www.facebook.com/CodeNovex" target="_blank">
           <img src={FbIcon} alt="" className="w-10 h-10 md:w-12 md:h-12" />
         </a>
-        <a href="" target="_blank">
+        <a href="https://www.linkedin.com/company/codenovex" target="_blank">
           <img
             src={LinkedinIcon}
             alt=""
             className="w-10 h-10 md:w-12 md:h-12"
           />
         </a>
-        <a href="" target="_blank">
+        <a href="https://www.instagram.com/codenovex/" target="_blank">
           <img
             src={InstagramIcon}
             alt=""
