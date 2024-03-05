@@ -14,7 +14,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
     if (targetRef && targetRef.current) {
       window.scrollTo({
         top: targetRef.current.offsetTop,
-        behavior: "revert-layer",
+        behavior: "smooth",
       });
     }
   };
