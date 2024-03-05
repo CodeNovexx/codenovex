@@ -1,4 +1,4 @@
-import { RefObject, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 import HamburgerIcon from "../assets/hamburger.png";
 import Logo from "../assets/logo.png";
 import CloseIcon from "../assets/closeIcon.png";
@@ -20,6 +20,13 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
     setDropdownVisible(false);
   };
 
+  useEffect(() => {
+    if (isDropdownVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [isDropdownVisible]);
   const scrollToRef = (refName: string) => {
     const refs: { [key: string]: RefObject<HTMLDivElement> } = {
       about: aboutRef,
