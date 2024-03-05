@@ -1,37 +1,31 @@
-import React from "react";
+import React, { RefObject } from "react";
 import Logo_Without_Bg from "../assets/logo_without_background.png";
 import { AboutusProps } from "../types/aboutUs";
 
 const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
   const { footerRef } = props;
   const scrollToRef = (refName: string) => {
-    let targetRef;
+    const refs: { [key: string]: RefObject<HTMLDivElement> } = {
+      contact: footerRef,
+    };
 
-    switch (refName) {
-      case "contact":
-        targetRef = footerRef;
-        break;
-      default:
-        targetRef = null;
-    }
+    const targetRef = refs[refName];
 
     if (targetRef && targetRef.current) {
-      const targetPosition =
-        targetRef.current.getBoundingClientRect().top + window.scrollY + 400;
       window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
+        top: targetRef.current.offsetTop,
+        behavior: "revert-layer",
       });
     }
   };
   return (
     <div
-      className="text-white flex flex-col gap-10 lg:flex-row lg:justify-between"
+      className="text-white flex flex-col gap-10 lg:flex-row xl:gap-[200px]"
       ref={ref}
     >
       <div className="flex flex-col gap-4  p-5 md:p-7 lg:p-9">
-        <h1 className="text-4xl">Why us</h1>
-        <p className="text-lg leading-[30px]">
+        <h1 className="text-4xl font-semibold">Why Us</h1>
+        <p className="text-lg leading-8 md:text-xl">
           At CodeNovex, we're passionate about leveraging technology to drive
           innovation and empower businesses. With expertise in custom software
           development, web design, and mobile app development, we deliver
@@ -41,7 +35,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
         </p>
 
         <div className="hidden lg:flex flex-col gap-3 rounded-3xl bg-[#3A556D] p-5 w-full md:p-7">
-          <h1 className="text-4xl">Pricing</h1>
+          <h1 className="text-4xl font-semibold">Pricing</h1>
           <p className="text-lg md:text-xl">
             Discover our unbeatable value. Our transparent pricing ensures you
             get top-notch solutions tailored to your budget, without
@@ -54,10 +48,10 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
       <div className="relative border border-1-white m-5 rounded-3xl flex flex-col gap-3 md:m-7 lg:m-9">
         <div className="flex justify-between items-center pr-5">
           <img src={Logo_Without_Bg} alt="Logo" className="w-28 h-28" />
-          <p className="text-3xl md:text-4xl">CodeNovex</p>
+          <p className="text-3xl font-semibold">CodeNovex</p>
         </div>
 
-        <p className="px-5 pb-5 md:text-xl">
+        <p className="text-lg px-5 pb-5 md:text-xl">
           We thrive on innovation, constantly seeking out the latest
           technologies and techniques to stay ahead of the curve. Our
           forward-thinking approach ensures that we deliver cutting-edge
@@ -65,7 +59,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
         </p>
 
         <button
-          className="bg-white m-5 rounded-3xl text-black p-2 text-xl md:text-2xl"
+          className="bg-white m-5 rounded-3xl text-black p-2 text-xl md:text-2xl lg:mt-12 xl:mt-10"
           onClick={() => scrollToRef("contact")}
         >
           Contact Us

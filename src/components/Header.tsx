@@ -61,7 +61,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
     }
   };
   return (
-    <header className=" text-white flex flex-col w-full max-w-[1130px] mx-auto">
+    <header className=" text-white flex flex-col w-full max-w-[1440px] mx-auto">
       <div className="flex justify-between items-center py-4 px-6 md:hidden">
         <div
           className="bg-white rounded-full p-4 w-11 h-11 flex items-center justify-center cursor-pointer md:hidden"

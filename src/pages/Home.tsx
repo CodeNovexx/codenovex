@@ -19,7 +19,7 @@ const Home = () => {
         servicesRef={servicesRef}
         footerRef={footerRef}
       />
-      <div className="max-w-[1130px] mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         <Aboutus ref={aboutRef} footerRef={footerRef} />
         <Team ref={teamRef} />
         <Services ref={servicesRef} />
