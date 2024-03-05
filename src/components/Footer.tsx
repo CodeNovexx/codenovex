@@ -7,7 +7,7 @@ import InstagramIcon from "../assets/instagram_icon.svg";
 export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div
-      className="bg-white py-12 flex flex-col gap-4 items-center mt-28 rounded-lg md:mt-0"
+      className="bg-white py-12 flex flex-col gap-4 items-center rounded-lg md:mt-0"
       ref={ref}
     >
       <img

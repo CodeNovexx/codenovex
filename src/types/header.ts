@@ -1,3 +1,5 @@
+import { ReactNode, MouseEventHandler } from "react";
+
 interface HeaderProps {
   aboutRef: React.RefObject<HTMLDivElement>;
   teamRef: React.RefObject<HTMLDivElement>;
@@ -15,4 +17,14 @@ interface HeaderContentProps {
   scrollToRef: (refName: string) => void;
 }
 
-export type { HeaderProps, DropdownContentProps, HeaderContentProps };
+interface NavItemProps {
+  children: ReactNode;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+export type {
+  HeaderProps,
+  DropdownContentProps,
+  HeaderContentProps,
+  NavItemProps,
+};
