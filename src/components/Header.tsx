@@ -22,9 +22,9 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
 
   useEffect(() => {
     if (isDropdownVisible) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
     }
   }, [isDropdownVisible]);
   const scrollToRef = (refName: string) => {
