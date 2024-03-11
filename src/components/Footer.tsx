@@ -23,8 +23,8 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
         <a href="mailto: info@codenovex.ge">
           Email: <span className="font-bold">info@codenovex.ge</span>
         </a>
-        <a href="tel:555 05 00 01">
-          Phone: <span className="font-bold"> 555 05 00 01</span>
+        <a href="tel:555 16 71 55">
+          Phone: <span className="font-bold"> 555 16 71 55</span>
         </a>
       </div>
 
