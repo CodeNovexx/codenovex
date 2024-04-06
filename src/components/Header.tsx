@@ -7,10 +7,12 @@ import {
   HeaderProps,
   NavItemProps,
 } from "../types/header";
-import DownArrow from "../assets/white-down-arrow.png";
+import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const { t } = useTranslation();
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -74,57 +76,64 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         </div>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <NavItem onClick={() => scrollToRef("about")}>About</NavItem>
-          <NavItem onClick={() => scrollToRef("services")}>Services</NavItem>
-          <NavItem onClick={() => scrollToRef("contact")}>Contact</NavItem>
+          <NavItem onClick={() => scrollToRef("about")}>
+            {t("header.ABOUT")}
+          </NavItem>
+          <NavItem onClick={() => scrollToRef("services")}>
+            {t("header.SERVICES")}
+          </NavItem>
+          <NavItem onClick={() => scrollToRef("contact")}>
+            {t("header.CONTACT")}
+          </NavItem>
         </nav>
       </div>
 
       <div className="hidden md:flex justify-between p-7 lg:p-9 ">
         <div>
-          <img src={Logo} className="w-20 h-20 rounded-full " alt="logo" />
+          <img src={Logo} className="w-20 h-20 rounded-full" alt="logo" />
         </div>
 
         <div className="flex gap-4 items-center justify-center bg-white p-6 rounded-full text-gray-500">
           <p onClick={() => scrollToRef("home")} className="cursor-pointer">
-            HOME
+            {t("header.HOME")}
           </p>
           <p onClick={() => scrollToRef("about")} className="cursor-pointer">
-            ABOUT
+            {t("header.ABOUT")}
           </p>
+
           {/* <p onClick={() => scrollToRef("team")} className="cursor-pointer">TEAM</p> */}
           <p onClick={() => scrollToRef("services")} className="cursor-pointer">
-            SERVICES
+            {t("header.SERVICES")}
+          </p>
+          <p onClick={() => scrollToRef("contact")} className="cursor-pointer">
+            {t("header.CONTACT")}
           </p>
         </div>
 
-        <button
-          className="bg-[#3A556D] rounded-full w-auto p-3 text-white text-lg"
-          onClick={() => scrollToRef("contact")}
-        >
-          Contact
-        </button>
+        <LanguageSelector />
       </div>
 
       <section className="header_background  mb-20 flex flex-col gap-14 items-center justify-center">
         <h1 className="text-5xl">CodeNovex</h1>
         <div className="flex flex-col gap-4 text-3xl items-center">
-          <p>BUILDING</p>
-          <p>SUCCESS</p>
-          <p>TOGETHER</p>
+          <p>{t("header.BUILDING")}</p>
+          <p>{t("header.SUCCESS")}</p>
+          <p>{t("header.TOGETHER")}</p>
         </div>
         <div
           className="mt-10 flex flex-col gap-3 items-center justify-center cursor-pointer"
           onClick={() => handleScroll("about")}
         >
-          <img src={DownArrow} alt="down_arrow" className="w-10 h-10" />
-          <h1 className="text-2xl">Scroll</h1>
+          <div className="scroll-down-dude"></div>
+
+          <h1 className="text-2xl">{t("header.SCROLL")}</h1>
         </div>
       </section>
       {isDropdownVisible && (
         <DropdownContent
           scrollToRef={scrollToRef}
           closeDropdown={closeDropdown}
+          t={t}
         />
       )}
     </header>
@@ -145,18 +154,36 @@ const NavItem = ({ children, onClick }: NavItemProps) => {
 const DropdownContent = ({
   scrollToRef,
   closeDropdown,
+  t,
 }: DropdownContentProps) => {
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-80 z-[999]">
-      <div className="max-w-md mx-auto bg-white rounded-lg p-4">
-        <nav className="flex flex-col space-y-8 w-[300px] text-black relative">
-          <button className="absolute top-1 right-1" onClick={closeDropdown}>
-            <img src={CloseIcon} alt="Close" className="w-4" />
+    <div className="fixed inset-0 flex w-full justify-center bg-gray-900 bg-opacity-80 z-[999]">
+      <div className="relative  h-[100vh] w-full bg-white p-4 flex flex-col gap-16">
+        <div className="flex justify-between items-center">
+          <h1 className="text-black text-4xl">CodeNovex</h1>
+          <button onClick={closeDropdown}>
+            <img src={CloseIcon} alt="Close" className="w-5 h-5" />
           </button>
-          <NavItem onClick={() => scrollToRef("about")}>About</NavItem>
-          <NavItem onClick={() => scrollToRef("services")}>Services</NavItem>
-          <NavItem onClick={() => scrollToRef("contact")}>Contact</NavItem>
-        </nav>
+        </div>
+
+        <div className="flex justify-between items-start">
+          <nav className="flex flex-col space-y-8 items-start text-black relative text-xl">
+            <NavItem onClick={() => scrollToRef("about")}>
+              {t("header.ABOUT")}
+            </NavItem>
+            <NavItem onClick={() => scrollToRef("services")}>
+              {t("header.SERVICES")}
+            </NavItem>
+            <NavItem onClick={() => scrollToRef("contact")}>
+              {t("header.CONTACT")}
+            </NavItem>
+          </nav>
+          <LanguageSelector />
+        </div>
+
+        <div className="mt-20">
+          <img src={Logo} alt="Logo" />
+        </div>
       </div>
     </div>
   );

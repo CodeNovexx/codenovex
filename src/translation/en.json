@@ -1,0 +1,39 @@
+{
+  "header": { 
+    "HOME": "HOME",
+    "ABOUT": "ABOUT",
+    "SERVICES": "SERVICES",
+    "CONTACT": "CONTACT",
+    "BUILDING": "BUILDING",
+    "SUCCESS": "SUCCESS",
+    "TOGETHER": "TOGETHER",
+    "SCROLL": "SCROLL"
+  },
+  "why_us": {
+    "WHY_US": "WHY US",
+    "WHY_US_TEXT": "At CodeNovex, we're passionate about leveraging technology to drive innovation and empower businesses. With expertise in custom software development, web design, and mobile app development, we deliver tailored digital solutions that exceed expectations. Collaborate with us to turn your ideas into reality and unlock your business's full potential.",
+    "PRICING": "PRICING",
+    "PRICING_TEXT": "Our transparent pricing ensures you get top-notch solutions tailored to your budget, without compromising quality. No hidden fees, just straightforward pricing for exceptional results.",
+    "PRICING_BOX": "We thrive on day by day, constantly seeking out the latest technologies and techniques to stay ahead of the curve. Our forward-thinking approach ensures that we deliver cutting-edge solutions to our clients.",
+    "PRICING_BTN": "Contact Us"
+  },
+  "team": {
+    "WHO_WE_ARE": "WHO WE ARE",
+    "WHO_WE_ARE_TEXT": "We are a diverse and dedicated team of developers, designers, and tech enthusiasts united by our passion for innovation and our commitment to excellence. With a deep understanding of cutting-edge technologies and a collaborative approach to problem-solving, we strive to create bespoke software solutions that not only meet but exceed the unique needs and expectations of our clients. Our journey is defined by a relentless pursuit of quality, creativity, and customer satisfaction, as we continue to push the boundaries of possibility and shape the digital landscape one project at a time."
+  },
+  "services": {
+    "WHAT_WE_DO": "WHAT WE DO",
+    "WHAT_WE_DO_TEXT": "We Developed Software Solutions That Grows Startups And Businesses",
+    "WEB3": "Leverage state-of-the-art technologies to create highly adaptable and interactive web experiences that redefine user engagement and satisfaction.",
+    "UI/UX": "Design seamless and captivating user interfaces, focusing on intuitive navigation and delightful interactions to elevate user experience to new heights.",
+    "FRONT_END": "Engineer dynamic and responsive front-end solutions using cutting-edge frameworks and libraries, ensuring optimal performance and user interaction across devices and platforms.",
+    "BACK_END": "Designing strong and adaptable server-side frameworks capable of managing intricate business logic, ensuring scalability and resilience for your applications' infrastructure to handle complex operations and data processing with efficiency.",
+    "SEO": "Strategically optimize websites to enhance their visibility and relevance on search engines, driving organic traffic and maximizing online presence for sustainable growth and success."
+  },
+  "footer": { 
+    "FOOTER_TEXT": "Innovate, Code, Elevate: Crafting Tomorrow's Solutions Today.",
+    "EMAIL": "Email:",
+    "PHONE": "Phone:"
+  }
+}
+  

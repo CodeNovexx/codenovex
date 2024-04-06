@@ -10,6 +10,7 @@ interface HeaderProps {
 interface DropdownContentProps {
   closeDropdown: () => void;
   scrollToRef: (refName: string) => void;
+  t: (key: string) => string;
 }
 
 interface HeaderContentProps {

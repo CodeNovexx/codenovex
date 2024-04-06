@@ -3,8 +3,10 @@ import ServiceImage from "../assets/world-wide-web.png";
 import PlusIcon from "../assets/plus.png";
 import MinusIcon from "../assets/minus.png";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(-1);
 
   const toggleDescription = (index: number) => {
@@ -14,37 +16,32 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
   const services = [
     {
       name: "Web 3",
-      description:
-        "Leverage state-of-the-art technologies to create highly adaptable and interactive web experiences that redefine user engagement and satisfaction.",
+      description: t("services.WEB3"),
     },
     {
       name: "UI/UX",
-      description:
-        "Design seamless and captivating user interfaces, focusing on intuitive navigation and delightful interactions to elevate user experience to new heights.",
+      description: t("services.UI/UX"),
     },
     {
       name: "Front-End",
-      description:
-        "Engineer dynamic and responsive front-end solutions using cutting-edge frameworks and libraries, ensuring optimal performance and user interaction across devices and platforms.",
+      description: t("services.FRONT_END"),
     },
     {
       name: "Back-End",
-      description:
-        "Develop robust and scalable server-side architectures to handle complex business logicArchitect scalable and resilient server-side systems, empowering your applications with robust infrastructure to manage complex business operations and data processing efficiently.",
+      description: t("services.BACK_END"),
     },
     {
       name: "SEO",
-      description:
-        "Strategically optimize websites to enhance their visibility and relevance on search engines, driving organic traffic and maximizing online presence for sustainable growth and success.",
+      description: t("services.SEO"),
     },
   ];
 
   return (
     <div className="text-white p-5 md:p-7 lg:p-9" ref={ref}>
       <section className="flex flex-col gap-5 lg:items-center">
-        <h1 className="text-4xl font-semibold">What We Do ?</h1>
+        <h1 className="text-4xl font-semibold">{t("services.WHAT_WE_DO")}</h1>
         <h1 className="md:text-xl lg:text-2xl">
-          We Developed Software Solutions That Grows Startups And Businesses
+          {t("services.WHAT_WE_DO_TEXT")}
         </h1>
       </section>
 

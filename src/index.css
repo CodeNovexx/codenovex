@@ -31,3 +31,99 @@ body {
     background-size: contain;
   }
 }
+
+#wave {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 3px;
+  background: white;
+  animation: wave 1.3s linear infinite;
+}
+
+.second_dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 3px;
+  background: white;
+  animation: wave 1.3s linear infinite;
+  animation-delay: -1.1s;
+}
+
+.third_dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 3px;
+  background: white;
+  animation: wave 1.3s linear infinite;
+  animation-delay: -0.9s;
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+
+  30% {
+    transform: translateY(-15px);
+  }
+}
+
+.scroll-down-dude {
+  margin-bottom: 30px;
+}
+
+.scroll-down-dude:before,
+.scroll-down-dude:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  border-bottom: 4px solid white;
+  border-right: 4px solid white;
+}
+
+.scroll-down-dude:before {
+  animation: down-arrow-before 2.6s ease-in-out infinite;
+}
+
+.scroll-down-dude:after {
+  animation: down-arrow-after 2.6s ease-in-out infinite;
+}
+
+@keyframes down-arrow-before {
+  50% {
+    transform: rotate(45deg) translate(70%, 70%);
+  }
+  100% {
+    transform: rotate(45deg) translate(70%, 70%);
+  }
+}
+
+@keyframes down-arrow-after {
+  50% {
+    transform: rotate(45deg) translate(110%, 110%);
+    opacity: 0;
+  }
+  51% {
+    transform: rotate(45deg) translate(-130%, -130%);
+  }
+  100% {
+    transform: rotate(45deg) translate(-70%, -70%);
+    opacity: 1;
+  }
+}

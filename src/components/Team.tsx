@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 // import Sandro from "../assets/team_images/SandroTushurashvili.jpeg";
 // import Anri from "../assets/team_images/AnriKopaliani.png";
 // import Mariam from "../assets/team_images/MariamDatukishvili.png";
@@ -7,21 +8,16 @@ import React from "react";
 // import TeamMemberCard from "./TeamMemberCard";
 
 const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
+  const { t } = useTranslation();
   return (
     <div className="p-5 flex flex-col gap-16 md:p-7 lg:p-9" ref={ref}>
       <section className="flex flex-col gap-3 text-white lg:flex-row lg:items-center lg:justify-between">
-        <h1 className="text-4xl font-semibold lg:text-[64px]">Who We Are ?</h1>
+        <h1 className="text-4xl font-semibold lg:text-[64px]">
+          {t("team.WHO_WE_ARE")}
+        </h1>
 
         <p className="md:text-xl lg:w-[45%] lg:leading-8">
-          We are a diverse and dedicated team of developers, designers, and tech
-          enthusiasts united by our passion for innovation and our commitment to
-          excellence. With a deep understanding of cutting-edge technologies and
-          a collaborative approach to problem-solving, we strive to create
-          bespoke software solutions that not only meet but exceed the unique
-          needs and expectations of our clients. Our journey is defined by a
-          relentless pursuit of quality, creativity, and customer satisfaction,
-          as we continue to push the boundaries of possibility and shape the
-          digital landscape one project at a time.
+          {t("team.WHO_WE_ARE_TEXT")}
         </p>
       </section>
 
