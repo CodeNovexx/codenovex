@@ -9,7 +9,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
   return (
     <div
-      className="bg-white py-12 flex flex-col gap-4 items-center rounded-lg md:mt-0"
+      className="bg-white py-12 px-4 flex flex-col gap-4 items-center rounded-lg md:mt-0"
       ref={ref}
     >
       <img
@@ -21,7 +21,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
         {t("footer.FOOTER_TEXT")}
       </p>
 
-      <div className="flex flex-col gap-3 items-center text-xl font-sans text-gray-700 mb-7 md:text-2xl">
+      <div className="flex flex-col gap-3 items-center text-center text-xl font-sans text-gray-700 mb-7 md:text-2xl">
         <a href="mailto: info@codenovex.ge">
           {t("footer.EMAIL")}{" "}
           <span className="font-bold">info@codenovex.ge</span>
