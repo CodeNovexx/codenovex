@@ -94,18 +94,30 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         </div>
 
         <div className="flex gap-4 items-center justify-center bg-white p-6 rounded-full text-gray-500">
-          <p onClick={() => scrollToRef("home")} className="cursor-pointer">
+          <p
+            onClick={() => scrollToRef("home")}
+            className="cursor-pointer hover"
+          >
             {t("header.HOME")}
           </p>
-          <p onClick={() => scrollToRef("about")} className="cursor-pointer">
+          <p
+            onClick={() => scrollToRef("about")}
+            className="cursor-pointer hover"
+          >
             {t("header.ABOUT")}
           </p>
 
-          {/* <p onClick={() => scrollToRef("team")} className="cursor-pointer">TEAM</p> */}
-          <p onClick={() => scrollToRef("services")} className="cursor-pointer">
+          {/* <p onClick={() => scrollToRef("team")} className="cursor-pointer hover-7">TEAM</p> */}
+          <p
+            onClick={() => scrollToRef("services")}
+            className="cursor-pointer hover"
+          >
             {t("header.SERVICES")}
           </p>
-          <p onClick={() => scrollToRef("contact")} className="cursor-pointer">
+          <p
+            onClick={() => scrollToRef("contact")}
+            className="cursor-pointer hover"
+          >
             {t("header.CONTACT")}
           </p>
         </div>
@@ -114,7 +126,9 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       </div>
 
       <section className="header_background  mb-20 flex flex-col gap-14 items-center justify-center">
-        <h1 className="text-5xl">CodeNovex</h1>
+        <h1 className="text-3d" data-heading="CodeNovex">
+          CodeNovex
+        </h1>
         <div className="flex flex-col gap-4 text-3xl items-center">
           <p>{t("header.BUILDING")}</p>
           <p>{t("header.SUCCESS")}</p>

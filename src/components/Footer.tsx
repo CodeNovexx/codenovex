@@ -1,8 +1,6 @@
 import React from "react";
-import Logo from "../assets/logo.png";
-import FbIcon from "../assets/fb_icon.svg";
-import LinkedinIcon from "../assets/linkedin_icon.svg";
-import InstagramIcon from "../assets/instagram_icon.svg";
+import Logo from "../assets/logo_without_background.png";
+
 import { useTranslation } from "react-i18next";
 
 export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
@@ -15,7 +13,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
       <img
         src={Logo}
         alt="Logo"
-        className="w-36 h-36 self-center md:w-40 md:h-40"
+        className="w-36 h-36 self-center md:w-40 md:h-40 logo-effect"
       />
       <p className="text-center text-xl md:text-2xl md:w-[600px]">
         {t("footer.FOOTER_TEXT")}
@@ -30,26 +28,23 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
           {t("footer.PHONE")} <span className="font-bold"> 555 16 71 55</span>
         </a>
       </div>
-
-      <div className="flex gap-5 items-start">
-        <a href="https://www.facebook.com/CodeNovex" target="_blank">
-          <img src={FbIcon} alt="" className="w-10 h-10 md:w-12 md:h-12" />
-        </a>
-        <a href="https://www.linkedin.com/company/codenovex" target="_blank">
-          <img
-            src={LinkedinIcon}
-            alt=""
-            className="w-10 h-10 md:w-12 md:h-12"
-          />
-        </a>
-        <a href="https://www.instagram.com/codenovex/" target="_blank">
-          <img
-            src={InstagramIcon}
-            alt=""
-            className="w-10 h-10 md:w-12 md:h-12"
-          />
-        </a>
-      </div>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/CodeNovex" target="_blank">
+            <i className="fab fa-facebook-f icon"></i>{" "}
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/codenovex" target="_blank">
+            <i className="fab fa-linkedin-in icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/codenovex/" target="_blank">
+            <i className="fab fa-instagram icon"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   );
 });
