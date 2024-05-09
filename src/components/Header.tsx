@@ -172,7 +172,7 @@ const DropdownContent = ({
 }: DropdownContentProps) => {
   return (
     <div className="fixed inset-0 flex w-full justify-center bg-gray-900 bg-opacity-80 z-[999]">
-      <div className="relative  h-[100vh] w-full bg-white p-4 flex flex-col gap-16">
+      <div className="relative  h-[100vh] w-full bg-white p-4 flex flex-col gap-16 dropdown_wrapper">
         <div className="flex justify-between items-center">
           <h1 className="text-black text-4xl">CodeNovex</h1>
           <button onClick={closeDropdown}>
@@ -195,9 +195,9 @@ const DropdownContent = ({
           <LanguageSelector />
         </div>
 
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <img src={Logo} alt="Logo" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

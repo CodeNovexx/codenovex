@@ -1,5 +1,9 @@
 import React from "react";
 import Logo from "../assets/logo_without_background.png";
+import FbLogo from "../assets/fb_icon.png";
+import InstaLogo from "../assets/instagram_icon.png";
+import LinkedInLogo from "../assets/linkedin_icon.png";
+import TiktokLogo from "../assets/tiktok_icon.png";
 
 import { useTranslation } from "react-i18next";
 
@@ -28,7 +32,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
           {t("footer.PHONE")} <span className="font-bold"> 555 16 71 55</span>
         </a>
       </div>
-      <ul>
+      {/* <ul>
         <li>
           <a href="https://www.facebook.com/CodeNovex" target="_blank">
             <i className="fab fa-facebook-f icon"></i>{" "}
@@ -44,7 +48,42 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
             <i className="fab fa-instagram icon"></i>
           </a>
         </li>
-      </ul>
+      </ul> */}
+
+      <div className="flex gap-4">
+        <a
+          href="https://www.linkedin.com/company/codenovex"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <img src={LinkedInLogo} alt="LinkedIn logo" />
+        </a>
+        <a
+          href="https://www.facebook.com/CodeNovex"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <img src={FbLogo} alt="Facebook logo" />
+        </a>
+        <a
+          href="https://www.instagram.com/codenovex"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <img src={InstaLogo} alt="Instagram logo" />
+        </a>
+        <a
+          href="https://www.tiktok.com/@codenovex"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <img src={TiktokLogo} alt="TikTok logo" />
+        </a>
+      </div>
     </div>
   );
 });

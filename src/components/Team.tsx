@@ -12,7 +12,7 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div className="p-5 flex flex-col gap-16 md:p-7 lg:p-9" ref={ref}>
       <section className="flex flex-col gap-3 text-white lg:flex-row lg:items-center lg:justify-between">
-        <h1 className="text-4xl font-semibold lg:text-[64px]">
+        <h1 className="text-4xl font-semibold lg:text-4xl">
           {t("team.WHO_WE_ARE")}
         </h1>
 
