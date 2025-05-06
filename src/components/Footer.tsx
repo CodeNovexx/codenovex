@@ -29,7 +29,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
           <span className="font-bold">info@codenovex.ge</span>
         </a>
         <a href="tel:555 16 71 55">
-          {t("footer.PHONE")} <span className="font-bold"> 555 16 71 55</span>
+          {t("footer.PHONE")} <span className="font-bold"> 555 05 00 01</span>
         </a>
       </div>
       {/* <ul>
