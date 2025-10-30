@@ -10,28 +10,29 @@ import { useTranslation } from "react-i18next";
 export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
   return (
-    <div
+    <footer
       className="bg-white py-12 px-4 flex flex-col gap-4 items-center rounded-lg md:mt-0"
       ref={ref}
+      aria-labelledby="contact-heading"
     >
       <img
         src={Logo}
-        alt="Logo"
+        alt="CodeNovex Logo"
         className="w-36 h-36 self-center md:w-40 md:h-40 logo-effect"
       />
-      <p className="text-center text-xl md:text-2xl md:w-[600px]">
+      <h2 id="contact-heading" className="text-center text-xl md:text-2xl md:w-[600px]">
         {t("footer.FOOTER_TEXT")}
-      </p>
+      </h2>
 
-      <div className="flex flex-col gap-3 items-center text-center text-xl font-sans text-gray-700 mb-7 md:text-2xl">
-        <a href="mailto: info@codenovex.ge">
+      <address className="flex flex-col gap-3 items-center text-center text-xl font-sans text-gray-700 mb-7 md:text-2xl not-italic">
+        <a href="mailto:info@codenovex.ge" className="hover:text-blue-600 transition-colors">
           {t("footer.EMAIL")}{" "}
           <span className="font-bold">info@codenovex.ge</span>
         </a>
-        <a href="tel:555 16 71 55">
-          {t("footer.PHONE")} <span className="font-bold"> 555 05 00 01</span>
+        <a href="tel:+995555050001" className="hover:text-blue-600 transition-colors">
+          {t("footer.PHONE")} <span className="font-bold">+995 555 05 00 01</span>
         </a>
-      </div>
+      </address>
       {/* <ul>
         <li>
           <a href="https://www.facebook.com/CodeNovex" target="_blank">
@@ -55,35 +56,39 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
           href="https://www.linkedin.com/company/codenovex"
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer"
+          className="cursor-pointer hover:opacity-80 transition-opacity"
+          aria-label="Visit CodeNovex on LinkedIn"
         >
-          <img src={LinkedInLogo} alt="LinkedIn logo" />
+          <img src={LinkedInLogo} alt="LinkedIn" loading="lazy" width="48" height="48" />
         </a>
         <a
           href="https://www.facebook.com/CodeNovex"
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer"
+          className="cursor-pointer hover:opacity-80 transition-opacity"
+          aria-label="Visit CodeNovex on Facebook"
         >
-          <img src={FbLogo} alt="Facebook logo" />
+          <img src={FbLogo} alt="Facebook" loading="lazy" width="48" height="48" />
         </a>
         <a
           href="https://www.instagram.com/codenovex"
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer"
+          className="cursor-pointer hover:opacity-80 transition-opacity"
+          aria-label="Visit CodeNovex on Instagram"
         >
-          <img src={InstaLogo} alt="Instagram logo" />
+          <img src={InstaLogo} alt="Instagram" loading="lazy" width="48" height="48" />
         </a>
         <a
           href="https://www.tiktok.com/@codenovex"
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer"
+          className="cursor-pointer hover:opacity-80 transition-opacity"
+          aria-label="Visit CodeNovex on TikTok"
         >
-          <img src={TiktokLogo} alt="TikTok logo" />
+          <img src={TiktokLogo} alt="TikTok" loading="lazy" width="48" height="48" />
         </a>
       </div>
-    </div>
+    </footer>
   );
 });

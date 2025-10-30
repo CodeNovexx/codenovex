@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from "react";
+import { RefObject, useEffect, useState, useCallback } from "react";
 import HamburgerIcon from "../assets/hamburger.png";
 import Logo from "../assets/logo.png";
 import CloseIcon from "../assets/closeIcon.png";
@@ -14,13 +14,13 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const { t } = useTranslation();
 
-  const toggleDropdown = () => {
-    setDropdownVisible(!isDropdownVisible);
-  };
+  const toggleDropdown = useCallback(() => {
+    setDropdownVisible(prev => !prev);
+  }, []);
 
-  const closeDropdown = () => {
+  const closeDropdown = useCallback(() => {
     setDropdownVisible(false);
-  };
+  }, []);
 
   useEffect(() => {
     if (isDropdownVisible) {
@@ -29,7 +29,8 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       document.body.style.overflowY = "scroll";
     }
   }, [isDropdownVisible]);
-  const scrollToRef = (refName: string) => {
+  
+  const scrollToRef = useCallback((refName: string) => {
     const refs: { [key: string]: RefObject<HTMLDivElement> } = {
       about: aboutRef,
       team: teamRef,
@@ -46,9 +47,9 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       });
       closeDropdown();
     }
-  };
+  }, [aboutRef, teamRef, servicesRef, footerRef, closeDropdown]);
 
-  const handleScroll = (refName: string) => {
+  const handleScroll = useCallback((refName: string) => {
     const ref: { [key: string]: RefObject<HTMLDivElement> } = {
       about: aboutRef,
     };
@@ -61,7 +62,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         behavior: "smooth",
       });
     }
-  };
+  }, [aboutRef]);
   return (
     <header className=" text-white flex flex-col w-full max-w-[1440px] mx-auto">
       <div className="flex justify-between items-center py-4 px-6 md:hidden">
@@ -96,13 +97,13 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         <div className="flex gap-4 items-center justify-center bg-white p-6 rounded-full text-gray-500">
           <p
             onClick={() => scrollToRef("home")}
-            className="cursor-pointer hover"
+            className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
             {t("header.HOME")}
           </p>
           <p
             onClick={() => scrollToRef("about")}
-            className="cursor-pointer hover"
+            className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
             {t("header.ABOUT")}
           </p>
@@ -110,13 +111,13 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
           {/* <p onClick={() => scrollToRef("team")} className="cursor-pointer hover-7">TEAM</p> */}
           <p
             onClick={() => scrollToRef("services")}
-            className="cursor-pointer hover"
+            className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
             {t("header.SERVICES")}
           </p>
           <p
             onClick={() => scrollToRef("contact")}
-            className="cursor-pointer hover"
+            className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
             {t("header.CONTACT")}
           </p>
@@ -157,7 +158,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
 const NavItem = ({ children, onClick }: NavItemProps) => {
   return (
     <button
-      className="text-black hover:text-gray-300 transition duration-300 focus:outline-none"
+      className="text-black hover:text-brand-primary transition duration-300 focus:outline-none font-medium"
       onClick={onClick}
     >
       {children}
@@ -171,11 +172,15 @@ const DropdownContent = ({
   t,
 }: DropdownContentProps) => {
   return (
-    <div className="fixed inset-0 flex w-full justify-center bg-gray-900 bg-opacity-80 z-[999]">
-      <div className="relative  h-[100vh] w-full bg-white p-4 flex flex-col gap-16 dropdown_wrapper">
+    <div className="fixed inset-0 flex w-full justify-center bg-gray-900 bg-opacity-95 z-[999] animate-fadeIn">
+      <div className="relative h-[100vh] w-full bg-white p-4 flex flex-col gap-16 dropdown_wrapper transform transition-transform duration-300 ease-in-out">
         <div className="flex justify-between items-center">
-          <h1 className="text-black text-4xl">CodeNovex</h1>
-          <button onClick={closeDropdown}>
+          <h1 className="text-black text-4xl font-bold">CodeNovex</h1>
+          <button 
+            onClick={closeDropdown}
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+            aria-label="Close menu"
+          >
             <img src={CloseIcon} alt="Close" className="w-5 h-5" />
           </button>
         </div>

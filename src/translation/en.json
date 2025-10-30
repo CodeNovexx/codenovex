@@ -1,20 +1,20 @@
 {
   "header": { 
     "HOME": "HOME",
-    "ABOUT": "ABOUT",
-    "SERVICES": "SERVICES",
-    "CONTACT": "CONTACT",
-    "BUILDING": "BUILDING",
-    "SUCCESS": "SUCCESS",
-    "TOGETHER": "TOGETHER",
-    "SCROLL": "SCROLL"
+    "ABOUT": "WHY US",
+    "SERVICES": "EXPERTISE",
+    "CONTACT": "START PROJECT",
+    "BUILDING": "TRANSFORMING",
+    "SUCCESS": "IDEAS INTO",
+    "TOGETHER": "REVENUE",
+    "SCROLL": "EXPLORE OUR WORK"
   },
   "why_us": {
-    "WHY_US": "WHY US",
-    "WHY_US_TEXT": "At CodeNovex, we're passionate about leveraging technology to drive innovation and empower businesses. With expertise in custom software development, web design, and mobile app development, we deliver tailored digital solutions that exceed expectations. Collaborate with us to turn your ideas into reality and unlock your business's full potential.",
-    "PRICING": "PRICING",
-    "PRICING_TEXT": "Our transparent pricing ensures you get top-notch solutions tailored to your budget, without compromising quality. No hidden fees, just straightforward pricing for exceptional results.",
-    "PRICING_BOX": "We thrive on day by day, constantly seeking out the latest technologies and techniques to stay ahead of the curve. Our forward-thinking approach ensures that we deliver cutting-edge solutions to our clients.",
+    "WHY_US": "WHY PARTNER WITH US",
+    "WHY_US_TEXT": "We transform complex business challenges into elegant software solutions that drive measurable ROI. Our Fortune 500-caliber development team delivers enterprise-grade applications that reduce operational costs by up to 40%, accelerate time-to-market, and scale seamlessly with your growth. When you partner with CodeNovex, you're not just getting code—you're gaining a strategic technology partner committed to your long-term success.",
+    "PRICING": "TRANSPARENT INVESTMENT",
+    "PRICING_TEXT": "Our fixed-price project model eliminates budget uncertainty. You'll receive a detailed proposal with clear milestones, deliverables, and ROI projections before any commitment. Most clients see positive returns within 6-12 months of launch.",
+    "PRICING_BOX": "We stay ahead of the technology curve so your business stays competitive. Our continuous R&D investment means you benefit from cutting-edge solutions like AI integration, blockchain security, and cloud-native architecture—without the enterprise price tag.",
     "PRICING_BTN": "Contact Us"
   },
   "team": {
@@ -22,18 +22,18 @@
     "WHO_WE_ARE_TEXT": "We are a diverse and dedicated team of developers, designers, and tech enthusiasts united by our passion for innovation and our commitment to excellence. With a deep understanding of cutting-edge technologies and a collaborative approach to problem-solving, we strive to create bespoke software solutions that not only meet but exceed the unique needs and expectations of our clients. Our journey is defined by a relentless pursuit of quality, creativity, and customer satisfaction, as we continue to push the boundaries of possibility and shape the digital landscape one project at a time."
   },
   "services": {
-    "WHAT_WE_DO": "WHAT WE DO",
-    "WHAT_WE_DO_TEXT": "We Developed Software Solutions That Grows Startups And Businesses",
-    "WEB3": "Leverage state-of-the-art technologies to create highly adaptable and interactive web experiences that redefine user engagement and satisfaction.",
-    "UI/UX": "Design seamless and captivating user interfaces, focusing on intuitive navigation and delightful interactions to elevate user experience to new heights.",
-    "FRONT_END": "Engineer dynamic and responsive front-end solutions using cutting-edge frameworks and libraries, ensuring optimal performance and user interaction across devices and platforms.",
-    "BACK_END": "Designing strong and adaptable server-side frameworks capable of managing intricate business logic, ensuring scalability and resilience for your applications' infrastructure to handle complex operations and data processing with efficiency.",
-    "SEO": "Strategically optimize websites to enhance their visibility and relevance on search engines, driving organic traffic and maximizing online presence for sustainable growth and success."
+    "WHAT_WE_DO": "OUR EXPERTISE",
+    "WHAT_WE_DO_TEXT": "Enterprise-Grade Software Solutions That Drive Revenue Growth & Operational Excellence",
+    "WEB3": "Build decentralized applications (dApps) and blockchain solutions that enhance security, reduce transaction costs, and create new revenue streams. Perfect for fintech, supply chain, and digital asset businesses.",
+    "UI/UX": "Increase conversion rates by up to 200% with data-driven interface design. Our UX research identifies friction points and optimizes user flows to maximize engagement and customer lifetime value.",
+    "FRONT_END": "Lightning-fast, mobile-responsive interfaces that load in under 2 seconds. Built with React, Vue, or Angular to deliver app-like experiences that keep users engaged and reduce bounce rates.",
+    "BACK_END": "Scalable server architecture that handles millions of requests without breaking. Our microservices approach ensures 99.9% uptime, seamless third-party integrations, and effortless scaling as your user base grows.",
+    "SEO": "Dominate search rankings and multiply organic traffic. Our technical SEO strategies have helped clients achieve first-page Google rankings for competitive keywords, driving 300%+ increases in qualified leads."
   },
   "footer": { 
-    "FOOTER_TEXT": "Innovate, Code, Elevate: Crafting Tomorrow's Solutions Today.",
-    "EMAIL": "Email:",
-    "PHONE": "Phone:"
+    "FOOTER_TEXT": "Ready to scale your business with custom software? Let's discuss your project and provide a detailed roadmap to success.",
+    "EMAIL": "Email us at:",
+    "PHONE": "Call us at:"
   }
 }
   

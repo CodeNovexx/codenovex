@@ -12,20 +12,20 @@ const Home = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex flex-col gap-5 md:gap-10">
+    <>
       <Header
         aboutRef={aboutRef}
         teamRef={teamRef}
         servicesRef={servicesRef}
         footerRef={footerRef}
       />
-      <div className="max-w-[1440px] mx-auto">
+      <main className="max-w-[1440px] mx-auto">
         <Aboutus ref={aboutRef} footerRef={footerRef} />
         <Team ref={teamRef} />
         <Services ref={servicesRef} />
-      </div>
+      </main>
       <Footer ref={footerRef} />
-    </div>
+    </>
   );
 };
 

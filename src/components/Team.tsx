@@ -10,16 +10,16 @@ import { useTranslation } from "react-i18next";
 const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
   return (
-    <div className="p-5 flex flex-col gap-16 md:p-7 lg:p-9" ref={ref}>
-      <section className="flex flex-col gap-3 text-white lg:flex-row lg:items-center lg:justify-between">
-        <h1 className="text-4xl font-semibold lg:text-4xl">
+    <section className="p-5 flex flex-col gap-16 md:p-7 lg:p-9" ref={ref} aria-labelledby="team-heading">
+      <header className="flex flex-col gap-3 text-white lg:flex-row lg:items-center lg:justify-between">
+        <h2 id="team-heading" className="text-4xl font-semibold lg:text-4xl">
           {t("team.WHO_WE_ARE")}
-        </h1>
+        </h2>
 
         <p className="md:text-xl lg:w-[45%] lg:leading-8">
           {t("team.WHO_WE_ARE_TEXT")}
         </p>
-      </section>
+      </header>
 
       {/* <section className="flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-between lg:justify-center">
         <TeamMemberCard
@@ -58,8 +58,11 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
           position="Software Engineer"
         />
       </section> */}
-    </div>
+    </section>
   );
 });
 
-export default Team;
+Team.displayName = 'Team';
+
+const MemoizedTeam = React.memo(Team);
+export default MemoizedTeam;
