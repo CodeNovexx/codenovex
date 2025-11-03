@@ -30,6 +30,24 @@
     "BACK_END": "Scalable server architecture that handles millions of requests without breaking. Our microservices approach ensures 99.9% uptime, seamless third-party integrations, and effortless scaling as your user base grows.",
     "SEO": "Dominate search rankings and multiply organic traffic. Our technical SEO strategies have helped clients achieve first-page Google rankings for competitive keywords, driving 300%+ increases in qualified leads."
   },
+  "contactForm": {
+    "BADGE": "GET IN TOUCH",
+    "HEADING": "Let's Build Something Amazing Together",
+    "SUBHEADING": "Tell us about your project and we'll get back to you within 24 hours with a detailed proposal.",
+    "NAME_LABEL": "Full Name",
+    "NAME_PLACEHOLDER": "John Doe",
+    "EMAIL_LABEL": "Email Address",
+    "EMAIL_PLACEHOLDER": "john@company.com",
+    "COMPANY_LABEL": "Company Name (Optional)",
+    "COMPANY_PLACEHOLDER": "Your Company",
+    "MESSAGE_LABEL": "Your Message",
+    "MESSAGE_PLACEHOLDER": "Tell us about your project requirements...",
+    "SUBMIT_BUTTON": "Send Message",
+    "SENDING": "Sending message...",
+    "SUCCESS_MESSAGE": "Thank you! Your message has been sent successfully. We'll contact you within 24 hours.",
+    "ERROR_MESSAGE": "An error occurred. Please try again or email us directly at info@codenovex.ge",
+    "PRIVACY_TEXT": "We respect your privacy. Your information will never be shared with third parties."
+  },
   "footer": { 
     "FOOTER_TEXT": "Ready to scale your business with custom software? Let's discuss your project and provide a detailed roadmap to success.",
     "EMAIL": "Email us at:",
