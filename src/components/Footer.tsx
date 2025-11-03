@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../assets/logo_without_background.png";
-import FbLogo from "../assets/fb_icon.png";
-import InstaLogo from "../assets/instagram_icon.png";
-import LinkedInLogo from "../assets/linkedin_icon.png";
-import TiktokLogo from "../assets/tiktok_icon.png";
+import Logo from "../assets/logo_without_background.webp";
+import FbLogo from "../assets/fb_icon.webp";
+import InstaLogo from "../assets/instagram_icon.webp";
+import LinkedInLogo from "../assets/linkedin_icon.webp";
+import TiktokLogo from "../assets/tiktok_icon.webp";
 
 import { useTranslation } from "react-i18next";
 
@@ -11,6 +11,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
   return (
     <footer
+      id="contact"
       className="bg-white py-12 px-4 flex flex-col gap-4 items-center rounded-lg md:mt-0"
       ref={ref}
       aria-labelledby="contact-heading"

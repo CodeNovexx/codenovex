@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import GeorgiaFlag from "../assets/GeorgiaFlag.svg";
-import UKFlag from "../assets/UsaFlag.svg";
+import GeorgiaFlag from "../assets/GeorgiaFlag.webp";
+import UKFlag from "../assets/UsaFlag.webp";
 import { useState } from "react";
 
 function LanguageSelector() {

@@ -1,11 +1,11 @@
 import React, { useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
-import UxLogo from "../assets/ui_ux_design_logo.png";
-import webLogo from "../assets/web_logo.png";
-import seoLogo from "../assets/seo_logo.png";
-import backEndLogo from "../assets/backend_logo.png";
-import frontEndLogo from "../assets/frontend_logo.png";
+import UxLogo from "../assets/ui_ux_design_logo.webp";
+import webLogo from "../assets/web_logo.webp";
+import seoLogo from "../assets/seo_logo.webp";
+import backEndLogo from "../assets/backend_logo.webp";
+import frontEndLogo from "../assets/frontend_logo.webp";
 
 const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
@@ -39,7 +39,7 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
   ], [t]);
 
   return (
-    <section className="text-white p-5 md:p-7 lg:p-9" ref={ref} aria-labelledby="services-heading">
+    <section id="services" className="text-white p-5 md:p-7 lg:p-9" ref={ref} aria-labelledby="services-heading">
       <header className="flex flex-col gap-5 lg:items-center">
         <h2 id="services-heading" className="text-4xl font-semibold">{t("services.WHAT_WE_DO")}</h2>
         <p className="md:text-xl lg:text-2xl">

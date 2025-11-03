@@ -1,5 +1,5 @@
 import React, { RefObject } from "react";
-import Logo_Without_Bg from "../assets/logo_without_background.png";
+import Logo_Without_Bg from "../assets/logo_without_background.webp";
 import { AboutusProps } from "../types/aboutUs";
 import { useTranslation } from "react-i18next";
 
@@ -22,6 +22,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
   };
   return (
     <section
+      id="about"
       className="text-white flex flex-col gap-10 lg:flex-row xl:gap-[200px]"
       ref={ref}
       aria-labelledby="why-us-heading"

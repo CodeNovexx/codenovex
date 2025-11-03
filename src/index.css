@@ -63,7 +63,7 @@ a:focus-visible {
 }
 
 .header_background {
-  background-image: url(assets/header_logo.png);
+  background-image: url(assets/header_logo.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
@@ -366,7 +366,7 @@ ul li:nth-child(3) a:before {
 }
 
 /* .dropdown_wrapper{
-  background-image: url("assets/logo_without_background.png");
+  background-image: url("assets/logo_without_background.webp");
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center; 

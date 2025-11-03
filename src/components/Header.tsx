@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState, useCallback } from "react";
-import HamburgerIcon from "../assets/hamburger.png";
-import Logo from "../assets/logo.png";
-import CloseIcon from "../assets/closeIcon.png";
+import HamburgerIcon from "../assets/hamburger.webp";
+import Logo from "../assets/logo.webp";
+import CloseIcon from "../assets/closeIcon.webp";
 import {
   DropdownContentProps,
   HeaderProps,
@@ -139,9 +139,9 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
           className="mt-10 flex flex-col gap-3 items-center justify-center cursor-pointer"
           onClick={() => handleScroll("about")}
         >
-          <div className="scroll-down-dude"></div>
+          <div className="scroll-down-dude" aria-hidden="true"></div>
 
-          <h1 className="text-2xl">{t("header.SCROLL")}</h1>
+          <p className="text-2xl">{t("header.SCROLL")}</p>
         </div>
       </section>
       {isDropdownVisible && (
@@ -175,7 +175,7 @@ const DropdownContent = ({
     <div className="fixed inset-0 flex w-full justify-center bg-gray-900 bg-opacity-95 z-[999] animate-fadeIn">
       <div className="relative h-[100vh] w-full bg-white p-4 flex flex-col gap-16 dropdown_wrapper transform transition-transform duration-300 ease-in-out">
         <div className="flex justify-between items-center">
-          <h1 className="text-black text-4xl font-bold">CodeNovex</h1>
+          <h2 className="text-black text-4xl font-bold">CodeNovex</h2>
           <button 
             onClick={closeDropdown}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
