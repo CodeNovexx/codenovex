@@ -1,8 +1,11 @@
 import { useState, useEffect, lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading";
 
-// Lazy load the Home component for code splitting
+// Lazy load pages for code splitting
 const Home = lazy(() => import("./pages/Home"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,15 +21,21 @@ function App() {
   }, []);
 
   return (
-    <main>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Suspense fallback={<Loading />}>
-          <Home />
-        </Suspense>
-      )}
-    </main>
+    <Router>
+      <main>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+            </Routes>
+          </Suspense>
+        )}
+      </main>
+    </Router>
   );
 }
 

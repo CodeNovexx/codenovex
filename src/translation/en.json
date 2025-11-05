@@ -3,7 +3,8 @@
     "HOME": "HOME",
     "ABOUT": "WHY US",
     "SERVICES": "EXPERTISE",
-    "CONTACT": "START PROJECT",
+    "BLOG": "BLOG",
+    "CONTACT": "CONTACT US",
     "BUILDING": "TRANSFORMING",
     "SUCCESS": "IDEAS INTO",
     "TOGETHER": "REVENUE",
@@ -15,7 +16,7 @@
     "PRICING": "TRANSPARENT INVESTMENT",
     "PRICING_TEXT": "Our fixed-price project model eliminates budget uncertainty. You'll receive a detailed proposal with clear milestones, deliverables, and ROI projections before any commitment. Most clients see positive returns within 6-12 months of launch.",
     "PRICING_BOX": "We stay ahead of the technology curve so your business stays competitive. Our continuous R&D investment means you benefit from cutting-edge solutions like AI integration, blockchain security, and cloud-native architecture - without the enterprise price tag.",
-    "PRICING_BTN": "Contact Us"
+    "PRICING_BTN": "Get In Touch"
   },
   "team": {
     "WHO_WE_ARE": "WHO WE ARE",

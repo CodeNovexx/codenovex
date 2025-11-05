@@ -1,4 +1,5 @@
 import { ReactNode, MouseEventHandler } from "react";
+import { NavigateFunction } from "react-router-dom";
 
 interface HeaderProps {
   aboutRef: React.RefObject<HTMLDivElement>;
@@ -10,6 +11,7 @@ interface HeaderProps {
 interface DropdownContentProps {
   closeDropdown: () => void;
   scrollToRef: (refName: string) => void;
+  navigate: NavigateFunction;
   t: (key: string) => string;
 }
 

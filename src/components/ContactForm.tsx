@@ -45,6 +45,8 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <section
       ref={ref}
+      data-section="contact"
+      id='contact'
       className="relative bg-black py-16 px-4 md:py-24 overflow-hidden"
       aria-labelledby="contact-form-heading"
     >

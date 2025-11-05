@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useState, useCallback } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import HamburgerIcon from "../assets/hamburger.webp";
 import Logo from "../assets/logo.webp";
 import CloseIcon from "../assets/closeIcon.webp";
@@ -13,6 +14,8 @@ import { useTranslation } from "react-i18next";
 const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleDropdown = useCallback(() => {
     setDropdownVisible(prev => !prev);
@@ -30,7 +33,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
     }
   }, [isDropdownVisible]);
   
-  const scrollToRef = useCallback((refName: string) => {
+  const scrollToRefOnHome = useCallback((refName: string) => {
     const refs: { [key: string]: RefObject<HTMLDivElement> } = {
       about: aboutRef,
       team: teamRef,
@@ -48,6 +51,41 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       closeDropdown();
     }
   }, [aboutRef, teamRef, servicesRef, footerRef, closeDropdown]);
+
+  // Handle hash navigation for smooth scrolling
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && location.pathname === '/') {
+        setTimeout(() => {
+          scrollToRefOnHome(hash);
+        }, 100);
+      }
+    };
+
+    // Handle hash on mount and navigation
+    handleHashScroll();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashScroll);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashScroll);
+    };
+  }, [location.pathname, scrollToRefOnHome]);
+
+  const scrollToRef = useCallback((refName: string) => {
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation then scroll
+      setTimeout(() => {
+        scrollToRefOnHome(refName);
+      }, 100);
+    } else {
+      scrollToRefOnHome(refName);
+    }
+  }, [navigate, location.pathname, scrollToRefOnHome]);
 
   const handleScroll = useCallback((refName: string) => {
     const ref: { [key: string]: RefObject<HTMLDivElement> } = {
@@ -116,6 +154,12 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
             {t("header.SERVICES")}
           </p>
           <p
+            onClick={() => navigate('/blog')}
+            className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
+          >
+            {t("header.BLOG")}
+          </p>
+          <p
             onClick={() => scrollToRef("contact")}
             className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
@@ -148,6 +192,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         <DropdownContent
           scrollToRef={scrollToRef}
           closeDropdown={closeDropdown}
+          navigate={navigate}
           t={t}
         />
       )}
@@ -169,6 +214,7 @@ const NavItem = ({ children, onClick }: NavItemProps) => {
 const DropdownContent = ({
   scrollToRef,
   closeDropdown,
+  navigate,
   t,
 }: DropdownContentProps) => {
   return (
@@ -192,6 +238,9 @@ const DropdownContent = ({
             </NavItem>
             <NavItem onClick={() => scrollToRef("services")}>
               {t("header.SERVICES")}
+            </NavItem>
+            <NavItem onClick={() => { closeDropdown(); navigate('/blog'); }}>
+              {t("header.BLOG")}
             </NavItem>
             <NavItem onClick={() => scrollToRef("contact")}>
               {t("header.CONTACT")}
