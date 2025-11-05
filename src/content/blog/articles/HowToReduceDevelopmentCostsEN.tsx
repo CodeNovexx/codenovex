@@ -32,7 +32,7 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
       {/* Hero Image */}
       <div className="mb-12">
         <img 
-          src="/blog/cost-reduction.png" 
+          src="/blog/cost-reduction.webp" 
           alt="Cost Reduction Strategy" 
           className="w-full h-96 object-cover rounded-3xl shadow-2xl shadow-black/50"
         />

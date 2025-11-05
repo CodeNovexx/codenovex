@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     category: 'Business Strategy',
     tags: ['Cost Optimization', 'ROI', 'Best Practices'],
-    image: '/blog/cost-reduction.png',
+    image: '/blog/cost-reduction.webp',
     alternateSlug: 'rogor-shevamciro-ganvitreba-xarjebi'
   },
   {
@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '12 min read',
     category: 'Technical',
     tags: ['React', 'Performance', 'Web Development'],
-    image: '/blog/react-performance.png',
+    image: '/blog/react-performance.webp',
     alternateSlug: 'react-performance-optimizacia-2025'
   },
   {
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '10 min read',
     category: 'Technology',
     tags: ['Tech Stack', 'Startups', 'Decision Making'],
-    image: '/blog/tech-stack.png',
+    image: '/blog/tech-stack.webp',
     alternateSlug: 'swori-teqnologiuri-steki-2025'
   },
 
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 წთ კითხვა',
     category: 'ბიზნეს სტრატეგია',
     tags: ['ხარჯების ოპტიმიზაცია', 'ROI', 'საუკეთესო პრაქტიკა'],
-    image: '/blog/cost-reduction.png',
+    image: '/blog/cost-reduction.webp',
     alternateSlug: 'how-to-reduce-development-costs'
   },
   {
@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '12 წთ კითხვა',
     category: 'ტექნიკური',
     tags: ['React', 'შესრულება', 'ვებ განვითარება'],
-    image: '/blog/react-performance.png',
+    image: '/blog/react-performance.webp',
     alternateSlug: 'react-performance-optimization-2025'
   },
   {
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '10 წთ კითხვა',
     category: 'ტექნოლოგია',
     tags: ['ტექ სტეკი', 'სტარტაპები', 'გადაწყვეტილებები'],
-    image: '/blog/tech-stack.png',
+    image: '/blog/tech-stack.webp',
     alternateSlug: 'choosing-right-tech-stack-2025'
   }
 ];
