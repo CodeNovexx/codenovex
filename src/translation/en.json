@@ -1,5 +1,5 @@
 {
-  "header": { 
+  "header": {
     "HOME": "HOME",
     "ABOUT": "WHY US",
     "SERVICES": "EXPERTISE",
@@ -49,10 +49,9 @@
     "ERROR_MESSAGE": "An error occurred. Please try again or email us directly at info@codenovex.ge",
     "PRIVACY_TEXT": "We respect your privacy. Your information will never be shared with third parties."
   },
-  "footer": { 
+  "footer": {
     "FOOTER_TEXT": "Ready to scale your business with custom software? Let's discuss your project and provide a detailed roadmap to success.",
     "EMAIL": "Email us at:",
     "PHONE": "Call us at:"
   }
 }
-  

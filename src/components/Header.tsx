@@ -18,7 +18,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   const location = useLocation();
 
   const toggleDropdown = useCallback(() => {
-    setDropdownVisible(prev => !prev);
+    setDropdownVisible((prev) => !prev);
   }, []);
 
   const closeDropdown = useCallback(() => {
@@ -32,31 +32,34 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       document.body.style.overflowY = "scroll";
     }
   }, [isDropdownVisible]);
-  
-  const scrollToRefOnHome = useCallback((refName: string) => {
-    const refs: { [key: string]: RefObject<HTMLDivElement> } = {
-      about: aboutRef,
-      team: teamRef,
-      services: servicesRef,
-      contact: footerRef,
-    };
 
-    const targetRef = refs[refName];
+  const scrollToRefOnHome = useCallback(
+    (refName: string) => {
+      const refs: { [key: string]: RefObject<HTMLDivElement> } = {
+        about: aboutRef,
+        team: teamRef,
+        services: servicesRef,
+        contact: footerRef,
+      };
 
-    if (targetRef && targetRef.current) {
-      window.scrollTo({
-        top: targetRef.current.offsetTop,
-        behavior: "smooth",
-      });
-      closeDropdown();
-    }
-  }, [aboutRef, teamRef, servicesRef, footerRef, closeDropdown]);
+      const targetRef = refs[refName];
+
+      if (targetRef && targetRef.current) {
+        window.scrollTo({
+          top: targetRef.current.offsetTop,
+          behavior: "smooth",
+        });
+        closeDropdown();
+      }
+    },
+    [aboutRef, teamRef, servicesRef, footerRef, closeDropdown]
+  );
 
   // Handle hash navigation for smooth scrolling
   useEffect(() => {
     const handleHashScroll = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && location.pathname === '/') {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && location.pathname === "/") {
         setTimeout(() => {
           scrollToRefOnHome(hash);
         }, 100);
@@ -67,40 +70,46 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
     handleHashScroll();
 
     // Listen for hash changes
-    window.addEventListener('hashchange', handleHashScroll);
-    
+    window.addEventListener("hashchange", handleHashScroll);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashScroll);
+      window.removeEventListener("hashchange", handleHashScroll);
     };
   }, [location.pathname, scrollToRefOnHome]);
 
-  const scrollToRef = useCallback((refName: string) => {
-    // If not on home page, navigate to home first
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Wait for navigation then scroll
-      setTimeout(() => {
+  const scrollToRef = useCallback(
+    (refName: string) => {
+      // If not on home page, navigate to home first
+      if (location.pathname !== "/") {
+        navigate("/");
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          scrollToRefOnHome(refName);
+        }, 100);
+      } else {
         scrollToRefOnHome(refName);
-      }, 100);
-    } else {
-      scrollToRefOnHome(refName);
-    }
-  }, [navigate, location.pathname, scrollToRefOnHome]);
+      }
+    },
+    [navigate, location.pathname, scrollToRefOnHome]
+  );
 
-  const handleScroll = useCallback((refName: string) => {
-    const ref: { [key: string]: RefObject<HTMLDivElement> } = {
-      about: aboutRef,
-    };
+  const handleScroll = useCallback(
+    (refName: string) => {
+      const ref: { [key: string]: RefObject<HTMLDivElement> } = {
+        about: aboutRef,
+      };
 
-    const targetRef = ref[refName];
+      const targetRef = ref[refName];
 
-    if (targetRef && targetRef.current) {
-      window.scrollTo({
-        top: targetRef.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  }, [aboutRef]);
+      if (targetRef && targetRef.current) {
+        window.scrollTo({
+          top: targetRef.current.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    },
+    [aboutRef]
+  );
   return (
     <header className=" text-white flex flex-col w-full max-w-[1440px] mx-auto">
       <div className="flex justify-between items-center py-4 px-6 md:hidden">
@@ -154,7 +163,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
             {t("header.SERVICES")}
           </p>
           <p
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate("/blog")}
             className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
             {t("header.BLOG")}
@@ -222,7 +231,7 @@ const DropdownContent = ({
       <div className="relative h-[100vh] w-full bg-white p-4 flex flex-col gap-16 dropdown_wrapper transform transition-transform duration-300 ease-in-out">
         <div className="flex justify-between items-center">
           <h2 className="text-black text-4xl font-bold">CodeNovex</h2>
-          <button 
+          <button
             onClick={closeDropdown}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
             aria-label="Close menu"
@@ -239,7 +248,12 @@ const DropdownContent = ({
             <NavItem onClick={() => scrollToRef("services")}>
               {t("header.SERVICES")}
             </NavItem>
-            <NavItem onClick={() => { closeDropdown(); navigate('/blog'); }}>
+            <NavItem
+              onClick={() => {
+                closeDropdown();
+                navigate("/blog");
+              }}
+            >
               {t("header.BLOG")}
             </NavItem>
             <NavItem onClick={() => scrollToRef("contact")}>

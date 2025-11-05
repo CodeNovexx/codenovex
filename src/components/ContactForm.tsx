@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       const data = await response.json();
@@ -46,13 +46,13 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
     <section
       ref={ref}
       data-section="contact"
-      id='contact'
+      id="contact"
       className="relative bg-black py-16 px-4 md:py-24 overflow-hidden"
       aria-labelledby="contact-form-heading"
     >
       <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl"></div>
-      
+
       <div className="relative max-w-5xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-4">
@@ -60,7 +60,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
               {t("contactForm.BADGE") || "GET IN TOUCH"}
             </span>
           </div>
-          
+
           <h2
             id="contact-form-heading"
             className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6"
@@ -78,8 +78,12 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="group">
-              <label htmlFor="name" className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors">
-                {t("contactForm.NAME_LABEL")} <span className="text-brand-primary">*</span>
+              <label
+                htmlFor="name"
+                className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+              >
+                {t("contactForm.NAME_LABEL")}{" "}
+                <span className="text-brand-primary">*</span>
               </label>
               <input
                 type="text"
@@ -90,9 +94,12 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
                 required
               />
             </div>
-            
+
             <div className="group">
-              <label htmlFor="company" className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors">
+              <label
+                htmlFor="company"
+                className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+              >
                 {t("contactForm.COMPANY_LABEL")}
               </label>
               <input
@@ -106,8 +113,12 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
           </div>
 
           <div className="group">
-            <label htmlFor="email" className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors">
-              {t("contactForm.EMAIL_LABEL")} <span className="text-brand-primary">*</span>
+            <label
+              htmlFor="email"
+              className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+            >
+              {t("contactForm.EMAIL_LABEL")}{" "}
+              <span className="text-brand-primary">*</span>
             </label>
             <input
               type="email"
@@ -120,8 +131,12 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
           </div>
 
           <div className="group">
-            <label htmlFor="message" className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors">
-              {t("contactForm.MESSAGE_LABEL")} <span className="text-brand-primary">*</span>
+            <label
+              htmlFor="message"
+              className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+            >
+              {t("contactForm.MESSAGE_LABEL")}{" "}
+              <span className="text-brand-primary">*</span>
             </label>
             <textarea
               id="message"
@@ -139,7 +154,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
             className="group relative w-full bg-brand-primary hover:bg-brand-hover text-white font-bold py-5 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
-            
+
             {isSubmitting ? (
               <span className="relative flex items-center justify-center gap-3">
                 <svg
@@ -167,29 +182,65 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
             ) : (
               <span className="relative flex items-center justify-center gap-2">
                 {t("contactForm.SUBMIT_BUTTON")}
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </span>
             )}
           </button>
 
           {result && (
-            <div className={`px-6 py-4 rounded-xl text-center font-semibold animate-fadeIn flex items-center justify-center gap-3 ${
-              result.includes('success') || result.includes('Thank you') || result.includes('გმადლობთ')
-                ? 'bg-green-900/30 border border-green-500 text-green-400' 
-                : result.includes('Sending') || result.includes('იგზავნება')
-                  ? 'bg-brand-primary/20 border border-brand-primary text-brand-primary'
-                  : 'bg-red-900/30 border border-red-500 text-red-400'
-            }`}>
-              {(result.includes('success') || result.includes('Thank you') || result.includes('გმადლობთ')) && (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <div
+              className={`px-6 py-4 rounded-xl text-center font-semibold animate-fadeIn flex items-center justify-center gap-3 ${
+                result.includes("success") ||
+                result.includes("Thank you") ||
+                result.includes("გმადლობთ")
+                  ? "bg-green-900/30 border border-green-500 text-green-400"
+                  : result.includes("Sending") || result.includes("იგზავნება")
+                  ? "bg-brand-primary/20 border border-brand-primary text-brand-primary"
+                  : "bg-red-900/30 border border-red-500 text-red-400"
+              }`}
+            >
+              {(result.includes("success") ||
+                result.includes("Thank you") ||
+                result.includes("გმადლობთ")) && (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               )}
-              {(result.includes('error') || result.includes('შეცდომა')) && (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              {(result.includes("error") || result.includes("შეცდომა")) && (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               )}
               {result}
@@ -197,8 +248,18 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
           )}
 
           <p className="text-gray-500 text-xs md:text-sm text-center flex items-center justify-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
             </svg>
             {t("contactForm.PRIVACY_TEXT")}
           </p>

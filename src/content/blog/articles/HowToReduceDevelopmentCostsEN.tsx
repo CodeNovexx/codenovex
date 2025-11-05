@@ -1,39 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const HowToReduceDevelopmentCosts: React.FC = () => {
   const techStack = [
     { category: "Frontend", tech: "React + TypeScript + Tailwind CSS" },
     { category: "Backend", tech: "Node.js + Express or Next.js API routes" },
     { category: "Database", tech: "PostgreSQL or MongoDB" },
-    { category: "Deployment", tech: "Vercel or AWS" }
+    { category: "Deployment", tech: "Vercel or AWS" },
   ];
 
   const caseStudyPoints = [
     "2-week sprints with client demos",
     "MVP-first approach",
-    "Automated testing from day 1"
+    "Automated testing from day 1",
   ];
 
   const manualTesting = [
     "3 days per feature",
     "Prone to human error",
-    "$5,000+ per release cycle"
+    "$5,000+ per release cycle",
   ];
 
   const automatedTesting = [
     "10 minutes per feature",
     "Consistent and reliable",
-    "$500 per release cycle"
+    "$500 per release cycle",
   ];
 
   return (
     <article className="text-gray-300 leading-relaxed">
       {/* Hero Image */}
       <div className="mb-12">
-        <img 
-          src="/blog/cost-reduction.webp" 
-          alt="Cost Reduction Strategy" 
+        <img
+          src="/blog/cost-reduction.webp"
+          alt="Cost Reduction Strategy"
           className="w-full h-96 object-cover rounded-3xl shadow-2xl shadow-black/50"
         />
       </div>
@@ -46,8 +46,10 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
       {/* Introduction */}
       <div className="mb-12">
         <p className="text-xl leading-relaxed">
-          In today's competitive market, reducing development costs while maintaining quality is crucial for business success. 
-          Based on our experience working with 50+ clients, we've identified proven strategies that can cut your costs by up to 40%.
+          In today's competitive market, reducing development costs while
+          maintaining quality is crucial for business success. Based on our
+          experience working with 50+ clients, we've identified proven
+          strategies that can cut your costs by up to 40%.
         </p>
       </div>
 
@@ -59,8 +61,9 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
         </h2>
 
         <p className="mb-8">
-          The biggest cost driver in software development is scope creep and unclear requirements. According to our data, 
-          projects with well-defined requirements cost 35% less than those without.
+          The biggest cost driver in software development is scope creep and
+          unclear requirements. According to our data, projects with
+          well-defined requirements cost 35% less than those without.
         </p>
 
         <div className="bg-gradient-to-br from-brand-primary/20 to-purple-600/10 border border-brand-primary/30 p-8 rounded-2xl">
@@ -69,8 +72,9 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
             Pro Tip:
           </p>
           <p>
-            Invest 2-3 weeks in detailed requirements gathering and wireframing. This upfront investment can save you 
-            months of rework and thousands in development costs.
+            Invest 2-3 weeks in detailed requirements gathering and wireframing.
+            This upfront investment can save you months of rework and thousands
+            in development costs.
           </p>
         </div>
       </section>
@@ -83,7 +87,8 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
         </h2>
 
         <p className="mb-8">
-          Not all technologies are created equal. Choosing mature, well-documented frameworks can reduce development time by 40%.
+          Not all technologies are created equal. Choosing mature,
+          well-documented frameworks can reduce development time by 40%.
         </p>
 
         <h3 className="text-2xl font-semibold text-white mb-6">
@@ -93,9 +98,12 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
         <div className="space-y-3">
           {techStack.map((item, index) => (
             <div key={index} className="flex items-start gap-3">
-              <span className="text-brand-primary text-xl font-bold mt-1">✓</span>
+              <span className="text-brand-primary text-xl font-bold mt-1">
+                ✓
+              </span>
               <span>
-                <strong className="text-white">{item.category}:</strong> {item.tech}
+                <strong className="text-white">{item.category}:</strong>{" "}
+                {item.tech}
               </span>
             </div>
           ))}
@@ -103,37 +111,42 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
       </section>
 
       {/* Section 3 */}
-<section className="mb-12">
-  <h2 className="text-3xl font-bold text-white mb-8 pb-3 border-b-2 border-brand-primary/30 flex items-center gap-3">
-    <span className="text-3xl">🔄</span>
-    3. Implement Agile Development
-  </h2>
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold text-white mb-8 pb-3 border-b-2 border-brand-primary/30 flex items-center gap-3">
+          <span className="text-3xl">🔄</span>
+          3. Implement Agile Development
+        </h2>
 
-  <p className="mb-8">
-    Agile methodology allows for iterative development and early feedback, reducing the risk of building the wrong features.
-  </p>
+        <p className="mb-8">
+          Agile methodology allows for iterative development and early feedback,
+          reducing the risk of building the wrong features.
+        </p>
 
-  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl p-8">
-    <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-      <span className="text-2xl">📊</span>
-      Our Approach in Practice: A Hypothetical Case Study
-    </h4>
-    <p className="mb-6">
-      Imagine a fintech startup approaches us with a $200,000 budget for a complex platform. How would CodeNovex act to maximize efficiency and reduce costs? Our strategy would be based on three core principles:
-    </p>
-    <div className="space-y-3 mb-6">
-      {caseStudyPoints.map((point, index) => (
-        <div key={index} className="flex items-start gap-3">
-          <span className="text-green-400 font-bold mt-1">→</span>
-          <span>{point}</span>
+        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl p-8">
+          <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
+            <span className="text-2xl">📊</span>
+            Our Approach in Practice: A Hypothetical Case Study
+          </h4>
+          <p className="mb-6">
+            Imagine a fintech startup approaches us with a $200,000 budget for a
+            complex platform. How would CodeNovex act to maximize efficiency and
+            reduce costs? Our strategy would be based on three core principles:
+          </p>
+          <div className="space-y-3 mb-6">
+            {caseStudyPoints.map((point, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <span className="text-green-400 font-bold mt-1">→</span>
+                <span>{point}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-brand-primary font-semibold text-lg bg-brand-primary/10 p-4 rounded-xl border border-brand-primary/30">
+            Potential Result: By applying this methodology, it's possible to
+            reduce the project budget by up to 40% and deliver within 4-6 months
+            without compromising quality.
+          </p>
         </div>
-      ))}
-    </div>
-    <p className="text-brand-primary font-semibold text-lg bg-brand-primary/10 p-4 rounded-xl border border-brand-primary/30">
-      Potential Result: By applying this methodology, it's possible to reduce the project budget by up to 40% and deliver within 4-6 months without compromising quality.
-    </p>
-  </div>
-</section>
+      </section>
 
       {/* Section 4 */}
       <section className="mb-12">
@@ -143,14 +156,17 @@ export const HowToReduceDevelopmentCosts: React.FC = () => {
         </h2>
 
         <p className="mb-8">
-          Building reusable components and libraries can reduce development time by 30% on subsequent features.
+          Building reusable components and libraries can reduce development time
+          by 30% on subsequent features.
         </p>
 
         <div className="bg-gray-800/50 rounded-2xl p-8 overflow-x-auto border border-gray-700/50">
-          <p className="text-gray-400 mb-4 font-semibold">Example: Reusable Button Component</p>
+          <p className="text-gray-400 mb-4 font-semibold">
+            Example: Reusable Button Component
+          </p>
           <pre className="bg-black/50 p-6 rounded-xl text-sm border border-gray-700/30">
             <code className="text-green-400">
-{`// Button.tsx - Reusable across entire app
+              {`// Button.tsx - Reusable across entire app
 interface ButtonProps {
   variant: 'primary' | 'secondary';
   onClick: () => void;
@@ -187,8 +203,9 @@ export const Button: React.FC<ButtonProps> = ({
         </h2>
 
         <p className="mb-8">
-          Automated testing catches bugs early, when they're cheapest to fix. Manual testing of a complex feature can take 
-          2-3 days, while automated tests run in minutes.
+          Automated testing catches bugs early, when they're cheapest to fix.
+          Manual testing of a complex feature can take 2-3 days, while automated
+          tests run in minutes.
         </p>
 
         <h3 className="text-2xl font-semibold text-white mb-6">
@@ -235,8 +252,9 @@ export const Button: React.FC<ButtonProps> = ({
         </h2>
 
         <p className="mb-6">
-          Reducing development costs doesn't mean cutting corners. By implementing these strategies, you can build 
-          high-quality software faster and more efficiently.
+          Reducing development costs doesn't mean cutting corners. By
+          implementing these strategies, you can build high-quality software
+          faster and more efficiently.
         </p>
       </section>
 
@@ -246,7 +264,8 @@ export const Button: React.FC<ButtonProps> = ({
           Ready to Optimize Your Development Costs?
         </h3>
         <p className="mb-8 max-w-2xl mx-auto text-lg">
-          Let's discuss your project and show you exactly how we can reduce your costs by 40% without compromising quality.
+          Let's discuss your project and show you exactly how we can reduce your
+          costs by 40% without compromising quality.
         </p>
         <Link
           to="/#contact"

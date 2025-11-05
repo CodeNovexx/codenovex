@@ -9,12 +9,12 @@ const BlogHeader = () => {
 
   const handleContactClick = () => {
     // Navigate to home page
-    navigate('/');
+    navigate("/");
     // Wait for navigation to complete, then scroll to contact
     setTimeout(() => {
       const contactElement = document.querySelector('[data-section="contact"]');
       if (contactElement) {
-        contactElement.scrollIntoView({ behavior: 'smooth' });
+        contactElement.scrollIntoView({ behavior: "smooth" });
       }
     }, 100);
   };
@@ -25,10 +25,10 @@ const BlogHeader = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src={Logo} 
-              alt="CodeNovex" 
-              className="w-12 h-12 rounded-full transition-transform duration-300 group-hover:scale-110" 
+            <img
+              src={Logo}
+              alt="CodeNovex"
+              className="w-12 h-12 rounded-full transition-transform duration-300 group-hover:scale-110"
             />
             <span className="text-white text-xl font-bold hidden sm:block">
               CodeNovex

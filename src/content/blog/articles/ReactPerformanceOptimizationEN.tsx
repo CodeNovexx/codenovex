@@ -7,14 +7,24 @@ const ReactPerformanceOptimizationEN: React.FC = () => {
     "Eliminate unnecessary re-renders using React.memo and useMemo",
     "Optimize bundle size by analyzing and removing dead code",
     "Implement concurrent rendering for smoother user experiences",
-    "Monitor real-world performance with Web Vitals"
+    "Monitor real-world performance with Web Vitals",
   ];
 
   const bundleBloaculprits = [
-    { name: "Moment.js", solution: "Replace with date-fns or day.js (save ~230KB)" },
-    { name: "Lodash", solution: "Import specific functions: import debounce from 'lodash/debounce'" },
-    { name: "Material-UI", solution: "Use tree-shaking: import Button from '@mui/material/Button'" },
-    { name: "Unused dependencies", solution: "Run npm-check to find them" }
+    {
+      name: "Moment.js",
+      solution: "Replace with date-fns or day.js (save ~230KB)",
+    },
+    {
+      name: "Lodash",
+      solution:
+        "Import specific functions: import debounce from 'lodash/debounce'",
+    },
+    {
+      name: "Material-UI",
+      solution: "Use tree-shaking: import Button from '@mui/material/Button'",
+    },
+    { name: "Unused dependencies", solution: "Run npm-check to find them" },
   ];
 
   const targetMetrics = [
@@ -22,7 +32,7 @@ const ReactPerformanceOptimizationEN: React.FC = () => {
     { name: "FID (First Input Delay)", value: "< 100ms" },
     { name: "CLS (Cumulative Layout Shift)", value: "< 0.1" },
     { name: "FCP (First Contentful Paint)", value: "< 1.8s" },
-    { name: "TTI (Time to Interactive)", value: "< 3.8s" }
+    { name: "TTI (Time to Interactive)", value: "< 3.8s" },
   ];
 
   const checklist = [
@@ -35,7 +45,7 @@ const ReactPerformanceOptimizationEN: React.FC = () => {
     "Lazy load images and heavy components",
     "Set up Web Vitals monitoring",
     "Optimize images (WebP/AVIF format)",
-    "Test on slow 3G connection"
+    "Test on slow 3G connection",
   ];
 
   return (
@@ -281,7 +291,9 @@ npm run build`}</code>
                 <div className="flex items-start gap-3">
                   <span className="text-amber-400 font-bold mt-1">→</span>
                   <div>
-                    <span className="text-white font-semibold">{item.name}:</span>
+                    <span className="text-white font-semibold">
+                      {item.name}:
+                    </span>
                     <span className="text-gray-300 ml-2">{item.solution}</span>
                   </div>
                 </div>
@@ -514,8 +526,14 @@ getTTFB(sendToAnalytics);`}</code>
         <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl p-8">
           <div className="space-y-4">
             {checklist.map((item, index) => (
-              <label key={index} className="flex items-start gap-4 cursor-pointer hover:text-white transition-colors duration-200">
-                <input type="checkbox" className="mt-1 w-5 h-5 rounded border-gray-600 text-brand-primary focus:ring-brand-primary focus:ring-2" />
+              <label
+                key={index}
+                className="flex items-start gap-4 cursor-pointer hover:text-white transition-colors duration-200"
+              >
+                <input
+                  type="checkbox"
+                  className="mt-1 w-5 h-5 rounded border-gray-600 text-brand-primary focus:ring-brand-primary focus:ring-2"
+                />
                 <span>{item}</span>
               </label>
             ))}

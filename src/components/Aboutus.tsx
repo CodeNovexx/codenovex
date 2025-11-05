@@ -28,7 +28,9 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
       aria-labelledby="why-us-heading"
     >
       <article className="flex flex-col gap-4 p-5 md:p-7 lg:p-9">
-        <h2 id="why-us-heading" className="text-4xl font-semibold">{t("why_us.WHY_US")}</h2>
+        <h2 id="why-us-heading" className="text-4xl font-semibold">
+          {t("why_us.WHY_US")}
+        </h2>
         <p className="text-lg leading-8 md:text-xl">
           {t("why_us.WHY_US_TEXT")}
         </p>
@@ -41,7 +43,11 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
 
       <aside className="relative border-2 border-brand-primary/30 m-5 rounded-3xl flex flex-col gap-3 md:m-7 lg:m-9 hover:border-brand-primary transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20">
         <div className="flex justify-between items-center pr-5">
-          <img src={Logo_Without_Bg} alt="CodeNovex Logo" className="w-28 h-28" />
+          <img
+            src={Logo_Without_Bg}
+            alt="CodeNovex Logo"
+            className="w-28 h-28"
+          />
           <p className="text-3xl font-semibold">CodeNovex</p>
         </div>
 
@@ -66,7 +72,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((props, ref) => {
   );
 });
 
-Aboutus.displayName = 'Aboutus';
+Aboutus.displayName = "Aboutus";
 
 const MemoizedAboutus = React.memo(Aboutus);
 export default MemoizedAboutus;
