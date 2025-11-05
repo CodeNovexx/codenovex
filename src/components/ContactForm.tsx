@@ -49,9 +49,10 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
       id="contact"
       className="relative bg-black py-16 px-4 md:py-24 overflow-hidden"
       aria-labelledby="contact-form-heading"
+      style={{ willChange: 'auto' }}
     >
-      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative max-w-5xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
@@ -74,7 +75,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
 
         <form
           onSubmit={onSubmit}
-          className="relative bg-gray-900 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12 space-y-8 border border-gray-700/50 mb-16"
+          className="relative bg-gray-900 rounded-3xl shadow-2xl p-6 md:p-12 space-y-8 border border-gray-700/50 mb-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="group">
