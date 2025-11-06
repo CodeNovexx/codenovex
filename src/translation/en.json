@@ -2,7 +2,7 @@
   "header": {
     "HOME": "HOME",
     "ABOUT": "PHILOSOPHY",
-    "SERVICES": "EXPERTISE",
+    "SERVICES": "SOLUTIONS",
     "BLOG": "BLOG",
     "CONTACT": "CONTACT US",
     "BUILDING": "Your Strategic",
@@ -23,13 +23,13 @@
     "WHO_WE_ARE_TEXT": "CodeNovex was founded on a single principle: technology must solve a business problem, not just complete a task. This philosophy grew from direct experience with enterprise-level, mission-critical systems, where one lesson became clear: project success is determined not by the complexity of the code, but by the clarity of the strategy and the strength of the architecture. That is why the CodeNovex approach focuses not on 'what' to build, but on 'why' it's being built and 'how' to build it right."
   },
   "services": {
-    "WHAT_WE_DO": "OUR EXPERTISE",
-    "WHAT_WE_DO_TEXT": "Enterprise-Grade Software Solutions That Drive Revenue Growth & Operational Excellence",
-    "WEB3": "Build decentralized applications (dApps) and blockchain solutions that enhance security, reduce transaction costs, and create new revenue streams. Perfect for fintech, supply chain, and digital asset businesses.",
-    "UI/UX": "Increase conversion rates by up to 200% with data-driven interface design. UX research identifies friction points and optimizes user flows to maximize engagement and customer lifetime value.",
-    "FRONT_END": "Lightning-fast, mobile-responsive interfaces that load in under 2 seconds. Built with React, Vue, or Angular to deliver app-like experiences that keep users engaged and reduce bounce rates.",
-    "BACK_END": "Scalable server architecture that handles millions of requests without breaking. A microservices approach ensures 99.9% uptime, seamless third-party integrations, and effortless scaling as your user base grows.",
-    "SEO": "Dominate search rankings and multiply organic traffic. Technical SEO strategies help clients achieve first-page Google rankings for competitive keywords, driving 300%+ increases in qualified leads."
+    "WHAT_WE_DO": "OUR SOLUTIONS",
+    "WHAT_WE_DO_TEXT": "We translate your business needs into specific technology tools that deliver results.",
+    "WEB3": "Custom Web Applications",
+    "UI/UX": "Business Process Automation",
+    "FRONT_END": "Data Management Platforms",
+    "BACK_END": "API Development & Integration",
+    "SEO": "Technical SEO & Performance"
   },
   "contactForm": {
     "BADGE": "GET IN TOUCH",
