@@ -1,7 +1,7 @@
 {
   "header": {
     "HOME": "HOME",
-    "ABOUT": "WHY US",
+    "ABOUT": "PHILOSOPHY",
     "SERVICES": "EXPERTISE",
     "BLOG": "BLOG",
     "CONTACT": "CONTACT US",
@@ -11,25 +11,25 @@
     "SCROLL": "EXPLORE OUR WORK"
   },
   "why_us": {
-    "WHY_US": "WHY PARTNER WITH US",
-    "WHY_US_TEXT": "We transform complex business challenges into elegant software solutions that drive measurable ROI. Our Fortune 500-caliber development team delivers enterprise-grade applications that reduce operational costs by up to 40%, accelerate time-to-market, and scale seamlessly with your growth. When you partner with CodeNovex, you're not just getting code - you're gaining a strategic technology partner committed to your long-term success.",
+    "WHY_US": "WHY PARTNER WITH CODENOVEX?",
+    "WHY_US_TEXT": "CodeNovex transforms complex business challenges into elegant software solutions that drive measurable ROI. Built on Fortune 500 standards, our approach delivers enterprise-grade applications that can reduce operational costs by up to 40% and scale seamlessly with your growth. Partnering with CodeNovex means you're not just getting code - you're gaining a strategic technology partner committed to your long-term success.",
     "PRICING": "TRANSPARENT INVESTMENT",
-    "PRICING_TEXT": "Our fixed-price project model eliminates budget uncertainty. You'll receive a detailed proposal with clear milestones, deliverables, and ROI projections before any commitment. Most clients see positive returns within 6-12 months of launch.",
-    "PRICING_BOX": "We stay ahead of the technology curve so your business stays competitive. Our continuous R&D investment means you benefit from cutting-edge solutions like AI integration, blockchain security, and cloud-native architecture - without the enterprise price tag.",
+    "PRICING_TEXT": "A fixed-price project model eliminates budget uncertainty. You'll receive a detailed proposal with clear milestones, deliverables, and ROI projections before any commitment. Most clients see positive returns within 6-12 months of launch.",
+    "PRICING_BOX": "CodeNovex stays ahead of the technology curve so your business stays competitive. Continuous R&D means you benefit from cutting-edge solutions like AI integration and cloud-native architecture - without the enterprise price tag.",
     "PRICING_BTN": "Get In Touch"
   },
   "team": {
-    "WHO_WE_ARE": "WHO WE ARE",
-    "WHO_WE_ARE_TEXT": "We are a diverse and dedicated team of developers, designers, and tech enthusiasts united by our passion for innovation and our commitment to excellence. With a deep understanding of cutting-edge technologies and a collaborative approach to problem-solving, we strive to create bespoke software solutions that not only meet but exceed the unique needs and expectations of our clients. Our journey is defined by a relentless pursuit of quality, creativity, and customer satisfaction, as we continue to push the boundaries of possibility and shape the digital landscape one project at a time."
+    "WHO_WE_ARE": "THE CODENOVEX PHILOSOPHY",
+    "WHO_WE_ARE_TEXT": "CodeNovex was founded on a single principle: technology must solve a business problem, not just complete a task. This philosophy grew from direct experience with enterprise-level, mission-critical systems, where one lesson became clear: project success is determined not by the complexity of the code, but by the clarity of the strategy and the strength of the architecture. That is why the CodeNovex approach focuses not on 'what' to build, but on 'why' it's being built and 'how' to build it right."
   },
   "services": {
     "WHAT_WE_DO": "OUR EXPERTISE",
     "WHAT_WE_DO_TEXT": "Enterprise-Grade Software Solutions That Drive Revenue Growth & Operational Excellence",
     "WEB3": "Build decentralized applications (dApps) and blockchain solutions that enhance security, reduce transaction costs, and create new revenue streams. Perfect for fintech, supply chain, and digital asset businesses.",
-    "UI/UX": "Increase conversion rates by up to 200% with data-driven interface design. Our UX research identifies friction points and optimizes user flows to maximize engagement and customer lifetime value.",
+    "UI/UX": "Increase conversion rates by up to 200% with data-driven interface design. UX research identifies friction points and optimizes user flows to maximize engagement and customer lifetime value.",
     "FRONT_END": "Lightning-fast, mobile-responsive interfaces that load in under 2 seconds. Built with React, Vue, or Angular to deliver app-like experiences that keep users engaged and reduce bounce rates.",
-    "BACK_END": "Scalable server architecture that handles millions of requests without breaking. Our microservices approach ensures 99.9% uptime, seamless third-party integrations, and effortless scaling as your user base grows.",
-    "SEO": "Dominate search rankings and multiply organic traffic. Our technical SEO strategies have helped clients achieve first-page Google rankings for competitive keywords, driving 300%+ increases in qualified leads."
+    "BACK_END": "Scalable server architecture that handles millions of requests without breaking. A microservices approach ensures 99.9% uptime, seamless third-party integrations, and effortless scaling as your user base grows.",
+    "SEO": "Dominate search rankings and multiply organic traffic. Technical SEO strategies help clients achieve first-page Google rankings for competitive keywords, driving 300%+ increases in qualified leads."
   },
   "contactForm": {
     "BADGE": "GET IN TOUCH",
