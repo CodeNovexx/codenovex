@@ -88,10 +88,9 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-primary to-purple-600 hover:from-brand-hover hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50 group"
-                  aria-label="Visit founder's LinkedIn profile"
                 >
                   <span>{t("team.FOUNDER_LINKEDIN")}</span>
-                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
                 </a>
               </div>
             </div>
