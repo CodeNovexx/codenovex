@@ -163,6 +163,12 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
             {t("header.SERVICES")}
           </p>
           <p
+            onClick={() => navigate("/process")}
+            className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
+          >
+            {t("header.PROCESS")}
+          </p>
+          <p
             onClick={() => navigate("/blog")}
             className="cursor-pointer hover text-gray-700 hover:text-brand-primary"
           >
@@ -247,6 +253,14 @@ const DropdownContent = ({
             </NavItem>
             <NavItem onClick={() => scrollToRef("services")}>
               {t("header.SERVICES")}
+            </NavItem>
+            <NavItem
+              onClick={() => {
+                closeDropdown();
+                navigate("/process");
+              }}
+            >
+              {t("header.PROCESS")}
             </NavItem>
             <NavItem
               onClick={() => {
