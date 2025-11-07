@@ -6,10 +6,14 @@
     "PROCESS": "OUR PROCESS",
     "BLOG": "BLOG",
     "CONTACT": "CONTACT US",
+    "LANGUAGE": "Language",
     "BUILDING": "Turning Code",
     "SUCCESS": "Into Business",
     "TOGETHER": "Results",
     "SCROLL": "See How"
+  },
+  "loading": {
+    "LOADING": "Loading"
   },
   "process": {
     "title": "How We Work",
@@ -71,7 +75,12 @@
   },
   "why_us": {
     "WHY_US": "WHY PARTNER WITH CODENOVEX?",
-    "WHY_US_TEXT": "CodeNovex transforms complex business challenges into elegant software solutions that drive measurable ROI. Built on Fortune 500 standards, our approach delivers enterprise-grade applications that can reduce operational costs by up to 40% and scale seamlessly with your growth. Partnering with CodeNovex means you're not just getting code - you're gaining a strategic technology partner committed to your long-term success.",
+    "FEATURE_1_TITLE": "Measurable Results",
+    "FEATURE_1_TEXT": "Our goal is not just to write code. We build systems that directly impact your business outcomes, whether it's reducing costs or increasing sales.",
+    "FEATURE_2_TITLE": "Enterprise-Grade Standards",
+    "FEATURE_2_TEXT": "Experience with large-scale, corporate systems teaches one thing: reliability isn't a feature, it's the foundation. Every CodeNovex project is built with this same enterprise-level engineering discipline, where security and stability are never optional.",
+    "FEATURE_3_TITLE": "Strategic Partnership",
+    "FEATURE_3_TEXT": "Working with CodeNovex means you're gaining a technology partner, not just a contractor, who is personally invested in your long-term success.",
     "PRICING": "TRANSPARENT INVESTMENT",
     "PRICING_TEXT": "A fixed-price project model eliminates budget uncertainty. You'll receive a detailed proposal with clear milestones, deliverables, and ROI projections before any commitment. Most clients see positive returns within 6-12 months of launch.",
     "PRICING_BOX": "CodeNovex stays ahead of the technology curve so your business stays competitive. Continuous R&D means you benefit from cutting-edge solutions like AI integration and cloud-native architecture - without the enterprise price tag.",
@@ -79,17 +88,20 @@
   },
   "team": {
     "WHO_WE_ARE": "THE CODENOVEX PHILOSOPHY",
-    "WHO_WE_ARE_TEXT": "CodeNovex was founded on a single principle: technology must solve a business problem, not just complete a task. This philosophy grew from direct experience with enterprise-level, mission-critical systems, where one lesson became clear: project success is determined not by the complexity of the code, but by the clarity of the strategy and the strength of the architecture. That is why the CodeNovex approach focuses not on 'what' to build, but on 'why' it's being built and 'how' to build it right."
+    "WHO_WE_ARE_TEXT": "CodeNovex was founded on a single principle: technology must solve a business problem, not just complete a task. This philosophy grew from direct experience with enterprise-level, mission-critical systems, where one lesson became clear: project success is determined not by the complexity of the code, but by the clarity of the strategy and the strength of the architecture. That is why the CodeNovex approach focuses not on 'what' to build, but on 'why' it's being built and 'how' to build it right.",
+    "FOUNDER_VISION": "FOUNDER'S VISION",
+    "FOUNDER_TEXT": "My personal mission is to help businesses turn technology into their most powerful tool. My experience with mission-critical, enterprise-level systems is the guarantee that your project will be reliable and ready for growth.",
+    "FOUNDER_LINKEDIN": "Learn More on LinkedIn"
   },
   "services": {
-    "WHAT_WE_DO": "OUR SOLUTIONS",
-    "WHAT_WE_DO_TEXT": "We translate your business needs into specific technology tools that deliver results.",
-    "WEB3": "Custom Web Applications",
-    "UI/UX": "Business Process Automation",
-    "FRONT_END": "Data Management Platforms",
-    "BACK_END": "API Development & Integration",
-    "SEO": "Technical SEO & Performance"
-  },
+  "WHAT_WE_DO": "Our Solutions",
+  "WHAT_WE_DO_TEXT": "We translate your business needs into technology tools that deliver results.",
+  "WEB3": "Custom Web Applications",
+  "UI/UX": "Business Process Automation",
+  "FRONT_END": "Data Management Platforms",
+  "BACK_END": "API Development & Integration",
+  "SEO": "Technical SEO & Performance"
+},
   "contactForm": {
     "BADGE": "GET IN TOUCH",
     "HEADING": "Let's Build Something Amazing Together",
