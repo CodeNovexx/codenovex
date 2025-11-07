@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
+import FadeInUp from "./FadeInUp";
 import UxLogo from "../assets/ui_ux_design_logo.webp";
 import webLogo from "../assets/web_logo.webp";
 import seoLogo from "../assets/seo_logo.webp";
@@ -55,20 +56,23 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
       aria-labelledby="services-heading"
     >
       {/* Section Header */}
-      <div className="max-w-6xl mx-auto mb-16 text-center">
-        <h2 
-          id="services-heading" 
-          className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}
-        >
-          {t("services.WHAT_WE_DO")}
-        </h2>
-        <p className={`${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'} text-gray-300 max-w-3xl mx-auto`}>
-          {t("services.WHAT_WE_DO_TEXT")}
-        </p>
-      </div>
+      <FadeInUp delay={0.1}>
+        <div className="max-w-6xl mx-auto mb-16 text-center">
+          <h2 
+            id="services-heading" 
+            className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}
+          >
+            {t("services.WHAT_WE_DO")}
+          </h2>
+          <p className={`${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'} text-gray-300 max-w-3xl mx-auto`}>
+            {t("services.WHAT_WE_DO_TEXT")}
+          </p>
+        </div>
+      </FadeInUp>
 
       {/* Services Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <FadeInUp delay={0.3}>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <article
             key={index}
@@ -103,6 +107,7 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
           </article>
         ))}
       </div>
+      </FadeInUp>
     </section>
   );
 });

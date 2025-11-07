@@ -5,6 +5,7 @@ import { getPostBySlug, getRecentPosts } from "../content/blog/posts";
 import { getPostComponent } from "../content/blog/postComponents";
 import BlogHeader from "../components/BlogHeader";
 import { Footer } from "../components/Footer";
+import FadeInUp from "../components/FadeInUp";
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -53,30 +54,33 @@ const BlogPostPage: React.FC = () => {
       <div className="min-h-screen bg-black pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="mb-8">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-brand-primary hover:text-brand-hover transition-colors"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <FadeInUp delay={0.1}>
+            <nav className="mb-8">
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 text-brand-primary hover:text-brand-hover transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              {currentLanguage === "en" ? "Back to Blog" : "დაბრუნება ბლოგში"}
-            </Link>
-          </nav>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                {currentLanguage === "en" ? "Back to Blog" : "დაბრუნება ბლოგში"}
+              </Link>
+            </nav>
+          </FadeInUp>
 
           {/* Post Header */}
-          <header className="mb-12">
+          <FadeInUp delay={0.2}>
+            <header className="mb-12">
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
                 {post.category}
@@ -146,9 +150,11 @@ const BlogPostPage: React.FC = () => {
               </div>
             </div>
           </header>
+          </FadeInUp>
 
           {/* Post Content */}
-          <div className="bg-gray-900 rounded-3xl p-6 md:p-12 border border-gray-800">
+          <FadeInUp delay={0.3}>
+            <div className="bg-gray-900 rounded-3xl p-6 md:p-12 border border-gray-800">
             <Suspense
               fallback={
                 <div className="flex flex-col items-center justify-center py-20">
@@ -232,11 +238,13 @@ const BlogPostPage: React.FC = () => {
                 Facebook
               </a>
             </div>
-          </div>
+            </div>
+          </FadeInUp>
 
           {/* Recent Posts */}
           {recentPosts.length > 0 && (
-            <div className="mt-16">
+            <FadeInUp delay={0.5}>
+              <div className="mt-16">
               <h3 className="text-3xl font-bold text-white mb-8">
                 {currentLanguage === "en" ? "More Articles" : "მეტი სტატია"}
               </h3>
@@ -278,7 +286,8 @@ const BlogPostPage: React.FC = () => {
                   </Link>
                 ))}
               </div>
-            </div>
+              </div>
+            </FadeInUp>
           )}
         </div>
       </div>

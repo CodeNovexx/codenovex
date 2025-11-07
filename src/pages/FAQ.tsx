@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import FadeInUp from "../components/FadeInUp";
 import ScrollToTop from "../components/ScrollToTop";
 import { Footer } from "../components/Footer";
 import BlogHeader from "../components/BlogHeader";
@@ -41,37 +42,40 @@ const FAQPage = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-6">
-            <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
-              {t("faq.badge")}
-            </span>
+        <FadeInUp delay={0.1}>
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <div className="inline-block mb-6">
+              <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
+                {t("faq.badge")}
+              </span>
+            </div>
+            
+            <h1
+              className={`${
+                isGeorgian
+                  ? "text-4xl md:text-5xl leading-[1.4] pb-2"
+                  : "text-5xl md:text-6xl pb-2"
+              } font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent`}
+            >
+              {t("faq.title")}
+            </h1>
+            
+            <p
+              className={`text-gray-400 max-w-2xl mx-auto ${
+                isGeorgian ? "text-lg leading-[1.9]" : "text-xl leading-relaxed"
+              }`}
+            >
+              {t("faq.subtitle")}
+            </p>
           </div>
-          
-          <h1
-            className={`${
-              isGeorgian
-                ? "text-4xl md:text-5xl leading-[1.4] pb-2"
-                : "text-5xl md:text-6xl pb-2"
-            } font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent`}
-          >
-            {t("faq.title")}
-          </h1>
-          
-          <p
-            className={`text-gray-400 max-w-2xl mx-auto ${
-              isGeorgian ? "text-lg leading-[1.9]" : "text-xl leading-relaxed"
-            }`}
-          >
-            {t("faq.subtitle")}
-          </p>
-        </div>
+        </FadeInUp>
       </section>
 
       {/* FAQ Accordion Section */}
       <section className="relative py-12 px-6 pb-24">
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
+          <FadeInUp delay={0.3}>
+            <div className="space-y-4">
             {faqData.map((item) => (
               <div
                 key={item.id}
@@ -130,10 +134,12 @@ const FAQPage = () => {
               </div>
             ))}
           </div>
+          </FadeInUp>
 
           {/* CTA Section */}
-          <div className="mt-16 text-center">
-            <div className="relative inline-block">
+          <FadeInUp delay={0.5}>
+            <div className="mt-16 text-center">
+              <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/20 to-purple-600/20 rounded-2xl blur-xl"></div>
               <div className="relative bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-2xl px-8 py-6">
                 <h3
@@ -175,6 +181,7 @@ const FAQPage = () => {
               </div>
             </div>
           </div>
+          </FadeInUp>
         </div>
       </section>
 

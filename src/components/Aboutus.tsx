@@ -2,6 +2,7 @@ import React from "react";
 import { TrendingUp, Shield, Handshake } from "lucide-react";
 import { AboutusProps } from "../types/aboutUs";
 import { useTranslation } from "react-i18next";
+import FadeInUp from "./FadeInUp";
 
 const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
   const { t, i18n } = useTranslation();
@@ -36,14 +37,17 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
       aria-labelledby="why-us-heading"
     >
       {/* Section Header */}
-      <div className="max-w-6xl mx-auto mb-16 text-center">
-        <h2 id="why-us-heading" className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}>
-          {t("why_us.WHY_US")}
-        </h2>
-      </div>
+      <FadeInUp delay={0.1}>
+        <div className="max-w-6xl mx-auto mb-16 text-center">
+          <h2 id="why-us-heading" className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}>
+            {t("why_us.WHY_US")}
+          </h2>
+        </div>
+      </FadeInUp>
 
       {/* Three Feature Blocks */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <FadeInUp delay={0.3}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {features.map((feature, index) => {
           const Icon = feature.icon;
           return (
@@ -74,9 +78,11 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
           );
         })}
       </div>
+      </FadeInUp>
 
       {/* Transparent Investment Section - Now Full Width */}
-      <div className="max-w-6xl mx-auto">
+      <FadeInUp delay={0.5}>
+        <div className="max-w-6xl mx-auto">
         <div className="relative bg-gradient-to-br from-[#3A556D]/80 to-[#2a3f51]/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 shadow-2xl hover:border-brand-primary/30 transition-all duration-300">
           {/* Decorative gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-purple-600/5 rounded-3xl"></div>
@@ -91,6 +97,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
           </div>
         </div>
       </div>
+      </FadeInUp>
     </section>
   );
 });

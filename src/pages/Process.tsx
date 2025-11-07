@@ -2,6 +2,7 @@ import React from 'react';
 import { Lightbulb, Layers, Code2, Rocket, CheckCircle2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import FadeInUp from '../components/FadeInUp';
 import Logo from '../assets/logo.webp';
 import LanguageSelector from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
@@ -111,21 +112,23 @@ const Process: React.FC = () => {
         <div className="absolute top-20 left-10 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
         
-        <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-block mb-6">
-            <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
-              {t('process.title').toUpperCase()}
-            </span>
+        <FadeInUp delay={0.1}>
+          <div className="relative max-w-6xl mx-auto text-center">
+            <div className="inline-block mb-6">
+              <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
+                {t('process.title').toUpperCase()}
+              </span>
+            </div>
+            
+            <h1 className={`${isGeorgian ? 'text-3xl md:text-5xl lg:text-6xl leading-[1.4]' : 'text-4xl md:text-6xl lg:text-7xl'} font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent`}>
+              {t('process.subtitle')}
+            </h1>
+            
+            <p className={`${isGeorgian ? 'text-lg md:text-xl leading-[2]' : 'text-xl md:text-2xl leading-relaxed'} text-gray-400 max-w-4xl mx-auto`}>
+              {t('process.heroTitle')}
+            </p>
           </div>
-          
-          <h1 className={`${isGeorgian ? 'text-3xl md:text-5xl lg:text-6xl leading-[1.4]' : 'text-4xl md:text-6xl lg:text-7xl'} font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent`}>
-            {t('process.subtitle')}
-          </h1>
-          
-          <p className={`${isGeorgian ? 'text-lg md:text-xl leading-[2]' : 'text-xl md:text-2xl leading-relaxed'} text-gray-400 max-w-4xl mx-auto`}>
-            {t('process.heroTitle')}
-          </p>
-        </div>
+        </FadeInUp>
       </section>
 
       {/* Timeline Section */}
@@ -140,7 +143,8 @@ const Process: React.FC = () => {
               const isEven = index % 2 === 0;
               
               return (
-                <div key={step.number} className="relative">
+                <FadeInUp key={step.number} delay={0.2 + index * 0.15}>
+                  <div className="relative">
                   {/* Timeline Dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 hidden md:block z-10">
                     <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl shadow-${step.color}/50`}>
@@ -193,6 +197,7 @@ const Process: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                </FadeInUp>
               );
             })}
           </div>
@@ -201,27 +206,29 @@ const Process: React.FC = () => {
 
       {/* CTA Section */}
       <section className="relative py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-r from-brand-primary/10 via-purple-600/10 to-brand-primary/10 border-2 border-brand-primary/30 rounded-3xl p-12 md:p-16 text-center overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-purple-600/5 blur-3xl"></div>
-            
-            <div className="relative z-10">
-              <h2 className={`${isGeorgian ? 'text-2xl md:text-4xl leading-[1.4]' : 'text-3xl md:text-5xl'} font-bold mb-6 text-white`}>
-                {t('process.cta.title')}
-              </h2>
-              <p className={`${isGeorgian ? 'text-lg leading-[2]' : 'text-xl'} text-gray-300 mb-10 max-w-2xl mx-auto`}>
-                {t('process.cta.description')}
-              </p>
-              <a
-                href="/#contact"
-                className="inline-block bg-gradient-to-r from-brand-primary to-purple-600 hover:from-brand-hover hover:to-purple-700 text-white font-bold py-5 px-12 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50"
-              >
-                {t('process.cta.button')}
-              </a>
+        <FadeInUp delay={0.8}>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-gradient-to-r from-brand-primary/10 via-purple-600/10 to-brand-primary/10 border-2 border-brand-primary/30 rounded-3xl p-12 md:p-16 text-center overflow-hidden">
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-purple-600/5 blur-3xl"></div>
+              
+              <div className="relative z-10">
+                <h2 className={`${isGeorgian ? 'text-2xl md:text-4xl leading-[1.4]' : 'text-3xl md:text-5xl'} font-bold mb-6 text-white`}>
+                  {t('process.cta.title')}
+                </h2>
+                <p className={`${isGeorgian ? 'text-lg leading-[2]' : 'text-xl'} text-gray-300 mb-10 max-w-2xl mx-auto`}>
+                  {t('process.cta.description')}
+                </p>
+                <a
+                  href="/#contact"
+                  className="inline-block bg-gradient-to-r from-brand-primary to-purple-600 hover:from-brand-hover hover:to-purple-700 text-white font-bold py-5 px-12 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50"
+                >
+                  {t('process.cta.button')}
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </FadeInUp>
       </section>
 
       {/* Footer */}

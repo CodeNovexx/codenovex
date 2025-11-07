@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import FadeInUp from "./FadeInUp";
 
 export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t, i18n } = useTranslation();
@@ -56,27 +57,30 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative max-w-5xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
-              {t("contactForm.BADGE") || "GET IN TOUCH"}
-            </span>
+        <FadeInUp delay={0.1}>
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
+                {t("contactForm.BADGE") || "GET IN TOUCH"}
+              </span>
+            </div>
+
+            <h2
+              id="contact-form-heading"
+              className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold text-white mb-4 md:mb-6`}
+            >
+              {t("contactForm.HEADING")}
+            </h2>
+            <p className={`text-gray-400 max-w-3xl mx-auto ${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'}`}>
+              {t("contactForm.SUBHEADING")}
+            </p>
           </div>
+        </FadeInUp>
 
-          <h2
-            id="contact-form-heading"
-            className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold text-white mb-4 md:mb-6`}
-          >
-            {t("contactForm.HEADING")}
-          </h2>
-          <p className={`text-gray-400 max-w-3xl mx-auto ${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'}`}>
-            {t("contactForm.SUBHEADING")}
-          </p>
-        </div>
-
-        <form
-          onSubmit={onSubmit}
-          className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12 space-y-8 border border-gray-800 hover:border-gray-700 transition-all duration-300 mb-16"
+        <FadeInUp delay={0.3}>
+          <form
+            onSubmit={onSubmit}
+            className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12 space-y-8 border border-gray-800 hover:border-gray-700 transition-all duration-300 mb-16"
         >
           {/* Decorative gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-purple-600/5 rounded-3xl pointer-events-none"></div>
@@ -315,6 +319,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
             {t("contactForm.PRIVACY_TEXT")}
           </p>
         </form>
+        </FadeInUp>
       </div>
     </section>
   );

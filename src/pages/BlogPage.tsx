@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import FadeInUp from "../components/FadeInUp";
 import { getPostsByLanguage, getAllCategories } from "../content/blog/posts";
 import BlogHeader from "../components/BlogHeader";
 import { Footer } from "../components/Footer";
@@ -52,26 +53,29 @@ const BlogPage: React.FC = () => {
       <div className="min-h-screen bg-black pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
-                {currentLanguage === "en" ? "BLOG" : "ბლოგი"}
-              </span>
+          <FadeInUp delay={0.1}>
+            <div className="text-center mb-16">
+              <div className="inline-block mb-4">
+                <span className="px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-sm font-semibold rounded-full">
+                  {currentLanguage === "en" ? "BLOG" : "ბლოგი"}
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                {currentLanguage === "en"
+                  ? "Insights & Resources"
+                  : "ინსაიტები და რესურსები"}
+              </h1>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                {currentLanguage === "en"
+                  ? "Expert advice, industry trends, and technical guides to help you build better software."
+                  : "ექსპერტული რჩევები, ინდუსტრიის ტენდენციები და ტექნიკური გზამკვლევები, რომლებიც დაგეხმარებათ უკეთესი პროგრამული უზრუნველყოფის შექმნაში."}
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              {currentLanguage === "en"
-                ? "Insights & Resources"
-                : "ინსაიტები და რესურსები"}
-            </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              {currentLanguage === "en"
-                ? "Expert advice, industry trends, and technical guides to help you build better software."
-                : "ექსპერტული რჩევები, ინდუსტრიის ტენდენციები და ტექნიკური გზამკვლევები, რომლებიც დაგეხმარებათ უკეთესი პროგრამული უზრუნველყოფის შექმნაში."}
-            </p>
-          </div>
+          </FadeInUp>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <FadeInUp delay={0.2}>
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
             <button
               onClick={() => setSelectedCategory("all")}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -96,10 +100,12 @@ const BlogPage: React.FC = () => {
               </button>
             ))}
           </div>
+          </FadeInUp>
 
           {/* Blog Posts Grid */}
-          {sortedPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FadeInUp delay={0.3}>
+            {sortedPosts.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {sortedPosts.map((post) => (
                 <Link
                   key={post.slug}
@@ -218,9 +224,11 @@ const BlogPage: React.FC = () => {
               </p>
             </div>
           )}
+          </FadeInUp>
 
           {/* CTA Section */}
-          <div className="mt-20 bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 border border-brand-primary/30 rounded-3xl p-8 md:p-12 text-center">
+          <FadeInUp delay={0.5}>
+            <div className="mt-20 bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 border border-brand-primary/30 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {currentLanguage === "en"
                 ? "Ready to Start Your Project?"
@@ -238,6 +246,7 @@ const BlogPage: React.FC = () => {
               {currentLanguage === "en" ? "Get in Touch" : "დაგვიკავშირდით"}
             </button>
           </div>
+          </FadeInUp>
         </div>
       </div>
 
