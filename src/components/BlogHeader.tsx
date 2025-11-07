@@ -21,14 +21,14 @@ const BlogHeader = () => {
     }, 100);
   };
 
+  const handleHomeClick = () => {
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
+
   const navigateToPage = (path: string) => {
     navigate(path);
-    setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }, 100);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -36,7 +36,11 @@ const BlogHeader = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link 
+            to="/" 
+            onClick={handleHomeClick}
+            className="flex items-center gap-3 group"
+          >
             <img
               src={Logo}
               alt="CodeNovex"
@@ -49,12 +53,12 @@ const BlogHeader = () => {
 
           {/* Navigation */}
           <nav className="flex items-center gap-6">
-            <Link
-              to="/"
+            <button
+              onClick={handleHomeClick}
               className="text-gray-300 hover:text-brand-primary transition-colors duration-300 font-medium hidden md:block"
             >
               {t("header.HOME")}
-            </Link>
+            </button>
             <button
               onClick={() => navigateToPage("/process")}
               className="text-gray-300 hover:text-brand-primary transition-colors duration-300 font-medium hidden md:block"
