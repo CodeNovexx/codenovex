@@ -683,7 +683,7 @@ const ChoosingRightTechStackEN: React.FC = () => {
           Need Help Choosing the Right Tech Stack?
         </h3>
         <p className="mb-8 max-w-2xl mx-auto text-lg">
-          Our team has built 50+ applications across various industries. We'll
+          We'll
           analyze your requirements and recommend the optimal tech stack for
           your startup.
         </p>
