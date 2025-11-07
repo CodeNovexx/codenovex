@@ -94,14 +94,14 @@
     "FOUNDER_LINKEDIN": "Learn More on LinkedIn"
   },
   "services": {
-  "WHAT_WE_DO": "Our Solutions",
-  "WHAT_WE_DO_TEXT": "We translate your business needs into technology tools that deliver results.",
-  "WEB3": "Custom Web Applications",
-  "UI/UX": "Business Process Automation",
-  "FRONT_END": "Data Management Platforms",
-  "BACK_END": "API Development & Integration",
-  "SEO": "Technical SEO & Performance"
-},
+    "WHAT_WE_DO": "Our Solutions",
+    "WHAT_WE_DO_TEXT": "We translate your business needs into technology tools that deliver results.",
+    "WEB3": "Custom Web Applications",
+    "UI/UX": "Business Process Automation",
+    "FRONT_END": "Data Management Platforms",
+    "BACK_END": "API Development & Integration",
+    "SEO": "Technical SEO & Performance"
+  },
   "contactForm": {
     "BADGE": "GET IN TOUCH",
     "HEADING": "Let's Build Something Amazing Together",
@@ -119,6 +119,8 @@
     "SOURCE_OPTIONS": [
       { "value": "linkedin", "label": "LinkedIn" },
       { "value": "google", "label": "Google" },
+      { "value": "facebook", "label": "Facebook" },
+      { "value": "instagram", "label": "Instagram" },
       { "value": "recommendation", "label": "Friend's Recommendation" },
       { "value": "other", "label": "Other" }
     ],
