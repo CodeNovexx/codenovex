@@ -3,12 +3,71 @@
     "HOME": "HOME",
     "ABOUT": "PHILOSOPHY",
     "SERVICES": "SOLUTIONS",
+    "PROCESS": "OUR PROCESS",
     "BLOG": "BLOG",
     "CONTACT": "CONTACT US",
-    "BUILDING": "Your Strategic",
-    "SUCCESS": "Growth",
-    "TOGETHER": "Partner",
-    "SCROLL": "EXPLORE OUR WORK"
+    "BUILDING": "Turning Code",
+    "SUCCESS": "Into Business",
+    "TOGETHER": "Results",
+    "SCROLL": "See How"
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Our Process",
+    "heroTitle": "From Idea to Launch: A Transparent Roadmap to Your Success",
+    "step1": {
+      "number": "01",
+      "title": "Discovery & Strategy",
+      "subtitle": "Understanding Your \"Why\"",
+      "description": "Our partnership begins not with code, but with questions. We conduct in-depth workshops to understand your business goals, target audience, and core challenges. This stage is about building a shared vision and defining what success looks like.",
+      "features": [
+        "Business goals analysis",
+        "Target audience research",
+        "Competitive landscape review",
+        "Success metrics definition"
+      ]
+    },
+    "step2": {
+      "number": "02",
+      "title": "Architecture & Design",
+      "subtitle": "Building the Foundation",
+      "description": "Once we understand the 'why', we design the 'how'. We create a robust technical blueprint (architecture) that ensures your product is scalable, secure, and maintainable. This is followed by user-centric UI/UX design to create an intuitive and engaging experience.",
+      "features": [
+        "System architecture design",
+        "Database schema planning",
+        "UI/UX wireframing",
+        "Design system creation"
+      ]
+    },
+    "step3": {
+      "number": "03",
+      "title": "Agile Development & Feedback",
+      "subtitle": "Building With You, Not Just For You",
+      "description": "Development is an iterative, transparent process. We work in 2-week 'sprints', at the end of which you get a live demo of the progress. This constant feedback loop ensures the final product is exactly what you need, with no surprises.",
+      "features": [
+        "2-week sprint cycles",
+        "Live demos & feedback sessions",
+        "Continuous integration & testing",
+        "Real-time progress tracking"
+      ]
+    },
+    "step4": {
+      "number": "04",
+      "title": "Launch & Partnership",
+      "subtitle": "The Beginning, Not The End",
+      "description": "Our job isn't done at launch. We provide ongoing support, performance monitoring, and strategic guidance to ensure your product continues to evolve and deliver value. Your success is our success.",
+      "features": [
+        "Smooth deployment",
+        "Performance monitoring",
+        "Ongoing support & maintenance",
+        "Strategic evolution planning"
+      ]
+    },
+    "cta": {
+      "title": "Ready to Start Your Journey?",
+      "description": "Let's turn your vision into reality. Schedule a free consultation to discuss your project and see how our process can work for you.",
+      "button": "Get Started Today"
+    }
   },
   "why_us": {
     "WHY_US": "WHY PARTNER WITH CODENOVEX?",
