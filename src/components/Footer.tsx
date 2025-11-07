@@ -311,7 +311,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
 
         {/* Copyright */}
         <div className="mt-8 pt-6 w-full">
-          <p className="text-gray-500 text-sm text-center">
+          <p className="text-gray-400 text-sm text-center">
             © {new Date().getFullYear()} CodeNovex. {t("footer.COPYRIGHT")}
           </p>
         </div>

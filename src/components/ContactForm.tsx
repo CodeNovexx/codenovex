@@ -298,7 +298,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
             </div>
           )}
 
-          <p className={`text-gray-500 text-center flex items-center justify-center gap-2 ${isGeorgian ? 'text-xs leading-[1.6]' : 'text-xs'}`}>
+          <p className={`text-gray-400 text-center flex items-center justify-center gap-2 ${isGeorgian ? 'text-xs leading-[1.6]' : 'text-xs'}`}>
             <svg
               className="w-4 h-4"
               fill="none"
