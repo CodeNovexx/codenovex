@@ -1,16 +1,16 @@
 {
-  "header": {
+"header": {
     "HOME": "HOME",
     "ABOUT": "PHILOSOPHY",
-    "SERVICES": "SOLUTIONS",
+    "SERVICES": "SERVICES",
     "PROCESS": "OUR PROCESS",
     "BLOG": "BLOG",
-    "CONTACT": "CONTACT US",
-    "LANGUAGE": "Language",
-    "BUILDING": "Turning Code",
-    "SUCCESS": "Into Business",
-    "TOGETHER": "Results",
-    "SCROLL": "See How"
+    "CONTACT": "CONTACT",
+    "LANGUAGE": "LANGUAGE",
+    "BUILDING": "WE BUILD TECHNOLOGY SOLUTIONS THAT",
+    "SUCCESS": "DRIVE",
+    "TOGETHER": "YOUR BUSINESS GROWTH",
+    "SCROLL": "SEE HOW"
   },
   "loading": {
     "LOADING": "Loading"
