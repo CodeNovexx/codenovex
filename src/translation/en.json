@@ -133,6 +133,66 @@
   "footer": {
     "FOOTER_TEXT": "Ready to scale your business with custom software? Let's discuss your project and provide a detailed roadmap to success.",
     "EMAIL": "Email us at:",
-    "PHONE": "Call us at:"
+    "PHONE": "Call us at:",
+    "COPYRIGHT": "All rights reserved.",
+    "NAV_TITLE": "Navigation",
+    "NAV_HOME": "Home",
+    "NAV_SERVICES": "Services",
+    "NAV_BLOG": "Blog",
+    "NAV_CONTACT": "Contact",
+    "COMPANY_TITLE": "Company",
+    "COMPANY_PROCESS": "Our Process",
+    "COMPANY_PHILOSOPHY": "Philosophy",
+    "COMPANY_FAQ": "FAQ",
+    "LEGAL_TITLE": "Legal",
+    "LEGAL_PRIVACY": "Privacy Policy",
+    "LEGAL_TERMS": "Terms of Service"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to your most common questions about our process and philosophy.",
+    "backToHome": "Back to Home",
+    "ctaTitle": "Still have questions?",
+    "ctaSubtitle": "We're here to help. Reach out and let's discuss your project.",
+    "ctaButton": "Get In Touch",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What's the difference between a website and a web application?",
+        "answer": "A website is typically a digital brochure-it provides information. A web application is a tool-it performs a specific task: automating a process, managing data, calculating a price, etc. "
+      },
+      {
+        "id": 2,
+        "question": "Why don't you have a fixed price list?",
+        "answer": "Because we don't sell off-the-shelf products. Every business is unique, and so are its challenges. It's like asking, 'How much does it cost to build a house?'. The price depends on the size, materials, and complexity. Our 'Discovery' phase is dedicated to creating that blueprint, after which you receive a precise, transparent investment plan."
+      },
+      {
+        "id": 3,
+        "question": "How long does a project typically take?",
+        "answer": "The timeline directly depends on the project's complexity. A simple system might take a few weeks, while a complex platform could take several months. Our agile, 2-week sprint system ensures that you see consistent progress and the process is fully predictable."
+      },
+      {
+        "id": 4,
+        "question": "Do you offer support after the project is launched?",
+        "answer": "Yes, absolutely. Our partnership doesn't end at launch. CodeNovex offers ongoing technical support, development, and strategic guidance to ensure your product continues to meet evolving business needs. We are committed to your long-term success."
+      },
+      {
+        "id": 5,
+        "question": "What technology stack do you use?",
+        "answer": "CodeNovex is tech-agnostic, meaning we choose the best tool for the job, not just our favorite tool. However, our core expertise lies in modern technologies like React/Next.js, Node.js, and PostgreSQL. The guiding principle is simple: the technology must serve the business goal, not the other way around."
+      }
+    ]
+  },
+ "legal": {
+    "badge": "Legal",
+    "backToHome": "Back to Home",
+    "lastUpdated": "Last Updated",
+    "updateDate": "November 7, 2025",
+    "contactUs": "Contact Us",
+    "privacyTitle": "Privacy Policy",
+    "privacyContent": "At CodeNovex, we respect your privacy. This document explains what limited information we collect and how we use it.\n\n**What information do we collect?**\nThe only personal information we collect is what you voluntarily provide through our contact form (name, email, company name, message).\n\n**How do we use this information?**\nWe use this information for the sole purpose of responding to your inquiry and communicating with you about your project.\n\n**Data Sharing**\nWe will never sell, rent, or share your personal information with third parties.",
+    "termsTitle": "Terms of Service",
+    "termsContent": "**1. Agreement to Terms**\nBy accessing the website at https://codenovex.ge, you are agreeing to be bound by these Terms of Service. If you do not agree with any of these terms, you are prohibited from using this site.\n\n**2. Intellectual Property**\nAll content on this website, including text, graphics, logos, and code, is the property of CodeNovex and is protected by copyright law.\n\n**3. Disclaimer**\nThe information on this website, particularly in the blog section, is provided for informational purposes only. We make no guarantees about its completeness or accuracy and are not liable for any outcomes that may result from the use of this information."
   }
 }

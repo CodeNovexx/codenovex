@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Logo from "../assets/logo_without_background.webp";
 import FbLogo from "../assets/fb_icon.webp";
 import InstaLogo from "../assets/instagram_icon.webp";
@@ -10,6 +11,44 @@ import { useTranslation } from "react-i18next";
 export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
   const { t, i18n } = useTranslation();
   const isGeorgian = i18n.language === 'ka';
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Navigate to home and scroll to top
+  const handleHomeClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
+
+  // Navigate to section on homepage
+  const handleSectionClick = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  // Navigate to page and scroll to top
+  const handlePageClick = (path: string) => {
+    navigate(path);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
   
   return (
     <footer
@@ -44,7 +83,7 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
         </h2>
 
         {/* Contact Info - Modern Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-4 mb-12">
           <a
             href="mailto:info@codenovex.ge"
             className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-brand-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20 hover:-translate-y-1"
@@ -102,8 +141,101 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
           </a>
         </div>
 
+        {/* Footer Navigation - Three Column Layout */}
+        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 py-12 border-t border-b border-gray-800">
+          {/* Column 1: Navigation */}
+          <div className="space-y-4">
+            <h3 className={`font-bold text-slate-400 uppercase tracking-wider ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}>
+              {t("footer.NAV_TITLE")}
+            </h3>
+            <nav className="flex flex-col space-y-3">
+              <button
+                onClick={handleHomeClick}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.NAV_HOME")}
+              </button>
+              <button
+                onClick={() => handleSectionClick("services")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.NAV_SERVICES")}
+              </button>
+              <button
+                onClick={() => handlePageClick("/blog")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.NAV_BLOG")}
+              </button>
+              <button
+                onClick={() => handleSectionClick("contact")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.NAV_CONTACT")}
+              </button>
+            </nav>
+          </div>
+
+          {/* Column 2: Company */}
+          <div className="space-y-4">
+            <h3 className={`font-bold text-slate-400 uppercase tracking-wider ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}>
+              {t("footer.COMPANY_TITLE")}
+            </h3>
+            <nav className="flex flex-col space-y-3">
+              <button
+                onClick={() => handlePageClick("/process")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.COMPANY_PROCESS")}
+              </button>
+              <button
+                onClick={() => handleSectionClick("about")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.COMPANY_PHILOSOPHY")}
+              </button>
+              <button
+                onClick={() => handlePageClick("/faq")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.COMPANY_FAQ")}
+              </button>
+            </nav>
+          </div>
+
+          {/* Column 3: Legal */}
+          <div className="space-y-4">
+            <h3 className={`font-bold text-slate-400 uppercase tracking-wider ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}>
+              {t("footer.LEGAL_TITLE")}
+            </h3>
+            <nav className="flex flex-col space-y-3">
+              <button
+                onClick={() => handlePageClick("/privacy-policy")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.LEGAL_PRIVACY")}
+              </button>
+              <button
+                onClick={() => handlePageClick("/terms-of-service")}
+                className="text-slate-200 hover:text-brand-primary transition-colors duration-300 text-left group flex items-center gap-2"
+              >
+                <span className="w-0 h-0.5 bg-brand-primary group-hover:w-4 transition-all duration-300"></span>
+                {t("footer.LEGAL_TERMS")}
+              </button>
+            </nav>
+          </div>
+        </div>
+
         {/* Social Media - Premium Icons */}
-        <div className="flex gap-6 mt-6">
+        <div className="flex gap-6 mt-8">
           <a
             href="https://www.linkedin.com/company/codenovex"
             target="_blank"
@@ -178,9 +310,9 @@ export const Footer = React.forwardRef<HTMLDivElement>((_, ref) => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-800 w-full">
+        <div className="mt-8 pt-6 w-full">
           <p className="text-gray-500 text-sm text-center">
-            © {new Date().getFullYear()} CodeNovex. All rights reserved.
+            © {new Date().getFullYear()} CodeNovex. {t("footer.COPYRIGHT")}
           </p>
         </div>
       </div>

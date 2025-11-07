@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Logo from "../assets/logo.webp";
 import LanguageSelector from "./LanguageSelector";
@@ -6,16 +6,28 @@ import LanguageSelector from "./LanguageSelector";
 const BlogHeader = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isBlogPage =
+    location.pathname === "/blog" || location.pathname.startsWith("/blog/");
 
   const handleContactClick = () => {
-    // Navigate to home page
     navigate("/");
-    // Wait for navigation to complete, then scroll to contact
     setTimeout(() => {
       const contactElement = document.querySelector('[data-section="contact"]');
       if (contactElement) {
         contactElement.scrollIntoView({ behavior: "smooth" });
       }
+    }, 100);
+  };
+
+  const navigateToPage = (path: string) => {
+    navigate(path);
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }, 100);
   };
 
@@ -43,12 +55,23 @@ const BlogHeader = () => {
             >
               {t("header.HOME")}
             </Link>
-            <Link
-              to="/blog"
-              className="text-brand-primary font-medium hidden md:block"
+            <button
+              onClick={() => navigateToPage("/process")}
+              className="text-gray-300 hover:text-brand-primary transition-colors duration-300 font-medium hidden md:block"
             >
-              {t("header.BLOG")}
-            </Link>
+              {t("header.PROCESS")}
+            </button>
+
+            {/* Blog link - hidden on blog pages */}
+            {!isBlogPage && (
+              <button
+                onClick={() => navigateToPage("/blog")}
+                className="text-gray-300 hover:text-brand-primary transition-colors duration-300 font-medium hidden md:block"
+              >
+                {t("header.BLOG")}
+              </button>
+            )}
+
             <button
               onClick={handleContactClick}
               className="px-6 py-2 bg-brand-primary hover:bg-brand-hover text-white rounded-lg transition-all duration-300 font-semibold"

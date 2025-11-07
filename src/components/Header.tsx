@@ -9,12 +9,35 @@ import {
 } from "../types/header";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
+  
+  // Scroll-spy for homepage sections - always call hook, use conditionally
+  const detectedSection = useActiveSection(["about", "services", "contact"]);
+  const activeSection = location.pathname === "/" ? detectedSection : null;
+
+  // Detect scroll for sticky header background and position tracking
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+      
+      // More precise "at top" detection - only true when very close to top
+      // This ensures HOME indicator only shows when actually at the top
+      setIsAtTop(scrollY < 200);
+    };
+
+    handleScroll(); // Check initial state
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDropdown = useCallback(() => {
     setDropdownVisible((prev) => !prev);
@@ -46,7 +69,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       if (targetRef && targetRef.current) {
         window.scrollTo({
           top: targetRef.current.offsetTop,
-          behavior: "auto",
+          behavior: "smooth", // Smooth scroll when clicking navigation links
         });
         closeDropdown();
       }
@@ -78,6 +101,18 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
 
   const scrollToRef = useCallback(
     (refName: string) => {
+      // Special case: "home" should scroll to top
+      if (refName === "home") {
+        if (location.pathname !== "/") {
+          navigate("/");
+        }
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+        return;
+      }
+
       // If not on home page, navigate to home first
       if (location.pathname !== "/") {
         navigate("/");
@@ -92,6 +127,18 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
     [navigate, location.pathname, scrollToRefOnHome]
   );
 
+  // Navigate to page routes and scroll to top
+  const navigateToPage = useCallback((path: string) => {
+    navigate(path);
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
+  }, [navigate]);
+
   const handleScroll = useCallback(
     (refName: string) => {
       const ref: { [key: string]: RefObject<HTMLDivElement> } = {
@@ -103,15 +150,22 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       if (targetRef && targetRef.current) {
         window.scrollTo({
           top: targetRef.current.offsetTop,
-          behavior: "auto",
+          behavior: "smooth", // Smooth scroll when clicking scroll-down arrow
         });
       }
     },
     [aboutRef]
   );
   return (
-    <header className=" text-white flex flex-col w-full max-w-[1440px] mx-auto">
-      <div className="flex justify-between items-center py-4 px-6 md:hidden">
+    <>
+      {/* Sticky Navigation - Independent from hero section */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-slate-900/98 backdrop-blur-md shadow-2xl shadow-black/50 border-b border-white/10' 
+          : 'bg-transparent'
+      }`}>
+        <div className="w-full max-w-[1440px] mx-auto">
+        <div className="flex justify-between items-center py-4 px-6 md:hidden">
         <button
           onClick={toggleDropdown}
           className="group p-2.5 rounded-xl bg-gray-900/80 border border-gray-700/50 hover:border-brand-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20 backdrop-blur-sm"
@@ -145,9 +199,9 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
             {t("header.CONTACT")}
           </NavItem>
         </nav>
-      </div>
+        </div>
 
-      <div className="hidden md:flex md:items-center md:justify-between md:mx-auto md:w-full p-7 lg:p-9 gap-4">
+        <div className="hidden md:flex md:items-center md:justify-between md:mx-auto md:w-full p-5 gap-4">
         {/* Left: Logo */}
         <div className="flex justify-start">
           <button
@@ -173,45 +227,84 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         </div>
 
         {/* Center: Navigation */}
-        <div className="flex gap-2 lg:gap-3 items-center justify-center bg-white px-4 py-3 lg:px-6 lg:py-4 rounded-full text-gray-500">
-          <p
+        <div className="flex gap-3 lg:gap-4 items-center justify-center bg-white px-6 py-4 lg:px-8 lg:py-5 rounded-full shadow-lg">
+          {/* HOME - Active when at top of homepage */}
+          <button
             onClick={() => scrollToRef("home")}
-            className="cursor-pointer hover text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap "
+            className={`relative group cursor-pointer text-gray-700 hover:text-brand-primary text-sm lg:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300 ${
+              (location.pathname === "/" && isAtTop && !activeSection) ? "text-brand-primary" : ""
+            }`}
           >
             {t("header.HOME")}
-          </p>
-          <p
+            {location.pathname === "/" && isAtTop && !activeSection && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/50"></span>
+            )}
+          </button>
+          
+          {/* ABOUT - Active when scrolled to about section on homepage */}
+          <button
             onClick={() => scrollToRef("about")}
-            className="cursor-pointer hover text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap"
+            className={`relative group cursor-pointer text-gray-700 hover:text-brand-primary text-sm lg:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300 ${
+              (location.pathname === "/" && activeSection === "about") ? "text-brand-primary" : ""
+            }`}
           >
             {t("header.ABOUT")}
-          </p>
+            {location.pathname === "/" && activeSection === "about" && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/50 animate-pulse"></span>
+            )}
+          </button>
 
-          {/* <p onClick={() => scrollToRef("team")} className="cursor-pointer hover-7">TEAM</p> */}
-          <p
+          {/* SERVICES - Active when scrolled to services section on homepage */}
+          <button
             onClick={() => scrollToRef("services")}
-            className="cursor-pointer hover text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap"
+            className={`relative group cursor-pointer text-gray-700 hover:text-brand-primary text-sm lg:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300 ${
+              (location.pathname === "/" && activeSection === "services") ? "text-brand-primary" : ""
+            }`}
           >
             {t("header.SERVICES")}
-          </p>
-          <p
-            onClick={() => navigate("/process")}
-            className="cursor-pointer hover text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap"
+            {location.pathname === "/" && activeSection === "services" && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/50 animate-pulse"></span>
+            )}
+          </button>
+          
+          {/* PROCESS - Active when on /process page (URL match) */}
+          <button
+            onClick={() => navigateToPage("/process")}
+            className={`relative group cursor-pointer text-gray-700 hover:text-brand-primary text-sm lg:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300 ${
+              location.pathname === "/process" ? "text-brand-primary" : ""
+            }`}
           >
             {t("header.PROCESS")}
-          </p>
-          <p
-            onClick={() => navigate("/blog")}
-            className="cursor-pointer hover text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap"
+            {location.pathname === "/process" && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/50"></span>
+            )}
+          </button>
+          
+          {/* BLOG - Active when on /blog or /blog/* page (URL match) */}
+          <button
+            onClick={() => navigateToPage("/blog")}
+            className={`relative group cursor-pointer text-gray-700 hover:text-brand-primary text-sm lg:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300 ${
+              (location.pathname === "/blog" || location.pathname.startsWith("/blog/")) ? "text-brand-primary" : ""
+            }`}
           >
             {t("header.BLOG")}
-          </p>
-          <p
+            {(location.pathname === "/blog" || location.pathname.startsWith("/blog/")) && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/50"></span>
+            )}
+          </button>
+          
+          {/* CONTACT - Active when scrolled to contact section on homepage */}
+          <button
             onClick={() => scrollToRef("contact")}
-            className="cursor-pointer hover text-gray-700 hover:text-brand-primary text-sm lg:text-lg whitespace-nowrap"
+            className={`relative group cursor-pointer text-gray-700 hover:text-brand-primary text-sm lg:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300 ${
+              (location.pathname === "/" && activeSection === "contact") ? "text-brand-primary" : ""
+            }`}
           >
             {t("header.CONTACT")}
-          </p>
+            {location.pathname === "/" && activeSection === "contact" && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-lg shadow-brand-primary/50 animate-pulse"></span>
+            )}
+          </button>
         </div>
 
         {/* Right: Language Selector */}
@@ -219,8 +312,12 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
           <LanguageSelector />
         </div>
       </div>
+        </div>
+      </nav>
 
-      <section className="header_background  mb-20 flex flex-col gap-14 items-center justify-center">
+      {/* Hero Section - Separate from navigation, with top padding to avoid overlap */}
+      <header className="text-white w-full max-w-[1440px] mx-auto pt-20 md:pt-28">
+      <section className="header_background mb-20 flex flex-col gap-14 items-center justify-center">
         <h1 className="text-3d" data-heading="CodeNovex">
           CodeNovex
         </h1>
@@ -238,15 +335,18 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
           <p className="text-2xl">{t("header.SCROLL")}</p>
         </div>
       </section>
+      </header>
+
+      {/* Mobile Dropdown Menu */}
       {isDropdownVisible && (
         <DropdownContent
           scrollToRef={scrollToRef}
           closeDropdown={closeDropdown}
-          navigate={navigate}
+          navigateToPage={navigateToPage}
           t={t}
         />
       )}
-    </header>
+    </>
   );
 };
 
@@ -264,7 +364,7 @@ const NavItem = ({ children, onClick }: NavItemProps) => {
 const DropdownContent = ({
   scrollToRef,
   closeDropdown,
-  navigate,
+  navigateToPage,
   t,
 }: DropdownContentProps) => {
   return (
@@ -315,7 +415,7 @@ const DropdownContent = ({
           <NavItem
             onClick={() => {
               closeDropdown();
-              navigate("/process");
+              navigateToPage("/process");
             }}
           >
             <div className="group flex items-center justify-between w-full p-4 rounded-xl bg-gray-800/30 border border-gray-700/30 hover:border-brand-primary/50 hover:bg-gradient-to-r hover:from-brand-primary/10 hover:to-purple-600/10 transition-all duration-300">
@@ -329,7 +429,7 @@ const DropdownContent = ({
           <NavItem
             onClick={() => {
               closeDropdown();
-              navigate("/blog");
+              navigateToPage("/blog");
             }}
           >
             <div className="group flex items-center justify-between w-full p-4 rounded-xl bg-gray-800/30 border border-gray-700/30 hover:border-brand-primary/50 hover:bg-gradient-to-r hover:from-brand-primary/10 hover:to-purple-600/10 transition-all duration-300">

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { getPostBySlug, getRecentPosts } from "../content/blog/posts";
 import { getPostComponent } from "../content/blog/postComponents";
 import BlogHeader from "../components/BlogHeader";
+import { Footer } from "../components/Footer";
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -49,7 +50,7 @@ const BlogPostPage: React.FC = () => {
   return (
     <>
       <BlogHeader />
-      <div className="min-h-screen bg-black pt-24 pb-16">
+      <div className="min-h-screen bg-black pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="mb-8">
@@ -281,6 +282,9 @@ const BlogPostPage: React.FC = () => {
           )}
         </div>
       </div>
+      
+      {/* Footer */}
+      <Footer />
     </>
   );
 };

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getPostsByLanguage, getAllCategories } from "../content/blog/posts";
 import BlogHeader from "../components/BlogHeader";
+import { Footer } from "../components/Footer";
 
 const BlogPage: React.FC = () => {
   const { i18n } = useTranslation();
@@ -48,7 +49,7 @@ const BlogPage: React.FC = () => {
   return (
     <>
       <BlogHeader />
-      <div className="min-h-screen bg-black pt-24 pb-16">
+      <div className="min-h-screen bg-black pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
@@ -239,6 +240,8 @@ const BlogPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
