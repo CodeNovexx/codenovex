@@ -108,7 +108,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
                 htmlFor="company"
                 className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
               >
-                {t("contactForm.COMPANY_LABEL")}
+                {t("contactForm.COMPANY_LABEL")}{" "}
               </label>
               <div className="relative">
                 <input
@@ -161,6 +161,38 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
                 placeholder={t("contactForm.MESSAGE_PLACEHOLDER")}
                 required
               ></textarea>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
+          </div>
+
+          <div className="relative z-10 group">
+            <label
+              htmlFor="source"
+              className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
+            >
+              {t("contactForm.SOURCE_LABEL")}
+            </label>
+            <div className="relative">
+              <select
+                id="source"
+                name="source"
+                className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 hover:border-brand-primary/50 appearance-none cursor-pointer ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+              >
+                <option value="" className="bg-gray-900 text-gray-400">
+                  {t("contactForm.SOURCE_PLACEHOLDER")}
+                </option>
+                {(t("contactForm.SOURCE_OPTIONS", { returnObjects: true }) as Array<{value: string, label: string}>).map((option) => (
+                  <option key={option.value} value={option.value} className="bg-gray-900 text-white">
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              {/* Custom dropdown arrow */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                <svg className="w-5 h-5 text-gray-400 group-focus-within:text-brand-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           </div>
