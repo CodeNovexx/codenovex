@@ -26,9 +26,9 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
 
   useEffect(() => {
     if (isDropdownVisible) {
-      document.body.style.overflowY = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflowY = "scroll";
+      document.body.style.overflow = "";
     }
   }, [isDropdownVisible]);
 
@@ -46,7 +46,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       if (targetRef && targetRef.current) {
         window.scrollTo({
           top: targetRef.current.offsetTop,
-          behavior: "smooth",
+          behavior: "auto",
         });
         closeDropdown();
       }
@@ -54,7 +54,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
     [aboutRef, teamRef, servicesRef, footerRef, closeDropdown]
   );
 
-  // Handle hash navigation for smooth scrolling
+  // Handle hash navigation
   useEffect(() => {
     const handleHashScroll = () => {
       const hash = window.location.hash.replace("#", "");
@@ -103,7 +103,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
       if (targetRef && targetRef.current) {
         window.scrollTo({
           top: targetRef.current.offsetTop,
-          behavior: "smooth",
+          behavior: "auto",
         });
       }
     },

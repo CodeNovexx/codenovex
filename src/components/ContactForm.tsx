@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isGeorgian = i18n.language === 'ka';
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -64,96 +65,112 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
 
           <h2
             id="contact-form-heading"
-            className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6"
+            className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold text-white mb-4 md:mb-6`}
           >
             {t("contactForm.HEADING")}
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className={`text-gray-400 max-w-3xl mx-auto ${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'}`}>
             {t("contactForm.SUBHEADING")}
           </p>
         </div>
 
         <form
           onSubmit={onSubmit}
-          className="relative bg-gray-900 rounded-3xl shadow-2xl p-6 md:p-12 space-y-8 border border-gray-700/50 mb-16"
+          className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-12 space-y-8 border border-gray-800 hover:border-gray-700 transition-all duration-300 mb-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Decorative gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-purple-600/5 rounded-3xl pointer-events-none"></div>
+          
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="group">
               <label
                 htmlFor="name"
-                className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+                className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
               >
                 {t("contactForm.NAME_LABEL")}{" "}
                 <span className="text-brand-primary">*</span>
               </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-5 py-4 bg-gray-800/50 border border-gray-600 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-gray-500"
-                placeholder={t("contactForm.NAME_PLACEHOLDER")}
-                required
-              />
+              <div className="relative">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-brand-primary/50 ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+                  placeholder={t("contactForm.NAME_PLACEHOLDER")}
+                  required
+                />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
             </div>
 
             <div className="group">
               <label
                 htmlFor="company"
-                className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+                className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
               >
                 {t("contactForm.COMPANY_LABEL")}
               </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                className="w-full px-5 py-4 bg-gray-800/50 border border-gray-600 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-gray-500"
-                placeholder={t("contactForm.COMPANY_PLACEHOLDER")}
-              />
+              <div className="relative">
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-brand-primary/50 ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+                  placeholder={t("contactForm.COMPANY_PLACEHOLDER")}
+                />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
             </div>
           </div>
 
-          <div className="group">
+          <div className="relative z-10 group">
             <label
               htmlFor="email"
-              className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+              className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
             >
               {t("contactForm.EMAIL_LABEL")}{" "}
               <span className="text-brand-primary">*</span>
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full px-5 py-4 bg-gray-800/50 border border-gray-600 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-gray-500"
-              placeholder={t("contactForm.EMAIL_PLACEHOLDER")}
-              required
-            />
+            <div className="relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-brand-primary/50 ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+                placeholder={t("contactForm.EMAIL_PLACEHOLDER")}
+                required
+              />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
           </div>
 
-          <div className="group">
+          <div className="relative z-10 group">
             <label
               htmlFor="message"
-              className="block mb-3 text-sm md:text-base font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors"
+              className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
             >
               {t("contactForm.MESSAGE_LABEL")}{" "}
               <span className="text-brand-primary">*</span>
             </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={6}
-              className="w-full px-5 py-4 bg-gray-800/50 border border-gray-600 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 resize-vertical placeholder-gray-500 hover:border-gray-500"
-              placeholder={t("contactForm.MESSAGE_PLACEHOLDER")}
-              required
-            ></textarea>
+            <div className="relative">
+              <textarea
+                id="message"
+                name="message"
+                rows={6}
+                className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-brand-primary/50 resize-none ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+                placeholder={t("contactForm.MESSAGE_PLACEHOLDER")}
+                required
+              ></textarea>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
           </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="group relative w-full bg-brand-primary hover:bg-brand-hover text-white font-bold py-5 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50 overflow-hidden"
-          >
+          <div className="relative z-10">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`group relative w-full bg-gradient-to-r from-brand-primary to-cyan-500 hover:from-brand-hover hover:to-cyan-600 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl shadow-brand-primary/40 hover:shadow-brand-primary/60 overflow-hidden ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+            >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
 
             {isSubmitting ? (
@@ -198,7 +215,8 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
                 </svg>
               </span>
             )}
-          </button>
+            </button>
+          </div>
 
           {result && (
             <div
@@ -248,7 +266,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
             </div>
           )}
 
-          <p className="text-gray-500 text-xs md:text-sm text-center flex items-center justify-center gap-2">
+          <p className={`text-gray-500 text-center flex items-center justify-center gap-2 ${isGeorgian ? 'text-xs leading-[1.6]' : 'text-xs'}`}>
             <svg
               className="w-4 h-4"
               fill="none"

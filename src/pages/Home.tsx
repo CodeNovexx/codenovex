@@ -5,6 +5,7 @@ import { ContactForm } from "../components/ContactForm";
 import Aboutus from "../components/Aboutus";
 import Team from "../components/Team";
 import Services from "../components/Services";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -28,6 +29,7 @@ const Home = () => {
       </main>
       <ContactForm ref={contactRef} />
       <Footer ref={footerRef} />
+      <ScrollToTop />
     </>
   );
 };

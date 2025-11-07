@@ -37,7 +37,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
     >
       {/* Section Header */}
       <div className="max-w-6xl mx-auto mb-16 text-center">
-        <h2 id="why-us-heading" className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+        <h2 id="why-us-heading" className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}>
           {t("why_us.WHY_US")}
         </h2>
       </div>
@@ -61,7 +61,7 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
                 </div>
 
                 {/* Title */}
-                <h3 className={`${isGeorgian ? 'text-2xl leading-[1.4]' : 'text-2xl'} font-bold mb-4 bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                <h3 className={`${isGeorgian ? 'text-xl leading-[1.4]' : 'text-xl'} font-bold mb-4 text-white`}>
                   {feature.title}
                 </h3>
 
@@ -82,10 +82,10 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
           <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-purple-600/5 rounded-3xl"></div>
           
           <div className="relative z-10">
-            <h3 className={`${isGeorgian ? 'text-3xl leading-[1.3]' : 'text-4xl'} font-bold mb-6 text-white`}>
+            <h3 className={`${isGeorgian ? 'text-2xl md:text-3xl leading-[1.4]' : 'text-3xl md:text-4xl'} font-bold mb-6 text-white`}>
               {t("why_us.PRICING")}
             </h3>
-            <p className={`${isGeorgian ? 'text-lg leading-[1.9]' : 'text-xl leading-relaxed'} text-gray-200`}>
+            <p className={`${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'} text-gray-200`}>
               {t("why_us.PRICING_TEXT")}
             </p>
           </div>

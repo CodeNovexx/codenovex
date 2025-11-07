@@ -22,16 +22,16 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
             id="team-heading"
             className={`${
               isGeorgian
-                ? "text-3xl md:text-4xl leading-[1.3]"
-                : "text-4xl md:text-5xl"
-            } font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent`}
+                ? "text-3xl md:text-4xl leading-[1.4] pb-2"
+                : "text-4xl md:text-5xl pb-2"
+            } font-bold mb-6 text-white`}
           >
             {t("team.WHO_WE_ARE")}
           </h2>
 
           <p
             className={`${
-              isGeorgian ? "text-lg leading-[1.9]" : "text-xl leading-relaxed"
+              isGeorgian ? "text-base leading-[1.9]" : "text-base leading-relaxed"
             } text-gray-300 max-w-4xl`}
           >
             {t("team.WHO_WE_ARE_TEXT")}
@@ -45,9 +45,9 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
           <h3
             className={`${
               isGeorgian
-                ? "text-3xl md:text-4xl leading-[1.3]"
-                : "text-4xl md:text-5xl"
-            } font-bold text-center bg-gradient-to-r from-brand-primary to-purple-600 bg-clip-text text-transparent`}
+                ? "text-2xl md:text-3xl leading-[1.4] pb-2"
+                : "text-3xl md:text-4xl pb-2"
+            } font-bold text-center text-white`}
           >
             {t("team.FOUNDER_VISION")}
           </h3>
@@ -75,8 +75,8 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
               <p
                 className={`${
                   isGeorgian
-                    ? "text-lg leading-[1.9]"
-                    : "text-xl leading-relaxed"
+                    ? "text-base leading-[1.9]"
+                    : "text-base leading-relaxed"
                 } text-gray-300`}
               >
                 {t("team.FOUNDER_TEXT")}
