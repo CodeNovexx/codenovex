@@ -112,6 +112,8 @@
     "NAME_PLACEHOLDER": "გიორგი მაისურაძე",
     "EMAIL_LABEL": "ელექტრონული ფოსტა",
     "EMAIL_PLACEHOLDER": "giorgi@company.com",
+    "PHONE_LABEL": "ტელეფონის ნომერი",
+    "PHONE_PLACEHOLDER": "555 12 34 56",
     "COMPANY_LABEL": "კომპანიის სახელი (არასავალდებულო)",
     "COMPANY_PLACEHOLDER": "თქვენი კომპანია",
     "MESSAGE_LABEL": "რა პრობლემის გადაჭრა გსურთ?",

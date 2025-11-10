@@ -110,6 +110,8 @@
     "NAME_PLACEHOLDER": "John Doe",
     "EMAIL_LABEL": "Email Address",
     "EMAIL_PLACEHOLDER": "john@company.com",
+    "PHONE_LABEL": "Phone Number",
+    "PHONE_PLACEHOLDER": "555 12 34 56",
     "COMPANY_LABEL": "Company Name (Optional)",
     "COMPANY_PLACEHOLDER": "Your Company",
     "MESSAGE_LABEL": "What problem are you looking to solve?",

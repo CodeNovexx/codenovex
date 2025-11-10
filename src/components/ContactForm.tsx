@@ -133,7 +133,6 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
               className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
             >
               {t("contactForm.EMAIL_LABEL")}{" "}
-              <span className="text-brand-primary">*</span>
             </label>
             <div className="relative">
               <input
@@ -142,6 +141,26 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
                 name="email"
                 className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-brand-primary/50 ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
                 placeholder={t("contactForm.EMAIL_PLACEHOLDER")}
+              />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
+          </div>
+
+             <div className="relative z-10 group">
+            <label
+              htmlFor="phone"
+              className={`block mb-3 font-semibold text-gray-300 group-focus-within:text-brand-primary transition-colors ${isGeorgian ? 'text-sm leading-[1.6]' : 'text-sm'}`}
+            >
+              {t("contactForm.PHONE_LABEL")}{" "}
+              <span className="text-brand-primary">*</span>
+            </label>
+            <div className="relative">
+              <input
+                type="phone"
+                id="phone"
+                name="phone"
+                className={`w-full px-5 py-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white rounded-xl focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:bg-gray-800 transition-all duration-300 placeholder-gray-500 hover:border-brand-primary/50 ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+                placeholder={t("contactForm.PHONE_PLACEHOLDER")}
                 required
               />
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-brand-primary/5 to-brand-primary/0 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
