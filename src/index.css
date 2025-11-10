@@ -210,6 +210,15 @@ a:focus-visible {
   border-radius: 4px;
 }
 
+/* Contact form gradient animation utilities */
+.bg-size-200 {
+  background-size: 200%;
+}
+
+.bg-pos-100 {
+  background-position: 100%;
+}
+
 .header_background {
   background-image: url(assets/header_logo.webp);
   background-repeat: no-repeat;
