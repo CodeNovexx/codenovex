@@ -89,7 +89,7 @@ export const TableOfContents = () => {
   return (
     <motion.aside
       style={{ opacity }}
-      className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 w-64 max-h-[70vh] overflow-y-auto"
+      className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 w-64 max-h-[70vh] overflow-y-auto custom-scrollbar"
     >
       <div className="glass-strong rounded-2xl p-6 border border-white/10">
         {/* Header */}
