@@ -4,6 +4,7 @@ import { AboutusProps } from "../types/aboutUs";
 import { useTranslation } from "react-i18next";
 import FadeInUp from "./FadeInUp";
 import { StaggerContainer, StaggerItem } from "./StaggerAnimation";
+import { GradientReveal } from "./TextReveal";
 
 const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
   const { t, i18n } = useTranslation();
@@ -40,9 +41,11 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
       {/* Section Header */}
       <FadeInUp delay={0.1}>
         <div className="max-w-6xl mx-auto mb-16 text-center">
-          <h2 id="why-us-heading" className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}>
-            {t("why_us.WHY_US")}
-          </h2>
+          <GradientReveal key={i18n.language} className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6`}>
+            <h2 id="why-us-heading">
+              {t("why_us.WHY_US")}
+            </h2>
+          </GradientReveal>
         </div>
       </FadeInUp>
 

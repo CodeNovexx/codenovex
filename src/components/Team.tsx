@@ -2,6 +2,7 @@ import React from "react";
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import FadeInUp from "./FadeInUp";
+import { GradientReveal, TextReveal } from "./TextReveal";
 import profilePicture from "../assets/profile.webp";
 
 const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
@@ -20,24 +21,24 @@ const Team = React.forwardRef<HTMLDivElement>((_, ref) => {
       <FadeInUp delay={0.1}>
         <div className="max-w-6xl mx-auto mb-20">
           <div className="text-white">
-            <h2
-              id="team-heading"
-              className={`${
+            <GradientReveal key={i18n.language} className={`${
                 isGeorgian
                   ? "text-3xl md:text-4xl leading-[1.4] pb-2"
                   : "text-4xl md:text-5xl pb-2"
-              } font-bold mb-6 text-white`}
-            >
-              {t("team.WHO_WE_ARE")}
-            </h2>
+              } font-bold mb-6`}>
+              <h2 id="team-heading">
+                {t("team.WHO_WE_ARE")}
+              </h2>
+            </GradientReveal>
 
-            <p
+            <TextReveal
+              key={`${i18n.language}-team`}
               className={`${
                 isGeorgian ? "text-base leading-[1.9]" : "text-base leading-relaxed"
               } text-gray-300 max-w-4xl`}
             >
               {t("team.WHO_WE_ARE_TEXT")}
-            </p>
+            </TextReveal>
           </div>
         </div>
       </FadeInUp>

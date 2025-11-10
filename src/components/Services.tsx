@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import FadeInUp from "./FadeInUp";
 import { StaggerContainer, StaggerItem } from "./StaggerAnimation";
+import { GradientReveal, TextReveal } from "./TextReveal";
 import UxLogo from "../assets/ui_ux_design_logo.webp";
 import webLogo from "../assets/web_logo.webp";
 import seoLogo from "../assets/seo_logo.webp";
@@ -59,15 +60,14 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
       {/* Section Header */}
       <FadeInUp delay={0.1}>
         <div className="max-w-6xl mx-auto mb-16 text-center">
-          <h2 
-            id="services-heading" 
-            className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6 text-white`}
-          >
-            {t("services.WHAT_WE_DO")}
-          </h2>
-          <p className={`${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'} text-gray-300 max-w-3xl mx-auto`}>
+          <GradientReveal key={i18n.language} className={`${isGeorgian ? 'text-3xl md:text-4xl leading-[1.4] pb-2' : 'text-4xl md:text-5xl pb-2'} font-bold mb-6`}>
+            <h2 id="services-heading">
+              {t("services.WHAT_WE_DO")}
+            </h2>
+          </GradientReveal>
+          <TextReveal key={`${i18n.language}-services`} className={`${isGeorgian ? 'text-base leading-[1.9]' : 'text-base leading-relaxed'} text-gray-300 max-w-3xl mx-auto`}>
             {t("services.WHAT_WE_DO_TEXT")}
-          </p>
+          </TextReveal>
         </div>
       </FadeInUp>
 

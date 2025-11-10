@@ -3,6 +3,7 @@ import { Lightbulb, Layers, Code2, Rocket, CheckCircle2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import FadeInUp from '../components/FadeInUp';
+import { GradientReveal, TextReveal } from '../components/TextReveal';
 import Logo from '../assets/logo.webp';
 import LanguageSelector from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
@@ -121,13 +122,15 @@ const Process: React.FC = () => {
               </span>
             </div>
             
-            <h1 className={`${isGeorgian ? 'text-3xl md:text-5xl lg:text-6xl leading-[1.4]' : 'text-4xl md:text-6xl lg:text-7xl'} font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent`}>
-              {t('process.subtitle')}
-            </h1>
+            <GradientReveal key={i18n.language} className={`${isGeorgian ? 'text-3xl md:text-5xl lg:text-6xl leading-[1.4]' : 'text-4xl md:text-6xl lg:text-7xl'} font-bold mb-6`}>
+              <h1>
+                {t('process.subtitle')}
+              </h1>
+            </GradientReveal>
             
-            <p className={`${isGeorgian ? 'text-lg md:text-xl leading-[2]' : 'text-xl md:text-2xl leading-relaxed'} text-gray-400 max-w-4xl mx-auto`}>
+            <TextReveal key={`${i18n.language}-hero`} className={`${isGeorgian ? 'text-lg md:text-xl leading-[2]' : 'text-xl md:text-2xl leading-relaxed'} text-gray-400 max-w-4xl mx-auto `}>
               {t('process.heroTitle')}
-            </p>
+            </TextReveal>
           </div>
         </FadeInUp>
       </section>
