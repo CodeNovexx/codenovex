@@ -6,9 +6,10 @@ import { Globe, ChevronDown } from "lucide-react";
 
 interface LanguageSelectorProps {
   openUpward?: boolean;
+  size?: "compact" | "default";
 }
 
-function LanguageSelector({ openUpward = false }: LanguageSelectorProps) {
+function LanguageSelector({ openUpward = false, size = "default" }: LanguageSelectorProps) {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,17 +27,25 @@ function LanguageSelector({ openUpward = false }: LanguageSelectorProps) {
       <div>
         <button
           type="button"
-          className="group inline-flex items-center gap-2 px-4 py-5 rounded-xl bg-gray-900/80 border border-gray-700/50 hover:border-brand-primary/50 text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20 backdrop-blur-sm"
+          className={`group inline-flex items-center gap-2 rounded-lg text-white font-medium transition-all duration-300 backdrop-blur-sm ${
+            size === "compact"
+              ? "px-3 py-2 bg-gray-900/50 border border-gray-700/30 hover:border-brand-primary/40 text-sm hover:shadow-md hover:shadow-brand-primary/10"
+              : "px-4 py-3.5 bg-gray-900/70 border border-gray-700/40 hover:border-brand-primary/50 hover:shadow-lg hover:shadow-brand-primary/15"
+          }`}
           id="language-menu"
           aria-haspopup="true"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
         >
           {/* Globe Icon */}
-          <Globe className="w-4 h-4 text-brand-primary" />
+          <Globe className={size === "compact" ? "w-3.5 h-3.5 text-brand-primary/80" : "w-4 h-4 text-brand-primary"} />
           
           {/* Flag */}
-          <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-gray-600 group-hover:border-brand-primary transition-colors duration-300 shadow-sm">
+          <div className={`rounded-full overflow-hidden border group-hover:border-brand-primary/70 transition-colors duration-300 shadow-sm ${
+            size === "compact" 
+              ? "w-5 h-5 border-gray-600" 
+              : "w-6 h-6 border-gray-600"
+          }`}>
             <img 
               src={currentLanguage.flag} 
               alt={currentLanguage.name} 
@@ -45,11 +54,11 @@ function LanguageSelector({ openUpward = false }: LanguageSelectorProps) {
           </div>
           
           {/* Language Code */}
-          <span className="text-sm font-bold tracking-wide">{currentLanguage.code}</span>
+          <span className={size === "compact" ? "text-xs font-semibold tracking-wide" : "text-sm font-bold tracking-wide"}>{currentLanguage.code}</span>
           
           {/* Chevron */}
           <ChevronDown 
-            className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+            className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''} ${size === "compact" ? "w-3.5 h-3.5" : "w-4 h-4"}`}
           />
         </button>
       </div>

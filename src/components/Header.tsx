@@ -227,7 +227,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         </div>
 
         {/* Center: Navigation */}
-        <div className="flex gap-3 lg:gap-4 items-center justify-center bg-white px-6 py-4 lg:px-8 lg:py-5 rounded-full shadow-lg">
+        <div className="flex gap-3 lg:gap-4 items-center justify-center bg-white px-6 py-4 lg:px-8 lg:py-2.5 rounded-full shadow-lg">
           {/* HOME - Active when at top of homepage */}
           <button
             onClick={() => scrollToRef("home")}
@@ -321,7 +321,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         <h1 className="text-3d" data-heading="CodeNovex">
           CodeNovex
         </h1>
-        <div className="flex flex-col gap-4 text-3xl items-center justify-center text-center">
+        <div className="flex flex-col gap-4 text-3xl items-center justify-center text-center mt-16">
           <p>{t("header.BUILDING")}</p>
           <p>{t("header.SUCCESS")}</p>
           <p>{t("header.TOGETHER")}</p>

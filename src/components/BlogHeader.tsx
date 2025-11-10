@@ -78,11 +78,12 @@ const BlogHeader = () => {
 
             <button
               onClick={handleContactClick}
-              className="px-6 py-2 bg-brand-primary hover:bg-brand-hover text-white rounded-lg transition-all duration-300 font-semibold"
+              className="relative px-4 py-2 text-sm font-medium text-brand-primary border border-brand-primary/40 rounded-lg backdrop-blur-sm bg-brand-primary/5 hover:bg-brand-primary/10 hover:border-brand-primary/60 hover:shadow-lg hover:shadow-brand-primary/20 transition-all duration-300 group overflow-hidden"
             >
-              {t("header.CONTACT")}
+              <span className="relative z-10">{t("header.CONTACT")}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-100%] group-hover:translate-x-[100%]"></div>
             </button>
-            <LanguageSelector />
+            <LanguageSelector size="compact" />
           </nav>
         </div>
       </div>
