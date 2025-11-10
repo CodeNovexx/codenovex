@@ -5,6 +5,7 @@ import FadeInUp from "../components/FadeInUp";
 import { getPostsByLanguage, getAllCategories } from "../content/blog/posts";
 import BlogHeader from "../components/BlogHeader";
 import { Footer } from "../components/Footer";
+import { ScrollProgress } from "../components/ScrollProgress";
 
 const BlogPage: React.FC = () => {
   const { i18n } = useTranslation();
@@ -49,6 +50,7 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
+      <ScrollProgress />
       <BlogHeader />
       <div className="min-h-screen bg-black pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,9 +130,18 @@ const BlogPage: React.FC = () => {
                             "https://via.placeholder.com/400x300/1f2937/3b82f6?text=CodeNovex+Blog";
                         }}
                       />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-brand-primary text-white text-xs font-semibold rounded-full">
+                      <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 glass-strong text-white text-xs font-semibold rounded-full">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+                          </svg>
                           {post.category}
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 glass-dark text-white text-xs rounded-full">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {post.readTime}
                         </span>
                       </div>
                     </div>

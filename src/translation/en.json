@@ -196,5 +196,31 @@
     "privacyContent": "At CodeNovex, we respect your privacy. This document explains what limited information we collect and how we use it.\n\n**What information do we collect?**\nThe only personal information we collect is what you voluntarily provide through our contact form (name, email, company name, message).\n\n**How do we use this information?**\nWe use this information for the sole purpose of responding to your inquiry and communicating with you about your project.\n\n**Data Sharing**\nWe will never sell, rent, or share your personal information with third parties.",
     "termsTitle": "Terms of Service",
     "termsContent": "**1. Agreement to Terms**\nBy accessing the website at https://codenovex.ge, you are agreeing to be bound by these Terms of Service. If you do not agree with any of these terms, you are prohibited from using this site.\n\n**2. Intellectual Property**\nAll content on this website, including text, graphics, logos, and code, is the property of CodeNovex and is protected by copyright law.\n\n**3. Disclaimer**\nThe information on this website, particularly in the blog section, is provided for informational purposes only. We make no guarantees about its completeness or accuracy and are not liable for any outcomes that may result from the use of this information."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "subtitle": "Oops! The page you're looking for seems to have wandered off into the digital void. But don't worry, we'll help you find your way back.",
+    "searchPlaceholder": "Search our site...",
+    "searchButton": "Search",
+    "suggestedPages": "Try one of these:",
+    "goBack": "Go back to previous page",
+    "pages": {
+      "home": "Home",
+      "blog": "Blog",
+      "services": "Services",
+      "contact": "Contact"
+    }
+  },
+  "stats": {
+    "title": "Our Impact in Numbers",
+    "subtitle": "Trusted by businesses worldwide to deliver exceptional digital solutions",
+    "projectsCompleted": "Projects Completed",
+    "happyClients": "Happy Clients",
+    "linesOfCode": "Lines of Code",
+    "yearsExperience": "Years Experience"
+  },
+  "toc": {
+    "title": "Table of Contents",
+    "readingProgress": "Reading progress"
   }
 }

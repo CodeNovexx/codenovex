@@ -12,6 +12,7 @@ const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -73,6 +74,14 @@ function AnimatedRoutes() {
             element={
               <AnimatedPage>
                 <TermsOfService />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <AnimatedPage>
+                <NotFound />
               </AnimatedPage>
             }
           />

@@ -4,6 +4,7 @@ import FadeInUp from "../components/FadeInUp";
 import ScrollToTop from "../components/ScrollToTop";
 import { Footer } from "../components/Footer";
 import BlogHeader from "../components/BlogHeader";
+import { ScrollProgress } from "../components/ScrollProgress";
 
 // Helper function to format text with bold markers and paragraphs
 const formatLegalText = (text: string) => {
@@ -49,6 +50,7 @@ const TermsOfService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <ScrollProgress />
       {/* Header */}
       <BlogHeader />
 

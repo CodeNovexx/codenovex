@@ -6,6 +6,7 @@ import FadeInUp from "../components/FadeInUp";
 import ScrollToTop from "../components/ScrollToTop";
 import { Footer } from "../components/Footer";
 import BlogHeader from "../components/BlogHeader";
+import { ScrollProgress } from "../components/ScrollProgress";
 
 const FAQPage = () => {
   const { t, i18n } = useTranslation();
@@ -33,6 +34,7 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <ScrollProgress />
       {/* Header */}
       <BlogHeader />
 

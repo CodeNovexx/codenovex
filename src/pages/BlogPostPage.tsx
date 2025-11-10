@@ -6,6 +6,9 @@ import { getPostComponent } from "../content/blog/postComponents";
 import BlogHeader from "../components/BlogHeader";
 import { Footer } from "../components/Footer";
 import FadeInUp from "../components/FadeInUp";
+import { ScrollProgress } from "../components/ScrollProgress";
+import { Breadcrumb } from "../components/Breadcrumb";
+import { TableOfContents } from "../components/TableOfContents";
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -50,32 +53,21 @@ const BlogPostPage: React.FC = () => {
 
   return (
     <>
+      <ScrollProgress />
       <BlogHeader />
+      <TableOfContents />
       <div className="min-h-screen bg-black pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <FadeInUp delay={0.1}>
-            <nav className="mb-8">
-              <Link
-                to="/blog"
-                className="inline-flex items-center gap-2 text-brand-primary hover:text-brand-hover transition-colors"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-                {currentLanguage === "en" ? "Back to Blog" : "დაბრუნება ბლოგში"}
-              </Link>
-            </nav>
+            <div className="mb-8">
+              <Breadcrumb
+                items={[
+                  { label: currentLanguage === "en" ? "Blog" : "ბლოგი", href: "/blog" },
+                  { label: post.title },
+                ]}
+              />
+            </div>
           </FadeInUp>
 
           {/* Post Header */}

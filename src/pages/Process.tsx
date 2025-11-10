@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import FadeInUp from '../components/FadeInUp';
 import { GradientReveal, TextReveal } from '../components/TextReveal';
+import { ScrollProgress } from '../components/ScrollProgress';
 import Logo from '../assets/logo.webp';
 import LanguageSelector from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
@@ -66,9 +67,11 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+    <>
+      <ScrollProgress />
+      <div className="min-h-screen bg-black text-white">
+        {/* Header */}
+        <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <Link to="/" className="flex items-center gap-3 group">
@@ -237,7 +240,8 @@ const Process: React.FC = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
