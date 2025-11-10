@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
 import FadeInUp from "./FadeInUp";
+import { StaggerContainer, StaggerItem } from "./StaggerAnimation";
 import UxLogo from "../assets/ui_ux_design_logo.webp";
 import webLogo from "../assets/web_logo.webp";
 import seoLogo from "../assets/seo_logo.webp";
@@ -71,13 +72,13 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
       </FadeInUp>
 
       {/* Services Grid */}
-      <FadeInUp delay={0.3}>
+      <StaggerContainer>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <article
-            key={index}
-            className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/20 hover:-translate-y-2"
-          >
+          <StaggerItem key={index}>
+            <article
+              className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/20 hover:-translate-y-2 h-full"
+            >
             {/* Gradient Background on Hover */}
             <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
             
@@ -104,10 +105,11 @@ const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
                 {service.description}
               </p>
             </div>
-          </article>
+            </article>
+          </StaggerItem>
         ))}
-      </div>
-      </FadeInUp>
+        </div>
+      </StaggerContainer>
     </section>
   );
 });

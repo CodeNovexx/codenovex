@@ -3,6 +3,7 @@ import { TrendingUp, Shield, Handshake } from "lucide-react";
 import { AboutusProps } from "../types/aboutUs";
 import { useTranslation } from "react-i18next";
 import FadeInUp from "./FadeInUp";
+import { StaggerContainer, StaggerItem } from "./StaggerAnimation";
 
 const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
   const { t, i18n } = useTranslation();
@@ -46,15 +47,15 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
       </FadeInUp>
 
       {/* Three Feature Blocks */}
-      <FadeInUp delay={0.3}>
+      <StaggerContainer>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {features.map((feature, index) => {
           const Icon = feature.icon;
           return (
-            <article
-              key={index}
-              className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/20 hover:-translate-y-2"
-            >
+            <StaggerItem key={index}>
+              <article
+                className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/20 hover:-translate-y-2 h-full"
+              >
               {/* Gradient Background on Hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
               
@@ -74,11 +75,12 @@ const Aboutus = React.forwardRef<HTMLDivElement, AboutusProps>((_, ref) => {
                   {feature.text}
                 </p>
               </div>
-            </article>
+              </article>
+            </StaggerItem>
           );
         })}
-      </div>
-      </FadeInUp>
+        </div>
+      </StaggerContainer>
 
       {/* Transparent Investment Section - Now Full Width */}
       <FadeInUp delay={0.5}>

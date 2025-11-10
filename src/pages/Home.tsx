@@ -6,6 +6,7 @@ import Aboutus from "../components/Aboutus";
 import Team from "../components/Team";
 import Services from "../components/Services";
 import ScrollToTop from "../components/ScrollToTop";
+import { ParallaxBackground } from "../components/ParallaxBackground";
 
 const Home = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -16,6 +17,7 @@ const Home = () => {
 
   return (
     <>
+      <ParallaxBackground />
       <Header
         aboutRef={aboutRef}
         teamRef={teamRef}

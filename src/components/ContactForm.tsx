@@ -224,7 +224,7 @@ export const ContactForm = React.forwardRef<HTMLDivElement>((_, ref) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`group relative w-full bg-gradient-to-r from-brand-primary to-cyan-500 hover:from-brand-hover hover:to-cyan-600 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl shadow-brand-primary/40 hover:shadow-brand-primary/60 overflow-hidden ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
+              className={`group relative w-full bg-gradient-to-r from-brand-primary to-cyan-500 hover:from-brand-hover hover:to-cyan-600 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl shadow-brand-primary/40 hover:shadow-brand-primary/60 overflow-hidden animate-pulse-glow ${isGeorgian ? 'text-base leading-[1.6]' : 'text-base'}`}
             >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
 

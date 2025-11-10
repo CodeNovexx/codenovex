@@ -222,7 +222,7 @@ const Process: React.FC = () => {
                 </p>
                 <a
                   href="/#contact"
-                  className="inline-block bg-gradient-to-r from-brand-primary to-purple-600 hover:from-brand-hover hover:to-purple-700 text-white font-bold py-5 px-12 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50"
+                  className="inline-block bg-gradient-to-r from-brand-primary to-purple-600 hover:from-brand-hover hover:to-purple-700 text-white font-bold py-5 px-12 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-brand-primary/30 hover:shadow-brand-primary/50 animate-pulse-glow"
                 >
                   {t('process.cta.button')}
                 </a>

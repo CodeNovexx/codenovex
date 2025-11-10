@@ -110,15 +110,18 @@ const BlogPage: React.FC = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-primary transition-all duration-300 hover:transform hover:scale-[1.02]"
+                  className="group relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-primary transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/20 hover:-translate-y-2"
                 >
+                  {/* Shine effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                  
                   {/* Post Image */}
                   {post.image && (
                     <div className="relative h-48 bg-gray-800 overflow-hidden">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                         onError={(e) => {
                           // Fallback to placeholder if image fails to load
                           e.currentTarget.src =
