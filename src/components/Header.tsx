@@ -321,7 +321,7 @@ const Header = ({ aboutRef, teamRef, servicesRef, footerRef }: HeaderProps) => {
         <h1 className="text-3d" data-heading="CodeNovex">
           CodeNovex
         </h1>
-        <div className="flex flex-col gap-4 text-3xl items-center">
+        <div className="flex flex-col gap-4 text-3xl items-center justify-center text-center">
           <p>{t("header.BUILDING")}</p>
           <p>{t("header.SUCCESS")}</p>
           <p>{t("header.TOGETHER")}</p>
