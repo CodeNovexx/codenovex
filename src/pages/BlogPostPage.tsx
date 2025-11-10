@@ -178,7 +178,7 @@ const BlogPostPage: React.FC = () => {
                 ? "Share this article"
                 : "გააზიარეთ ეს სტატია"}
             </h3>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
               <a
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                   window.location.href
@@ -187,7 +187,7 @@ const BlogPostPage: React.FC = () => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-gray-800 hover:bg-brand-primary text-white rounded-lg transition-all duration-300 flex items-center gap-2"
+                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-brand-primary text-white rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 <svg
                   className="w-5 h-5"
@@ -206,7 +206,7 @@ const BlogPostPage: React.FC = () => {
                 )}&title=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-gray-800 hover:bg-brand-primary text-white rounded-lg transition-all duration-300 flex items-center gap-2"
+                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-brand-primary text-white rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 <svg
                   className="w-5 h-5"
@@ -226,7 +226,7 @@ const BlogPostPage: React.FC = () => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-gray-800 hover:bg-brand-primary text-white rounded-lg transition-all duration-300 flex items-center gap-2"
+                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-brand-primary text-white rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 <svg
                   className="w-5 h-5"
